@@ -250,44 +250,6 @@
               <article class="metric warn"><span>Cambios pendientes</span><strong>94</strong></article>
             </div>
 
-            <div class="section-title">
-              <h2>Plantas asociadas a la ciudad logística</h2>
-              <button class="btn btn-light" data-open-modal="cityPlantsModal">Administrar asociación</button>
-            </div>
-            <div class="warning-box">Las plantas se asocian funcionalmente a la ciudad logística. La Divipol clasifica geohashes/MAP_PAGE y mapea contra ZONE_CODE en Command.</div>
-            <div class="data-panel">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Ciudad logística</th>
-                    <th>Plantas asociadas</th>
-                    <th>Fuente maestro</th>
-                    <th>Uso funcional</th>
-                    <th>Última modificación</th>
-                    <th>Acciones</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Bogotá / Sabana</td>
-                    <td>513 Puente Aranda, 503 Calle 80, 522 Chía, 884 Zona Franca</td>
-                    <td>Maestro Tracking / Command</td>
-                    <td>Tiempo semilla contra cada geohash de la ciudad logística</td>
-                    <td>2026-06-10</td>
-                    <td><button class="link-btn" data-open-modal="cityPlantsModal">Ver / Editar</button></td>
-                  </tr>
-                  <tr>
-                    <td>Cartagena</td>
-                    <td>301 Mamonal, 302 Bayunca, 303 Turbaco</td>
-                    <td>Maestro Tracking / Command</td>
-                    <td>Tiempo semilla contra cada geohash de la ciudad logística</td>
-                    <td>2026-06-09</td>
-                    <td><button class="link-btn" data-open-modal="cityPlantsModal">Ver / Editar</button></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
             <div class="data-panel">
               <table>
                 <thead>
@@ -573,14 +535,6 @@
             <label>Fecha creación <input value="2026-04-28 - Juan Velasquez" readonly /></label>
             <label>Última modificación <input value="2026-05-20 - Juan Velasquez" readonly /></label>
             <div class="warning-box">Al ajustar el área de cobertura se descubren nuevos geohashes y quedan pendientes de sincronizar con Command. La eliminación exige permiso y queda en bitácora.</div>
-            <div class="association-block">
-              <h3>Plantas asociadas a esta ciudad logística</h3>
-              <label><input type="checkbox" checked /> 513 - Puente Aranda</label>
-              <label><input type="checkbox" checked /> 503 - Calle 80</label>
-              <label><input type="checkbox" checked /> 522 - Chía</label>
-              <label><input type="checkbox" checked /> 884 - Zona Franca</label>
-              <div class="warning-box">Estas plantas se usarán para calcular el tiempo semilla de cada geohash/MAP_PAGE generado dentro de la ciudad logística.</div>
-            </div>
           </section>
           <section class="map-panel modal-map">
             <div class="mock-map small-map">
@@ -590,49 +544,43 @@
             </div>
           </section>
         </div>
-        <div class="modal-actions">
-          <button class="btn btn-light">Cancelar</button>
-          <button class="btn btn-primary" data-toast="Ciudad logística actualizada y geohashes pendientes detectados">Guardar ciudad logística</button>
-        </div>
-      </form>
-    </dialog>
-
-    <dialog id="cityPlantsModal" class="modal wide">
-      <form method="dialog">
-        <h2>Administrar plantas asociadas a ciudad logística</h2>
-        <div class="edit-grid">
-          <section class="config-panel flat">
-            <label>Ciudad logística <input value="Bogotá / Sabana" readonly /></label>
-            <label>Departamento <input value="Cundinamarca" readonly /></label>
-            <label>Zona logística <input value="Centro" readonly /></label>
+        <section class="association-block association-master">
+          <div class="section-title compact-title">
+            <h3>Plantas asociadas a esta ciudad logística</h3>
+            <button class="btn btn-light" data-toast="Maestro de plantas actualizado desde Tracking / Command">Actualizar maestro</button>
+          </div>
+          <div class="association-notes">
             <div class="warning-box">Las plantas se seleccionan desde el maestro existente y aplican para toda la ciudad logística. No se asocian directamente a cada Divipol.</div>
             <div class="warning-box">Estas plantas se usarán para calcular el tiempo semilla de cada geohash/MAP_PAGE generado dentro de la ciudad logística.</div>
-          </section>
+          </div>
           <section class="data-panel compact">
             <table>
               <thead>
                 <tr>
                   <th>Seleccionar</th>
                   <th>Planta</th>
+                  <th>Divipol de ubicación / referencia</th>
                   <th>Estado</th>
                   <th>Fuente maestro</th>
+                  <th>Uso funcional</th>
+                  <th>Última modificación</th>
                 </tr>
               </thead>
               <tbody>
-                <tr><td><input type="checkbox" checked /></td><td>513 - Puente Aranda</td><td><span class="badge success">Activa</span></td><td>Maestro Tracking / Command</td></tr>
-                <tr><td><input type="checkbox" checked /></td><td>503 - Calle 80</td><td><span class="badge success">Activa</span></td><td>Maestro Tracking / Command</td></tr>
-                <tr><td><input type="checkbox" checked /></td><td>522 - Chía</td><td><span class="badge warn">Pendiente geocerca</span></td><td>Maestro Tracking / Command</td></tr>
-                <tr><td><input type="checkbox" checked /></td><td>884 - Zona Franca</td><td><span class="badge success">Activa</span></td><td>Maestro Tracking / Command</td></tr>
-                <tr><td><input type="checkbox" /></td><td>301 - Mamonal</td><td><span class="badge success">Activa</span></td><td>Maestro Tracking / Command</td></tr>
-                <tr><td><input type="checkbox" /></td><td>302 - Bayunca</td><td><span class="badge neutral">Inactiva</span></td><td>Maestro Tracking / Command</td></tr>
-                <tr><td><input type="checkbox" /></td><td>303 - Turbaco</td><td><span class="badge warn">Pendiente geocerca</span></td><td>Maestro Tracking / Command</td></tr>
+                <tr><td><input type="checkbox" checked /></td><td>513 - Puente Aranda</td><td>Usaquén / Bogotá</td><td><span class="badge success">Activa</span></td><td>Maestro Tracking / Command</td><td>Tiempo semilla contra geohashes/MAP_PAGE de la ciudad logística</td><td>2026-06-10</td></tr>
+                <tr><td><input type="checkbox" checked /></td><td>503 - Calle 80</td><td>Suba / Bogotá</td><td><span class="badge success">Activa</span></td><td>Maestro Tracking / Command</td><td>Tiempo semilla contra geohashes/MAP_PAGE de la ciudad logística</td><td>2026-06-10</td></tr>
+                <tr><td><input type="checkbox" checked /></td><td>522 - Chía</td><td>Chía / Cundinamarca</td><td><span class="badge warn">Pendiente geocerca</span></td><td>Maestro Tracking / Command</td><td>Tiempo semilla contra geohashes/MAP_PAGE de la ciudad logística</td><td>2026-06-09</td></tr>
+                <tr><td><input type="checkbox" checked /></td><td>884 - Zona Franca</td><td>Fontibón / Bogotá</td><td><span class="badge success">Activa</span></td><td>Maestro Tracking / Command</td><td>Tiempo semilla contra geohashes/MAP_PAGE de la ciudad logística</td><td>2026-06-09</td></tr>
+                <tr><td><input type="checkbox" /></td><td>301 - Mamonal</td><td>Cartagena</td><td><span class="badge success">Activa</span></td><td>Maestro Tracking / Command</td><td>Disponible al cambiar la ciudad logística</td><td>2026-06-08</td></tr>
+                <tr><td><input type="checkbox" /></td><td>302 - Bayunca</td><td>Cartagena</td><td><span class="badge neutral">Inactiva</span></td><td>Maestro Tracking / Command</td><td>No aplica mientras esté inactiva</td><td>2026-06-08</td></tr>
+                <tr><td><input type="checkbox" /></td><td>303 - Turbaco</td><td>Cartagena</td><td><span class="badge warn">Pendiente geocerca</span></td><td>Maestro Tracking / Command</td><td>Disponible cuando complete geocerca</td><td>2026-06-08</td></tr>
               </tbody>
             </table>
           </section>
-        </div>
+        </section>
         <div class="modal-actions">
           <button class="btn btn-light">Cancelar</button>
-          <button class="btn btn-primary" data-toast="Asociación de plantas actualizada para la ciudad logística">Guardar asociación</button>
+          <button class="btn btn-primary" data-toast="Ciudad logística actualizada y geohashes pendientes detectados">Guardar ciudad logística</button>
         </div>
       </form>
     </dialog>
