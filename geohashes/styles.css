@@ -1306,6 +1306,33 @@ td {
   line-height: 1.4;
 }
 
+.association-block {
+  display: grid;
+  gap: 10px;
+  padding: 14px;
+  background: #f7fbff;
+  border: 1px solid #cddced;
+  border-radius: 7px;
+}
+
+.association-block h3 {
+  margin: 0;
+  color: var(--navy);
+  font-size: 14px;
+}
+
+.association-block label {
+  min-height: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #26364e;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
 .split-grid {
   grid-template-columns: minmax(0, 1.2fr) minmax(360px, 0.8fr);
 }

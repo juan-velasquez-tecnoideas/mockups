@@ -214,12 +214,11 @@
             <strong>Juan Velasquez - Tecnoideas</strong>
             <span>Administrador CPD</span>
           </div>
-          <button id="tourBtn" class="btn btn-light btn-tour">Ver recorrido</button>
           <button id="logoutBtn" class="icon-btn" title="Cerrar sesión">↪</button>
         </div>
       </header>
 
-      <nav class="module-tabs" aria-label="Navegación principal" data-tour="menu">
+      <nav class="module-tabs" aria-label="Navegación principal">
         <button class="tab is-active" data-view="zonas">Ciudades</button>
         <button class="tab" data-view="divipoles">Divipoles</button>
         <button class="tab" data-view="plantas">Plantas</button>
@@ -229,7 +228,7 @@
       <section class="workspace">
         <div class="content-area">
           <section id="view-zonas" class="view is-active">
-            <div class="view-header" data-tour="zonas">
+            <div class="view-header">
               <div>
                 <h1>Ciudades logísticas</h1>
                 <p>Administra las ciudades logísticas donde se generan Divipoles, plantas y geohashes.</p>
@@ -249,6 +248,44 @@
               <article class="metric"><span>Divipoles</span><strong>159</strong></article>
               <article class="metric"><span>Plantas</span><strong>19</strong></article>
               <article class="metric warn"><span>Cambios pendientes</span><strong>94</strong></article>
+            </div>
+
+            <div class="section-title">
+              <h2>Plantas asociadas a la ciudad logística</h2>
+              <button class="btn btn-light" data-open-modal="cityPlantsModal">Administrar asociación</button>
+            </div>
+            <div class="warning-box">Las plantas se asocian funcionalmente a la ciudad logística. La Divipol clasifica geohashes/MAP_PAGE y mapea contra ZONE_CODE en Command.</div>
+            <div class="data-panel">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Ciudad logística</th>
+                    <th>Plantas asociadas</th>
+                    <th>Fuente maestro</th>
+                    <th>Uso funcional</th>
+                    <th>Última modificación</th>
+                    <th>Acciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Bogotá / Sabana</td>
+                    <td>513 Puente Aranda, 503 Calle 80, 522 Chía, 884 Zona Franca</td>
+                    <td>Maestro Tracking / Command</td>
+                    <td>Tiempo semilla contra cada geohash de la ciudad logística</td>
+                    <td>2026-06-10</td>
+                    <td><button class="link-btn" data-open-modal="cityPlantsModal">Ver / Editar</button></td>
+                  </tr>
+                  <tr>
+                    <td>Cartagena</td>
+                    <td>301 Mamonal, 302 Bayunca, 303 Turbaco</td>
+                    <td>Maestro Tracking / Command</td>
+                    <td>Tiempo semilla contra cada geohash de la ciudad logística</td>
+                    <td>2026-06-09</td>
+                    <td><button class="link-btn" data-open-modal="cityPlantsModal">Ver / Editar</button></td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
 
             <div class="data-panel">
@@ -280,7 +317,7 @@
                     <td>2026-04-28</td>
                     <td>2026-05-20</td>
                     <td><span class="badge success">Activo</span></td>
-                    <td><div class="table-actions"><button class="link-btn" data-open-modal="zoneEditModal" data-tour="editar-zona">Ver / Editar</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td>
+                    <td><div class="table-actions"><button class="link-btn" data-open-modal="zoneEditModal">Ver / Editar</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td>
                   </tr>
                   <tr>
                     <td>Z002</td>
@@ -326,7 +363,7 @@
             </div>
           </section>
 
-          <section id="view-divipoles" class="view" data-tour="divipoles">
+          <section id="view-divipoles" class="view">
             <div class="view-header">
               <div>
                 <h1>Divipoles</h1>
@@ -376,11 +413,11 @@
             </div>
           </section>
 
-          <section id="view-plantas" class="view" data-tour="plantas">
+          <section id="view-plantas" class="view">
             <div class="view-header">
               <div>
                 <h1>Plantas</h1>
-                <p>Consulta las plantas por ciudad logística y Divipol, y visualiza su geocerca en el mapa.</p>
+                <p>Consulta las plantas asociadas a cada ciudad logística. La Divipol se muestra solo como referencia geográfica cuando aplique.</p>
               </div>
             </div>
 
@@ -394,7 +431,7 @@
                 </select>
               </label>
               <label>Zona logística <select><option>Todas</option><option>Centro</option><option>Noroccidente</option><option>Norte</option><option>Sur</option></select></label>
-              <label>Divipol
+              <label>Divipol de ubicación / referencia
                 <select>
                   <option>Todas</option>
                   <option>Usaquén / Bogotá</option>
@@ -417,7 +454,7 @@
                     <th>Planta</th>
                     <th>Ciudad logística</th>
                     <th>Zona logística</th>
-                    <th>Divipol</th>
+                    <th>Divipol de ubicación / referencia</th>
                     <th>Fecha creación</th>
                     <th>Última modificación</th>
                     <th>Estado</th>
@@ -431,9 +468,11 @@
                 </tbody>
               </table>
             </div>
+
+            <div class="warning-box">La Divipol es referencia geográfica, no asociación funcional. Las plantas aplican para toda la ciudad logística al calcular tiempos semilla contra geohashes/MAP_PAGE.</div>
           </section>
 
-          <section id="view-sync" class="view" data-tour="sync">
+          <section id="view-sync" class="view">
             <div class="view-header">
               <div>
                 <h1>Sincronización</h1>
@@ -506,16 +545,6 @@
     </main>
 
     <div id="toast" class="toast" role="status"></div>
-    <div id="tourOverlay" class="tour-overlay is-hidden"></div>
-    <section id="tourBubble" class="tour-bubble is-hidden" aria-live="polite">
-      <span id="tourStep" class="tour-step"></span>
-      <h2 id="tourTitle"></h2>
-      <p id="tourText"></p>
-      <div class="tour-actions">
-        <button id="tourSkip" class="btn btn-light">Saltar</button>
-        <button id="tourNext" class="btn btn-primary">Siguiente</button>
-      </div>
-    </section>
 
     <dialog id="zoneModal" class="modal">
       <form method="dialog">
@@ -544,18 +573,66 @@
             <label>Fecha creación <input value="2026-04-28 - Juan Velasquez" readonly /></label>
             <label>Última modificación <input value="2026-05-20 - Juan Velasquez" readonly /></label>
             <div class="warning-box">Al ajustar el área de cobertura se descubren nuevos geohashes y quedan pendientes de sincronizar con Command. La eliminación exige permiso y queda en bitácora.</div>
+            <div class="association-block">
+              <h3>Plantas asociadas a esta ciudad logística</h3>
+              <label><input type="checkbox" checked /> 513 - Puente Aranda</label>
+              <label><input type="checkbox" checked /> 503 - Calle 80</label>
+              <label><input type="checkbox" checked /> 522 - Chía</label>
+              <label><input type="checkbox" checked /> 884 - Zona Franca</label>
+              <div class="warning-box">Estas plantas se usarán para calcular el tiempo semilla de cada geohash/MAP_PAGE generado dentro de la ciudad logística.</div>
+            </div>
           </section>
           <section class="map-panel modal-map">
             <div class="mock-map small-map">
               <div class="grid"></div>
               <div class="polygon zone"></div>
-              <span class="geohash-count" data-tour="geohashes-descubiertos">+94 geohashes descubiertos</span>
+              <span class="geohash-count">+94 geohashes descubiertos</span>
             </div>
           </section>
         </div>
         <div class="modal-actions">
           <button class="btn btn-light">Cancelar</button>
           <button class="btn btn-primary" data-toast="Ciudad logística actualizada y geohashes pendientes detectados">Guardar ciudad logística</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog id="cityPlantsModal" class="modal wide">
+      <form method="dialog">
+        <h2>Administrar plantas asociadas a ciudad logística</h2>
+        <div class="edit-grid">
+          <section class="config-panel flat">
+            <label>Ciudad logística <input value="Bogotá / Sabana" readonly /></label>
+            <label>Departamento <input value="Cundinamarca" readonly /></label>
+            <label>Zona logística <input value="Centro" readonly /></label>
+            <div class="warning-box">Las plantas se seleccionan desde el maestro existente y aplican para toda la ciudad logística. No se asocian directamente a cada Divipol.</div>
+            <div class="warning-box">Estas plantas se usarán para calcular el tiempo semilla de cada geohash/MAP_PAGE generado dentro de la ciudad logística.</div>
+          </section>
+          <section class="data-panel compact">
+            <table>
+              <thead>
+                <tr>
+                  <th>Seleccionar</th>
+                  <th>Planta</th>
+                  <th>Estado</th>
+                  <th>Fuente maestro</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><input type="checkbox" checked /></td><td>513 - Puente Aranda</td><td><span class="badge success">Activa</span></td><td>Maestro Tracking / Command</td></tr>
+                <tr><td><input type="checkbox" checked /></td><td>503 - Calle 80</td><td><span class="badge success">Activa</span></td><td>Maestro Tracking / Command</td></tr>
+                <tr><td><input type="checkbox" checked /></td><td>522 - Chía</td><td><span class="badge warn">Pendiente geocerca</span></td><td>Maestro Tracking / Command</td></tr>
+                <tr><td><input type="checkbox" checked /></td><td>884 - Zona Franca</td><td><span class="badge success">Activa</span></td><td>Maestro Tracking / Command</td></tr>
+                <tr><td><input type="checkbox" /></td><td>301 - Mamonal</td><td><span class="badge success">Activa</span></td><td>Maestro Tracking / Command</td></tr>
+                <tr><td><input type="checkbox" /></td><td>302 - Bayunca</td><td><span class="badge neutral">Inactiva</span></td><td>Maestro Tracking / Command</td></tr>
+                <tr><td><input type="checkbox" /></td><td>303 - Turbaco</td><td><span class="badge warn">Pendiente geocerca</span></td><td>Maestro Tracking / Command</td></tr>
+              </tbody>
+            </table>
+          </section>
+        </div>
+        <div class="modal-actions">
+          <button class="btn btn-light">Cancelar</button>
+          <button class="btn btn-primary" data-toast="Asociación de plantas actualizada para la ciudad logística">Guardar asociación</button>
         </div>
       </form>
     </dialog>
@@ -621,10 +698,11 @@
             <label>Planta <input value="Puente Aranda" readonly /></label>
             <label>Ciudad logística <input value="Bogotá / Sabana" readonly /></label>
             <label>Zona logística <input value="Centro" readonly /></label>
-            <label>Divipol <input value="Usaquén / Bogotá" readonly /></label>
+            <label>Divipol de ubicación / referencia <input value="Usaquén / Bogotá" readonly /></label>
             <label>Estado <input value="Activa" readonly /></label>
             <label>Fecha creación <input value="2026-04-28 - Abner González" readonly /></label>
             <label>Última modificación <input value="2026-05-20 - Juan Velasquez" readonly /></label>
+            <div class="warning-box">La Divipol es referencia geográfica, no asociación funcional. La planta aplica para toda la ciudad logística seleccionada.</div>
           </section>
           <section class="map-panel modal-map">
             <div class="mock-map small-map">
