@@ -7,22 +7,195 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main id="login" class="login-screen">
-      <section class="login-card">
-        <div class="brand-row">
-          <img class="brand-logo argos-logo" src="assets/logos/argos-logo.png" alt="ARGOS" />
-          <span class="divider"></span>
-          <span class="powered">POWERED BY</span>
-          <img class="brand-logo detektor-logo" src="assets/logos/detektor-logo.png" alt="Detektor" />
+    <main id="corporate" class="corporate-screen">
+      <header class="corporate-top">
+        <img class="corp-logo" src="assets/logos/detektor-logo.png" alt="Detektor" />
+        <nav>
+          <a>Cotizar</a>
+          <a>Servicios Personas</a>
+          <a>Servicios Empresas</a>
+          <a>Quienes Somos</a>
+          <a>Actualizar Datos</a>
+          <a>Blog</a>
+        </nav>
+        <button id="corpLoginBtn" class="corp-login-btn">Iniciar sesión GPS</button>
+      </header>
+      <section class="corporate-hero">
+        <div class="hero-media"></div>
+        <div class="hero-copy">
+          <img class="hero-logo" src="assets/logos/detektor-logo.png" alt="Detektor Assist" />
+          <h1>Protección y gestión inteligente para operaciones conectadas</h1>
+          <p>Soluciones de monitoreo, rastreo y administración para clientes empresariales.</p>
+          <button class="red-pill" id="corpLoginBtnHero">Ingresar a plataforma</button>
         </div>
-        <div class="target-mark"><span></span></div>
-        <h1>Gestión de Geohashes</h1>
-        <p>Accede con tu cuenta corporativa de Microsoft</p>
-        <button id="loginBtn" class="btn btn-primary btn-login">
-          <span class="microsoft-grid"></span>
-          Iniciar sesión con Microsoft
-        </button>
-        <small>Solo usuarios autorizados pueden acceder.<br />Contacta a Detektor si necesitas acceso.</small>
+      </section>
+    </main>
+
+    <main id="detektorLogin" class="detektor-login-screen is-hidden">
+      <header class="login-brand">
+        <img class="corp-logo" src="assets/logos/detektor-logo.png" alt="Detektor" />
+      </header>
+      <section class="detektor-login-body">
+        <aside class="login-promo">
+          <div class="promo-card">
+            <img class="promo-logo" src="assets/logos/detektor-logo.png" alt="Detektor" />
+            <p>Automatizamos las alertas de pánico por medio de llamadas automáticas.</p>
+            <ul>
+              <li>Un posible hurto</li>
+              <li>Alguna novedad en el viaje</li>
+              <li>Una alerta o peligro</li>
+            </ul>
+          </div>
+        </aside>
+        <section class="detektor-login-panel">
+          <div class="detektor-mark"></div>
+          <h1>Bienvenido a Detektor</h1>
+          <p>Plataforma inteligente de información, monitoreo, rastreo y gestión de bienes y automóviles.</p>
+          <label><input id="detektorUser" value="Usuario Argos" /></label>
+          <label><input id="detektorPass" type="password" value="argos" /></label>
+          <button id="detektorLoginBtn" class="detektor-login-button">Entrar</button>
+          <a class="forgot-link">¿Olvidó su contraseña?</a>
+          <small>Al acceder acepta nuestros <u>Términos y Condiciones</u></small>
+        </section>
+      </section>
+    </main>
+
+    <main id="moduleHub" class="module-hub is-hidden">
+      <header class="hub-topbar">
+        <img class="hub-logo" src="assets/logos/detektor-logo.png" alt="Detektor" />
+        <div class="hub-user">
+          <strong>Usuario Argos</strong>
+          <span class="hub-avatar"></span>
+          <button id="managerBtn" class="hub-icon" title="Manager">⚙</button>
+          <button id="hubLogoutBtn" class="hub-icon" title="Salir">▯</button>
+        </div>
+      </header>
+      <section class="cards-grid">
+        <article class="product-card skytrack-card">
+          <div class="card-art card-art-skytrack"></div>
+          <span class="mini-brand">detektor</span>
+          <h2>Skytrack</h2>
+          <p>Módulo de monitoreo tradicional que permite la interacción con su vehículo.</p>
+          <button class="red-pill">Acceder</button>
+        </article>
+        <article class="product-card tracking-card">
+          <div class="card-art card-art-tracking"></div>
+          <span class="mini-brand">detektor</span>
+          <h2>Tracking</h2>
+          <p>Una nueva experiencia en monitoreo. Gestione sus vehículos de forma ágil.</p>
+          <button class="red-pill">Acceder</button>
+        </article>
+        <article class="product-card cathodic-card">
+          <div class="card-art card-art-cathodic"></div>
+          <span class="mini-brand">detektor</span>
+          <h2>Cathodic Protection</h2>
+          <p>Módulo de monitoreo de protección catódica.</p>
+          <button class="red-pill">Acceder</button>
+        </article>
+        <article class="product-card cargo-card">
+          <div class="card-art card-art-cargo"></div>
+          <span class="mini-brand">detektor</span>
+          <h2>Trazabilidad Transporte de Carga</h2>
+          <p>Seguimiento a planillas activas y trayectos de vehículos de carga.</p>
+          <button class="red-pill">Acceder</button>
+        </article>
+        <article class="product-card rent-card">
+          <div class="card-art card-art-rent"></div>
+          <span class="mini-brand">detektor</span>
+          <h2>Rent</h2>
+          <p>Solución inteligente para la gestión y control de vehículos de renta en tiempo real.</p>
+          <button class="red-pill">Acceder</button>
+        </article>
+        <article class="product-card roadview-card">
+          <div class="card-art card-art-roadview"></div>
+          <span class="mini-brand">detektor</span>
+          <h2>RoadView IA</h2>
+          <p>Revoluciona la seguridad vial en tu flota.</p>
+          <button class="red-pill">Acceder</button>
+        </article>
+        <article class="product-card argos-card">
+          <div class="card-art card-art-argos"></div>
+          <span class="powered-by">Powered by</span>
+          <span class="mini-brand">detektor</span>
+          <h2>Argos</h2>
+          <p>Módulo administrativo de Argos.</p>
+          <button id="argosCardBtn" class="red-pill argos-access">Acceder</button>
+        </article>
+        <article class="product-card bi-card">
+          <div class="card-art card-art-bi"></div>
+          <span class="mini-brand">detektor</span>
+          <h2>Detektor BI</h2>
+          <p>Permite transformar datos en buenas decisiones.</p>
+          <button class="red-pill">Acceder</button>
+        </article>
+      </section>
+    </main>
+
+    <main id="managerView" class="manager-shell is-hidden">
+      <header class="manager-top">
+        <img src="assets/logos/detektor-logo.png" alt="Detektor" />
+        <a>Manager</a>
+        <div>
+          <span>Usuario Argos</span>
+          <button id="managerHomeBtn" title="Volver a módulos">▦</button>
+          <button id="managerCloseBtn" title="Salir de Manager">▯</button>
+        </div>
+      </header>
+      <aside class="manager-side">
+        <button class="manager-menu is-active" data-manager-view="users">▣ Usuarios</button>
+        <button class="manager-menu" data-manager-view="profiles">▧ Perfiles</button>
+        <button class="manager-menu">✚ Compartir vehículos</button>
+      </aside>
+      <section class="manager-content">
+        <article id="manager-users" class="manager-page is-active">
+          <div class="manager-title">
+            <h1>Administración de usuarios</h1>
+            <span>Inicio / Administración de usuarios</span>
+          </div>
+          <div class="manager-card">
+            <div class="manager-actions">
+              <button class="dark-btn">Exportar</button>
+              <button class="manager-red-btn">+ Nuevo Usuario</button>
+            </div>
+            <div class="manager-search">🔍 <input placeholder="Búsqueda" /></div>
+            <table class="manager-table">
+              <thead>
+                <tr><th>Login</th><th>Nombre completo</th><th>Email</th><th>Cuenta</th><th>Usuario creador</th><th>Fecha/hora creación</th><th>Tipo</th><th>Acciones</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>kmartinez</td><td>KEVIN MARTINEZ HERNANDEZ</td><td>kevin.martinez@argos.com.co</td><td>GARGOS</td><td>GARGOS</td><td>19/05/2026 06:21</td><td>Cliente</td><td><button>⊘</button><button>✎</button><button>×</button></td></tr>
+                <tr><td>rklaiss</td><td>Richard Klaiss Luna_NAVITRANS</td><td>rklaiss@navitrans.com.co</td><td>GARGOS</td><td>GARGOS</td><td>07/05/2026 08:10</td><td>Cliente</td><td><button>⊘</button><button>✎</button><button>×</button></td></tr>
+                <tr><td>jmontoya</td><td>Juan Diego Montoya</td><td>jmontoya@argos.com.co</td><td>GARGOS</td><td>GARGOS</td><td>16/04/2026 05:09</td><td>Cliente</td><td><button>⊘</button><button>✎</button><button>×</button></td></tr>
+                <tr><td>agonzalez</td><td>Abner González</td><td>abner.gonzalez@argos.co</td><td>GARGOS</td><td>GARGOS</td><td>02/06/2026 09:18</td><td>Cliente</td><td><button>⊘</button><button>✎</button><button>×</button></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article id="manager-profiles" class="manager-page">
+          <div class="manager-title">
+            <h1>Crear perfil</h1>
+            <span>Inicio / Crear perfil</span>
+          </div>
+          <label class="manager-profile-name">Nombre <input value="PerfilGeohashes" /></label>
+          <div class="manager-permission-panel">
+            <h2>Gestión de Argos</h2>
+            <div class="permission-block">
+              <h3>Permisos del módulo</h3>
+              <label><input type="checkbox" checked /> Acceder al módulo Argos</label>
+              <label><input type="checkbox" checked /> Consultar y visualizar información</label>
+              <label><input type="checkbox" checked /> Editar Ciudades Logísticas, Divipoles, plantas y geohashes</label>
+              <label><input type="checkbox" checked /> Generar geohashes</label>
+              <label><input type="checkbox" checked /> Ejecutar sincronización</label>
+              <label><input type="checkbox" checked /> Reenviar con FLG_OVERRIDE</label>
+              <label><input type="checkbox" checked /> Administrar usuarios del módulo</label>
+            </div>
+            <div class="manager-actions">
+              <button id="managerBackBtn" class="dark-btn">Atrás</button>
+              <button class="manager-red-btn" data-toast="Perfil Geohashes actualizado">Guardar perfil</button>
+            </div>
+          </div>
+        </article>
       </section>
     </main>
 
@@ -32,8 +205,8 @@
           <img class="brand-logo argos-logo header-logo" src="assets/logos/argos-logo.png" alt="ARGOS" />
           <span class="vertical-rule"></span>
           <div>
-            <h2>Gestión de Geohashes</h2>
-            <p>Ciudades logísticas, Divipoles, plantas y sincronización Command</p>
+            <h2>Argos</h2>
+            <p>Organización administrativa e integraciones Command</p>
           </div>
         </div>
         <div class="topbar-right">
@@ -45,23 +218,33 @@
             <strong>Juan Velasquez - Tecnoideas</strong>
             <span>Administrador CPD</span>
           </div>
-          <button id="tourBtn" class="btn btn-light btn-tour">Ver recorrido</button>
+          <button id="appManagerBtn" class="icon-btn app-manager-btn" title="Manager">⚙</button>
           <button id="logoutBtn" class="icon-btn" title="Cerrar sesión">↪</button>
         </div>
       </header>
 
-      <nav class="module-tabs" aria-label="Navegación principal" data-tour="menu">
-        <button class="tab is-active" data-view="zonas">Ciudades</button>
-        <button class="tab" data-view="divipoles">Divipoles</button>
-        <button class="tab" data-view="plantas">Plantas</button>
-        <button class="tab" data-view="sync">Sincronización</button>
-        <button class="tab" data-view="seguridad">Permisos</button>
-      </nav>
+      <div class="module-layout">
+        <aside class="module-sidebar" aria-label="Navegación del módulo Argos">
+          <div class="module-sidebar-brand">
+            <img src="assets/logos/argos-logo.png" alt="Argos" />
+            <strong>Argos</strong>
+          </div>
+          <nav>
+            <p class="menu-group">Organización Administrativa</p>
+            <button class="tab menu-level-1 is-active" data-view="zonas"><span>▦</span> Ciudad Logística</button>
+            <button class="tab menu-level-2" data-view="divipoles"><span>⌖</span> Divipoles</button>
+            <button class="tab menu-level-2" data-view="plantas"><span>⌂</span> Plantas</button>
+            <button class="tab menu-level-3" data-view="vehiculos"><span>▣</span> Vehículos</button>
+            <p class="menu-group">Integraciones Command</p>
+            <button class="tab menu-level-1" data-view="geocercas"><span>⌗</span> Geohashes</button>
+          </nav>
+          <button id="sidebarManagerBtn" class="sidebar-manager" title="Abrir Manager"><span>⚙</span> Manager</button>
+        </aside>
 
-      <section class="workspace">
+        <section class="workspace">
         <div class="content-area">
           <section id="view-zonas" class="view is-active">
-            <div class="view-header" data-tour="zonas">
+            <div class="view-header">
               <div>
                 <h1>Ciudades logísticas</h1>
                 <p>Administra las ciudades logísticas donde se generan Divipoles, plantas y geohashes.</p>
@@ -70,9 +253,8 @@
             </div>
 
             <div class="screen-filters">
-              <label class="search-field">Buscar ciudad logística <input id="zoneSearch" type="search" placeholder="Nombre, departamento o zona..." /></label>
+              <label class="search-field">Buscar ciudad logística <input id="zoneSearch" type="search" placeholder="Nombre o zona logística..." /></label>
               <label>Zona logística <select><option>Todas</option><option>Centro</option><option>Noroccidente</option><option>Norte</option><option>Sur</option></select></label>
-              <label>Estado <select><option>Todos</option><option>Activo</option><option>Pendiente</option><option>Inactivo</option></select></label>
               <button class="btn btn-primary" data-action="consultar">Consultar</button>
             </div>
 
@@ -89,11 +271,9 @@
                   <tr>
                     <th>Id</th>
                     <th>Ciudad logística</th>
-                    <th>Departamento</th>
                     <th>Zona logística</th>
                     <th>Divipoles</th>
                     <th>Plantas</th>
-                    <th>Geohashes</th>
                     <th>Fecha creación</th>
                     <th>Última modificación</th>
                     <th>Estado</th>
@@ -104,24 +284,20 @@
                   <tr>
                     <td>Z001</td>
                     <td>Bogotá / Sabana</td>
-                    <td>Cundinamarca</td>
                     <td>Centro</td>
                     <td>62</td>
                     <td>10</td>
-                    <td>4,820</td>
                     <td>2026-04-28</td>
                     <td>2026-05-20</td>
                     <td><span class="badge success">Activo</span></td>
-                    <td><div class="table-actions"><button class="link-btn" data-open-modal="zoneEditModal" data-tour="editar-zona">Ver / Editar</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td>
+                    <td><div class="table-actions"><button class="link-btn" data-open-modal="zoneEditModal">Ver / Editar</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td>
                   </tr>
                   <tr>
                     <td>Z002</td>
                     <td>Medellín</td>
-                    <td>Antioquia</td>
                     <td>Noroccidente</td>
                     <td>16</td>
                     <td>5</td>
-                    <td>1,106</td>
                     <td>2026-04-29</td>
                     <td>2026-05-20</td>
                     <td><span class="badge success">Activo</span></td>
@@ -130,11 +306,9 @@
                   <tr>
                     <td>Z003</td>
                     <td>Cartagena</td>
-                    <td>Bolívar</td>
                     <td>Norte</td>
                     <td>31</td>
                     <td>3</td>
-                    <td>2,240</td>
                     <td>2026-05-02</td>
                     <td>2026-05-18</td>
                     <td><span class="badge warn">Pendiente Command</span></td>
@@ -143,11 +317,9 @@
                   <tr>
                     <td>Z004</td>
                     <td>Tunja</td>
-                    <td>Boyacá</td>
                     <td>Centro</td>
                     <td>50</td>
                     <td>1</td>
-                    <td>930</td>
                     <td>2026-05-04</td>
                     <td>2026-05-16</td>
                     <td><span class="badge neutral">Inactivo</span></td>
@@ -158,7 +330,22 @@
             </div>
           </section>
 
-          <section id="view-divipoles" class="view" data-tour="divipoles">
+          <section id="view-vehiculos" class="view">
+            <div class="view-header">
+              <div>
+                <h1>Vehículos</h1>
+                <p>Vehículos asociados a la planta seleccionada.</p>
+              </div>
+            </div>
+            <div class="screen-filters">
+              <label>Ciudad logística <select><option>Bogotá / Sabana</option><option>Medellín</option><option>Cartagena</option></select></label>
+              <label>Planta <select><option>513 - Puente Aranda</option><option>503 - Calle 80</option><option>522 - Chía</option></select></label>
+              <button class="btn btn-primary" data-action="consultar">Consultar</button>
+            </div>
+            <div class="data-panel empty-state"><strong>Total de vehículos: 0</strong><span>No hay vehículos asociados a la planta seleccionada.</span></div>
+          </section>
+
+          <section id="view-divipoles" class="view">
             <div class="view-header">
               <div>
                 <h1>Divipoles</h1>
@@ -176,9 +363,6 @@
                   <option value="Z004">Tunja</option>
                 </select>
               </label>
-              <label>Zona logística <select><option>Todas</option><option>Centro</option><option>Noroccidente</option><option>Norte</option><option>Sur</option></select></label>
-              <label class="search-field">Buscar Divipol <input id="divipolSearch" type="search" placeholder="Nombre o código de zona..." /></label>
-              <label>Estado <select><option>Todos</option><option>Activo</option><option>Pendiente</option><option>Inactivo</option></select></label>
               <button class="btn btn-primary" data-action="consultar">Consultar</button>
             </div>
 
@@ -189,30 +373,28 @@
                     <th>Divipol</th>
                     <th>Código zona</th>
                     <th>Ciudad logística</th>
-                    <th>Zona logística</th>
-                    <th>Plantas asociadas</th>
-                    <th>Geocerca</th>
-                    <th>Fecha creación</th>
+                    <th>Total geohashes</th>
+                    <th>Sincronizados</th>
                     <th>Última modificación</th>
                     <th>Estado</th>
                     <th>Acciones</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr><td>Usaquén / Bogotá</td><td>B54BE76E</td><td>Bogotá / Sabana</td><td>Centro</td><td>3</td><td>Cerrada</td><td>2026-04-28</td><td>2026-05-20</td><td><span class="badge success">Activo</span></td><td><div class="table-actions"><button class="link-btn" data-open-modal="divipolEditModal">Ver / Editar</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td></tr>
-                  <tr><td>Suba / Bogotá</td><td>B54BE6EE</td><td>Bogotá / Sabana</td><td>Centro</td><td>3</td><td>Requiere cierre</td><td>2026-04-30</td><td>2026-05-20</td><td><span class="badge warn">Pendiente Command</span></td><td><div class="table-actions"><button class="link-btn" data-open-modal="divipolEditModal">Ver / Editar</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td></tr>
-                  <tr><td>Chía / Cundinamarca</td><td>B54BEDF9</td><td>Bogotá / Sabana</td><td>Centro</td><td>1</td><td>Requiere cierre</td><td>2026-05-02</td><td>2026-05-19</td><td><span class="badge warn">Pendiente Command</span></td><td><div class="table-actions"><button class="link-btn" data-open-modal="divipolEditModal">Ver / Editar</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td></tr>
-                  <tr><td>Envigado</td><td>A74BE44A</td><td>Medellín</td><td>Noroccidente</td><td>2</td><td>Cerrada</td><td>2026-05-01</td><td>2026-05-16</td><td><span class="badge success">Activo</span></td><td><div class="table-actions"><button class="link-btn" data-open-modal="divipolEditModal">Ver / Editar</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td></tr>
+                  <tr><td>Usaquén / Bogotá</td><td>B54BE76E</td><td>Bogotá / Sabana</td><td>1,420</td><td>1,420</td><td>2026-05-20</td><td><span class="badge success">Activo</span></td><td><div class="table-actions"><button class="link-btn" data-open-modal="divipolEditModal">Ver / Editar</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td></tr>
+                  <tr><td>Suba / Bogotá</td><td>B54BE6EE</td><td>Bogotá / Sabana</td><td>1,250</td><td>1,230</td><td>2026-05-20</td><td><span class="badge warn">Cambios pendientes</span></td><td><div class="table-actions"><button class="link-btn" data-open-modal="divipolEditModal">Ver / Editar</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td></tr>
+                  <tr><td>Chía / Cundinamarca</td><td>B54BEDF9</td><td>Bogotá / Sabana</td><td>1,105</td><td>1,101</td><td>2026-05-19</td><td><span class="badge warn">Cambios pendientes</span></td><td><div class="table-actions"><button class="link-btn" data-open-modal="divipolEditModal">Ver / Editar</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td></tr>
+                  <tr><td>Envigado</td><td>A74BE44A</td><td>Medellín</td><td>980</td><td>980</td><td>2026-05-16</td><td><span class="badge success">Activo</span></td><td><div class="table-actions"><button class="link-btn" data-open-modal="divipolEditModal">Ver / Editar</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td></tr>
                 </tbody>
               </table>
             </div>
           </section>
 
-          <section id="view-plantas" class="view" data-tour="plantas">
+          <section id="view-plantas" class="view">
             <div class="view-header">
               <div>
                 <h1>Plantas</h1>
-                <p>Consulta las plantas por ciudad logística y Divipol, y visualiza su geocerca en el mapa.</p>
+                <p>Consulta las plantas asociadas a cada ciudad logística. La Divipol se muestra solo como referencia geográfica cuando aplique.</p>
               </div>
             </div>
 
@@ -225,21 +407,10 @@
                   <option>Tunja</option>
                 </select>
               </label>
-              <label>Zona logística <select><option>Todas</option><option>Centro</option><option>Noroccidente</option><option>Norte</option><option>Sur</option></select></label>
-              <label>Divipol
-                <select>
-                  <option>Todas</option>
-                  <option>Usaquén / Bogotá</option>
-                  <option>Suba / Bogotá</option>
-                  <option>Chía / Cundinamarca</option>
-                </select>
-              </label>
               <label class="search-field">Buscar planta <input id="plantSearch" type="search" placeholder="Código o nombre de planta..." /></label>
-              <label>Estado <select><option>Todos</option><option>Activa</option><option>Inactiva</option><option>Pendiente geocerca</option><option>Eliminar</option></select></label>
+              <label>Estado <select><option>Todos</option><option>Activa</option><option>Inactiva</option><option>Pendiente geocerca</option></select></label>
               <button class="btn btn-primary" data-action="consultar">Consultar</button>
             </div>
-
-            <div class="warning-box">Versión futura: sincronizar plantas desde el maestro de Command para evitar administración manual. El código interno de geocerca se conserva en base de datos y no se expone en la tabla.</div>
 
             <div class="data-panel">
               <table>
@@ -247,9 +418,10 @@
                   <tr>
                     <th>Código planta</th>
                     <th>Planta</th>
+                    <th>Coordenadas</th>
                     <th>Ciudad logística</th>
                     <th>Zona logística</th>
-                    <th>Divipol</th>
+                    <th>Divipol de ubicación / referencia</th>
                     <th>Fecha creación</th>
                     <th>Última modificación</th>
                     <th>Estado</th>
@@ -257,15 +429,17 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr><td>513</td><td>Puente Aranda</td><td>Bogotá / Sabana</td><td>Centro</td><td>Usaquén / Bogotá</td><td>2026-04-28</td><td>2026-05-20</td><td><span class="badge success">Activa</span></td><td><div class="table-actions"><button class="link-btn" data-open-modal="plantFenceModal">Ver</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td></tr>
-                  <tr><td>503</td><td>Calle 80</td><td>Bogotá / Sabana</td><td>Centro</td><td>Suba / Bogotá</td><td>2026-04-30</td><td>2026-05-19</td><td><span class="badge success">Activa</span></td><td><div class="table-actions"><button class="link-btn" data-open-modal="plantFenceModal">Ver</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td></tr>
-                  <tr><td>522</td><td>Chía</td><td>Bogotá / Sabana</td><td>Centro</td><td>Chía / Cundinamarca</td><td>2026-05-02</td><td>2026-05-18</td><td><span class="badge warn">Pendiente geocerca</span></td><td><div class="table-actions"><button class="link-btn" data-open-modal="plantFenceModal">Ver</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td></tr>
+                  <tr><td>513</td><td>Puente Aranda</td><td>4.6243, -74.1071</td><td>Bogotá / Sabana</td><td>Centro</td><td>Usaquén / Bogotá</td><td>2026-04-28</td><td>2026-05-20</td><td><span class="badge success">Activa</span></td><td><div class="table-actions"><button class="link-btn" data-open-modal="plantFenceModal">Ver</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td></tr>
+                  <tr><td>503</td><td>Calle 80</td><td>4.7251, -74.1228</td><td>Bogotá / Sabana</td><td>Centro</td><td>Suba / Bogotá</td><td>2026-04-30</td><td>2026-05-19</td><td><span class="badge success">Activa</span></td><td><div class="table-actions"><button class="link-btn" data-open-modal="plantFenceModal">Ver</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td></tr>
+                  <tr><td>522</td><td>Chía</td><td>4.8612, -74.0548</td><td>Bogotá / Sabana</td><td>Centro</td><td>Chía / Cundinamarca</td><td>2026-05-02</td><td>2026-05-18</td><td><span class="badge warn">Pendiente geocerca</span></td><td><div class="table-actions"><button class="link-btn" data-open-modal="plantFenceModal">Ver</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td></tr>
                 </tbody>
               </table>
             </div>
+
+            <div class="warning-box">La Divipol es referencia geográfica, no asociación funcional. Las plantas aplican para toda la ciudad logística al calcular tiempos semilla contra geohashes/MAP_PAGE.</div>
           </section>
 
-          <section id="view-sync" class="view" data-tour="sync">
+          <section id="view-sync" class="view">
             <div class="view-header">
               <div>
                 <h1>Sincronización</h1>
@@ -291,7 +465,9 @@
                   <option>Envigado</option>
                 </select>
               </label>
-              <label>Modo <select><option>Incremental</option><option>Sobrescritura seleccionada</option><option>Reconstrucción total autorizada</option></select></label>
+              <label>Estado <select><option>Todos</option><option>Finalizado</option><option>Con errores</option><option>Pendiente</option></select></label>
+              <label>Fecha <input type="date" value="2026-05-20" /></label>
+              <label>Código de error <input placeholder="400, 500..." /></label>
               <button class="btn btn-primary" data-action="consultar">Consultar</button>
             </div>
 
@@ -299,7 +475,6 @@
               <article><h2>Próxima ejecución</h2><strong>01:00</strong><span>Horario de baja operación</span></article>
               <article><h2>Tamaño de lote</h2><strong>250</strong><span>Geohashes por lote</span></article>
               <article><h2>Divipoles seleccionadas</h2><strong>3</strong><span>Alcance controlado</span></article>
-              <article><h2>Reintentos máximos</h2><strong>3</strong><span>Control auditado</span></article>
             </div>
 
             <div class="section-title">
@@ -320,110 +495,190 @@
                     <th>Procesados</th>
                     <th>Exitosos</th>
                     <th>Errores</th>
+                    <th>Pendientes</th>
                     <th>Estado</th>
                     <th>Acciones</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr><td>LOT-20260520-0100</td><td>2026-05-20</td><td>Bogotá / Sabana</td><td>Suba / Bogotá</td><td>Incremental</td><td>01:00</td><td>01:18</td><td>1,250</td><td>1,230</td><td>20</td><td><span class="badge warn">Con errores</span></td><td><button class="link-btn" data-open-modal="batchDetailModal">Ver detalle</button></td></tr>
-                  <tr><td>LOT-20260519-0100</td><td>2026-05-19</td><td>Medellín</td><td>Envigado</td><td>Incremental</td><td>01:00</td><td>01:11</td><td>980</td><td>980</td><td>0</td><td><span class="badge success">Finalizado</span></td><td><button class="link-btn" data-open-modal="batchDetailModal">Ver detalle</button></td></tr>
-                  <tr><td>LOT-20260518-0100</td><td>2026-05-18</td><td>Bogotá / Sabana</td><td>Chía / Cundinamarca</td><td>Sobrescritura</td><td>01:00</td><td>01:15</td><td>1,105</td><td>1,101</td><td>4</td><td><span class="badge warn">Con errores</span></td><td><button class="link-btn" data-open-modal="batchDetailModal">Ver detalle</button></td></tr>
+                  <tr><td>LOT-20260520-0100</td><td>2026-05-20</td><td>Bogotá / Sabana</td><td>Suba / Bogotá</td><td>Incremental</td><td>01:00</td><td>01:18</td><td>1,250</td><td>1,230</td><td>20</td><td>0</td><td><span class="badge warn">Con errores</span></td><td><button class="link-btn" data-open-modal="batchDetailModal">Ver detalle</button></td></tr>
+                  <tr><td>LOT-20260519-0100</td><td>2026-05-19</td><td>Medellín</td><td>Envigado</td><td>Incremental</td><td>01:00</td><td>01:11</td><td>980</td><td>980</td><td>0</td><td>0</td><td><span class="badge success">Finalizado</span></td><td><button class="link-btn" data-open-modal="batchDetailModal">Ver detalle</button></td></tr>
+                  <tr><td>LOT-20260518-0100</td><td>2026-05-18</td><td>Bogotá / Sabana</td><td>Chía / Cundinamarca</td><td>Sobrescritura</td><td>01:00</td><td>01:15</td><td>1,105</td><td>1,101</td><td>4</td><td>0</td><td><span class="badge warn">Con errores</span></td><td><button class="link-btn" data-open-modal="batchDetailModal">Ver detalle</button></td></tr>
                 </tbody>
               </table>
             </div>
           </section>
 
-          <section id="view-seguridad" class="view" data-tour="permisos">
+          <section id="view-geocercas" class="view">
+            <div class="legacy-admin-shell">
+              <div class="legacy-titlebar">
+                <h1>Geohashes / Mapas</h1>
+                <div class="command-view-actions">
+                  <button class="btn btn-light" data-nav="sync">Sincronización</button>
+                  <button class="btn btn-light" data-nav="bitacora">Bitácora</button>
+                </div>
+              </div>
+
+              <div class="legacy-card">
+                <div class="legacy-actions">
+                  <label>Ciudad logística
+                    <select>
+                      <option>Bogotá / Sabana</option>
+                      <option>Medellín</option>
+                      <option>Cartagena</option>
+                      <option>Tunja</option>
+                    </select>
+                  </label>
+                  <button class="legacy-primary" data-action="consultar">Consultar</button>
+                  <button class="legacy-primary" data-action="generate">Generar geohashes de 6 posiciones</button>
+                </div>
+
+                <div class="map-panel geohash-map-panel">
+                  <div class="map-toolbar">
+                    <button class="chip is-on">Marcadores</button>
+                    <button class="chip is-on">Nombres</button>
+                    <button class="chip is-on">Geohashes</button>
+                    <button class="chip is-on">Colores</button>
+                  </div>
+                  <div class="mock-map small-map">
+                    <div class="grid"></div>
+                    <div class="polygon zone"></div>
+                    <div class="divipol-outline one"></div>
+                    <span class="plant p1">513</span>
+                    <span class="plant p2">503</span>
+                    <span class="map-label l1">Usaquén / Bogotá</span>
+                  </div>
+                </div>
+
+                <div class="legacy-table-wrap">
+                  <table class="legacy-table">
+                    <thead>
+                      <tr>
+                        <th>Código zona</th>
+                        <th>Divipol</th>
+                        <th>Total geohashes</th>
+                        <th>Sincronizados</th>
+                        <th>Pendientes</th>
+                        <th>Última modificación</th>
+                        <th>Acciones</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>B54BE76E</td>
+                        <td>Usaquén / Bogotá</td>
+                        <td>1,420</td>
+                        <td>1,420</td>
+                        <td>0</td>
+                        <td>20/05/2026 14:36:38</td>
+                        <td><button class="link-btn" data-open-modal="batchDetailModal">Ver detalle</button></td>
+                      </tr>
+                      <tr>
+                        <td>B54BE6EE</td>
+                        <td>Suba / Bogotá</td>
+                        <td>1,250</td>
+                        <td>1,230</td>
+                        <td>20</td>
+                        <td>20/05/2026 10:28:36</td>
+                        <td><button class="link-btn" data-open-modal="batchDetailModal">Ver detalle</button></td>
+                      </tr>
+                      <tr>
+                        <td>B54BEDF9</td>
+                        <td>Chía / Cundinamarca</td>
+                        <td>1,105</td>
+                        <td>1,101</td>
+                        <td>4</td>
+                        <td>19/05/2026 05:34:23</td>
+                        <td><button class="link-btn" data-open-modal="batchDetailModal">Ver detalle</button></td>
+                      </tr>
+                      <tr>
+                        <td>A74BE44A</td>
+                        <td>Envigado</td>
+                        <td>980</td>
+                        <td>980</td>
+                        <td>0</td>
+                        <td>16/05/2026 17:43:22</td>
+                        <td><button class="link-btn" data-open-modal="batchDetailModal">Ver detalle</button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div class="legacy-pagination">
+                    <span>Mostrando 1 a 4 de 4 Divipoles</span>
+                    <span>« ‹ <strong>1</strong> › »</span>
+                    <select><option>5</option><option>10</option><option>25</option></select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="view-bitacora" class="view">
             <div class="view-header">
               <div>
-                <h1>Permisos</h1>
-                <p>Consulta qué personas tienen acceso y administra los permisos por rol.</p>
+                <h1>Auditoría de acciones</h1>
+                <p>Consulta quién modificó información del módulo, cuándo y qué cambio realizó.</p>
               </div>
-              <button class="btn btn-primary" data-open-modal="userRoleModal">Asignar rol</button>
-            </div>
-
-            <div class="split-grid">
-              <div class="data-panel">
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Persona</th>
-                      <th>Correo</th>
-                      <th>Rol</th>
-                      <th>Estado</th>
-                      <th>Último acceso</th>
-                      <th>Acciones</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr><td>Juan Velasquez</td><td>juan.velasquez@tecnoideas.co</td><td>Administrador CPD</td><td><span class="badge success">Activo</span></td><td>2026-06-01 08:10</td><td><button class="link-btn" data-open-modal="userRoleModal">Editar</button></td></tr>
-                    <tr><td>Abner González</td><td>abner.gonzalez@argos.co</td><td>Operador CPD</td><td><span class="badge success">Activo</span></td><td>2026-05-31 17:42</td><td><button class="link-btn" data-open-modal="userRoleModal">Editar</button></td></tr>
-                    <tr><td>Soporte Detektor</td><td>soporte@detektor.com.co</td><td>Soporte técnico</td><td><span class="badge success">Activo</span></td><td>2026-05-30 11:20</td><td><button class="link-btn" data-open-modal="userRoleModal">Editar</button></td></tr>
-                  </tbody>
-                </table>
+              <div class="actions">
+                <button class="btn btn-light" data-nav="geocercas">Volver a geohashes</button>
               </div>
-
-              <aside class="config-panel">
-                <h2>Editar permisos del rol</h2>
-                <label>Rol <select><option>Administrador CPD</option><option>Operador CPD</option><option>Soporte técnico</option></select></label>
-                <label><input type="checkbox" checked /> Consultar ciudades logísticas, Divipoles, plantas y sincronización</label>
-                <label><input type="checkbox" checked /> Crear, editar y eliminar ciudades logísticas</label>
-                <label><input type="checkbox" checked /> Crear, editar y eliminar Divipoles</label>
-                <label><input type="checkbox" checked /> Administrar y eliminar plantas</label>
-                <label><input type="checkbox" checked /> Programar sincronización</label>
-                <label><input type="checkbox" checked /> Autorizar sobrescritura/reconstrucción</label>
-                <button class="btn btn-primary" data-toast="Permisos del rol actualizados">Guardar rol</button>
-              </aside>
             </div>
 
-            <div class="section-title audit-title">
-              <h2>Bitácora de administración</h2>
-              <button class="btn btn-light" data-toast="Bitácora exportada">Exportar</button>
+            <div class="mobile-tab-proposal">
+              <div class="phone-tabs">
+                <button>‹</button>
+                <span>Plantas</span>
+                <strong>Geohashes / Mapas</strong>
+                <em>Bitácora</em>
+                <button>›</button>
+              </div>
             </div>
+
             <div class="data-panel">
               <table>
                 <thead>
                   <tr>
                     <th>Fecha y hora</th>
-                    <th>Módulo</th>
-                    <th>Elemento</th>
-                    <th>Acción</th>
                     <th>Usuario</th>
-                    <th>Detalle</th>
+                    <th>Entidad afectada</th>
+                    <th>Acción realizada</th>
+                    <th>Valores relevantes antes / después</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr><td>2026-06-02 09:18</td><td>Ciudades logísticas</td><td>Bogotá / Sabana</td><td>Modificación</td><td>Juan Velasquez</td><td>Ajuste de cobertura, +94 geohashes pendientes</td></tr>
-                  <tr><td>2026-06-01 17:42</td><td>Divipoles</td><td>Suba / Bogotá</td><td>Inactivación</td><td>Abner González</td><td>Cambio de estado por revisión operativa</td></tr>
-                  <tr><td>2026-05-31 11:06</td><td>Plantas</td><td>Puente Aranda</td><td>Modificación</td><td>Soporte Detektor</td><td>Actualización de Divipol asociada</td></tr>
-                  <tr><td>2026-05-30 08:55</td><td>Ciudades logísticas</td><td>Tunja</td><td>Eliminación</td><td>Juan Velasquez</td><td>Registro eliminado por creación incorrecta</td></tr>
+                  <tr><td>11/06/2026 09:42:18</td><td>GARGOS</td><td>Divipol: Suba / Bogotá</td><td><span class="badge warn">Edición de geometría</span></td><td>Geometría anterior → geometría ajustada; 20 geohashes pendientes</td></tr>
+                  <tr><td>10/06/2026 16:12:07</td><td>GARGOS</td><td>Ciudad Logística: Bogotá / Sabana</td><td><span class="badge success">Asociación de planta</span></td><td>Sin asociación → Planta 513 - Puente Aranda asociada</td></tr>
+                  <tr><td>09/06/2026 14:22:39</td><td>JPEREZ</td><td>Divipol: Chía / Cundinamarca</td><td><span class="badge neutral">FLG_OVERRIDE</span></td><td>0 → 1</td></tr>
+                  <tr><td>08/06/2026 08:55:21</td><td>SOPORTE</td><td>Planta: 522 - Chía</td><td><span class="badge danger">Eliminación lógica</span></td><td>Activa → Eliminada</td></tr>
+                  <tr><td>07/06/2026 11:03:12</td><td>GARGOS</td><td>Divipol: Usaquén / Bogotá</td><td><span class="badge warn">Reenvío</span></td><td>Sin solicitud → Pendiente de sincronización</td></tr>
                 </tbody>
               </table>
             </div>
           </section>
+
         </div>
-      </section>
+        </section>
+      </div>
     </main>
 
     <div id="toast" class="toast" role="status"></div>
-    <div id="tourOverlay" class="tour-overlay is-hidden"></div>
-    <section id="tourBubble" class="tour-bubble is-hidden" aria-live="polite">
-      <span id="tourStep" class="tour-step"></span>
-      <h2 id="tourTitle"></h2>
-      <p id="tourText"></p>
-      <div class="tour-actions">
-        <button id="tourSkip" class="btn btn-light">Saltar</button>
-        <button id="tourNext" class="btn btn-primary">Siguiente</button>
-      </div>
-    </section>
 
-    <dialog id="zoneModal" class="modal">
+    <dialog id="zoneModal" class="modal wide">
       <form method="dialog">
         <h2>Nueva ciudad logística</h2>
-        <label>Ciudad logística <select><option>Bogotá / Sabana Norte</option><option>Cartagena</option><option>Medellín</option><option>Tunja</option></select></label>
-        <label>Departamento <select><option>Cundinamarca</option><option>Antioquia</option><option>Bolívar</option><option>Boyacá</option></select></label>
-        <label>Zona logística <select><option>Centro</option><option>Noroccidente</option><option>Norte</option><option>Sur</option></select></label>
-        <label>Estado <select><option>Activo</option><option>Inactivo</option></select></label>
+        <div class="edit-grid">
+          <section class="config-panel flat">
+            <label>Ciudad logística <select><option>Bogotá / Sabana Norte</option><option>Cartagena</option><option>Medellín</option><option>Tunja</option></select></label>
+            <label>País <select><option>Colombia</option></select></label>
+            <label>Zona logística <select><option>Centro</option><option>Noroccidente</option><option>Norte</option><option>Sur</option></select></label>
+            <label>Estado <select><option>Activo</option><option>Inactivo</option></select></label>
+          </section>
+          <section class="map-panel modal-map">
+            <div class="mock-map small-map">
+              <div class="grid"></div>
+              <div class="polygon zone"></div>
+            </div>
+          </section>
+        </div>
         <div class="warning-box">Si la ciudad logística ya existe, el sistema bloquea el guardado y muestra el registro existente.</div>
         <div class="modal-actions">
           <button class="btn btn-light">Cancelar</button>
@@ -438,9 +693,9 @@
         <div class="edit-grid">
           <section class="config-panel flat">
             <label>Ciudad logística <input value="Bogotá / Sabana" /></label>
-            <label>Departamento <select><option>Cundinamarca</option><option>Antioquia</option><option>Bolívar</option><option>Boyacá</option></select></label>
+            <label>País <select><option>Colombia</option></select></label>
             <label>Zona logística <select><option>Centro</option><option>Noroccidente</option><option>Norte</option><option>Sur</option></select></label>
-            <label>Estado <select><option>Activo</option><option>Inactivo</option><option>Eliminar</option></select></label>
+            <label>Estado <select><option>Activo</option><option>Inactivo</option></select></label>
             <label>Fecha creación <input value="2026-04-28 - Juan Velasquez" readonly /></label>
             <label>Última modificación <input value="2026-05-20 - Juan Velasquez" readonly /></label>
             <div class="warning-box">Al ajustar el área de cobertura se descubren nuevos geohashes y quedan pendientes de sincronizar con Command. La eliminación exige permiso y queda en bitácora.</div>
@@ -449,10 +704,39 @@
             <div class="mock-map small-map">
               <div class="grid"></div>
               <div class="polygon zone"></div>
-              <span class="geohash-count" data-tour="geohashes-descubiertos">+94 geohashes descubiertos</span>
+              <span class="geohash-count">+94 geohashes descubiertos</span>
             </div>
           </section>
         </div>
+        <section class="association-block association-master">
+          <div class="section-title compact-title">
+            <h3>Plantas asociadas a esta ciudad logística</h3>
+          </div>
+          <div class="association-notes">
+            <div class="warning-box">Las plantas se seleccionan desde el maestro existente y aplican para toda la ciudad logística. No se asocian directamente a cada Divipol.</div>
+            <div class="warning-box">Estas plantas se usarán para calcular el tiempo semilla de cada geohash/MAP_PAGE generado dentro de la ciudad logística.</div>
+          </div>
+          <section class="data-panel compact">
+            <table>
+              <thead>
+                <tr>
+                  <th>Seleccionar</th>
+                  <th>Código planta</th>
+                  <th>Planta</th>
+                  <th>Coordenadas</th>
+                  <th>Divipol de ubicación / referencia</th>
+                  <th>Estado</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><input type="checkbox" checked /></td><td>513</td><td>Puente Aranda</td><td>4.6243, -74.1071</td><td>Usaquén / Bogotá</td><td><span class="badge success">Activa</span></td></tr>
+                <tr><td><input type="checkbox" checked /></td><td>503</td><td>Calle 80</td><td>4.7251, -74.1228</td><td>Suba / Bogotá</td><td><span class="badge success">Activa</span></td></tr>
+                <tr><td><input type="checkbox" checked /></td><td>522</td><td>Chía</td><td>4.8612, -74.0548</td><td>Chía / Cundinamarca</td><td><span class="badge warn">Pendiente geocerca</span></td></tr>
+                <tr><td><input type="checkbox" /></td><td>301</td><td>Mamonal</td><td>10.3230, -75.5050</td><td>Cartagena</td><td><span class="badge success">Activa</span></td></tr>
+              </tbody>
+            </table>
+          </section>
+        </section>
         <div class="modal-actions">
           <button class="btn btn-light">Cancelar</button>
           <button class="btn btn-primary" data-toast="Ciudad logística actualizada y geohashes pendientes detectados">Guardar ciudad logística</button>
@@ -460,14 +744,26 @@
       </form>
     </dialog>
 
-    <dialog id="divipolModal" class="modal">
+    <dialog id="divipolModal" class="modal wide">
       <form method="dialog">
         <h2>Nueva Divipol</h2>
-        <label>Ciudad logística <select><option>Bogotá / Sabana</option><option>Medellín</option><option>Cartagena</option></select></label>
-        <label>Zona logística <select><option>Centro</option><option>Noroccidente</option><option>Norte</option><option>Sur</option></select></label>
-        <label>Nombre de Divipol <select><option>Usaquén / Bogotá</option><option>Suba / Bogotá</option><option>Chía / Cundinamarca</option><option>Envigado</option></select></label>
-        <label>Código zona <input value="B54BE76E" /></label>
-        <label>Estado <select><option>Activo</option><option>Inactivo</option></select></label>
+        <div class="edit-grid">
+          <section class="config-panel flat">
+            <label>Ciudad logística <select><option>Bogotá / Sabana</option><option>Medellín</option><option>Cartagena</option></select></label>
+            <label>Nombre de Divipol <select><option>Usaquén / Bogotá</option><option>Suba / Bogotá</option><option>Chía / Cundinamarca</option><option>Envigado</option></select></label>
+            <label>Código zona <input value="B54BE76E" /></label>
+            <label>Estado <select><option>Activo</option><option>Inactivo</option></select></label>
+          </section>
+          <section class="map-panel modal-map">
+            <div class="geometry-tools">
+              <button title="Dibujar geometría">✚</button>
+              <button title="Editar geometría">✎</button>
+              <button title="Borrar geometría">⌫</button>
+              <button title="Deshacer">↶</button>
+            </div>
+            <div class="mock-map small-map"><div class="grid"></div><div class="divipol-outline one"></div></div>
+          </section>
+        </div>
         <div class="warning-box">No se permite guardar si la Divipol ya existe o si la geocerca no está creada y cerrada.</div>
         <div class="modal-actions">
           <button class="btn btn-light">Cancelar</button>
@@ -482,17 +778,20 @@
         <div class="edit-grid">
           <section class="config-panel flat">
             <label>Ciudad logística <input value="Bogotá / Sabana" readonly /></label>
-            <label>Zona logística <input value="Centro" readonly /></label>
             <label>Nombre de Divipol <input value="Suba / Bogotá" /></label>
-            <label>Código zona <input value="B54BE6EE" /></label>
-            <label>Estado <select><option>Activo</option><option>Pendiente Command</option><option>Inactivo</option><option>Eliminar</option></select></label>
-            <label>Fecha creación <input value="2026-04-30 - Abner González" readonly /></label>
-            <label>Última modificación <input value="2026-05-20 - Juan Velasquez" readonly /></label>
+            <label>Código zona <input value="B54BE6EE" readonly /></label>
+            <label>Estado <select><option>Activo</option><option>Inactivo</option></select></label>
+            <label><input type="checkbox" /> Requiere sobrescritura en Command (FLG_OVERRIDE)</label>
             <div class="warning-box">Campos completos y geocerca cerrada son obligatorios para guardar. Eliminar o inactivar exige permiso y queda en bitácora.</div>
           </section>
           <section class="map-panel modal-map">
             <div class="map-toolbar">
-              <button class="chip is-on">Plantas</button>
+              <div class="geometry-tools">
+                <button title="Dibujar geometría">✚</button>
+                <button title="Editar geometría">✎</button>
+                <button title="Borrar geometría">⌫</button>
+                <button title="Deshacer">↶</button>
+              </div>
               <button class="chip is-on">Nombres</button>
             </div>
             <div class="mock-map small-map">
@@ -519,12 +818,14 @@
           <section class="config-panel flat">
             <label>Código planta <input value="513" readonly /></label>
             <label>Planta <input value="Puente Aranda" readonly /></label>
+            <label>Coordenadas <input value="4.6243, -74.1071" readonly /></label>
             <label>Ciudad logística <input value="Bogotá / Sabana" readonly /></label>
             <label>Zona logística <input value="Centro" readonly /></label>
-            <label>Divipol <input value="Usaquén / Bogotá" readonly /></label>
+            <label>Divipol de ubicación / referencia <input value="Usaquén / Bogotá" readonly /></label>
             <label>Estado <input value="Activa" readonly /></label>
             <label>Fecha creación <input value="2026-04-28 - Abner González" readonly /></label>
             <label>Última modificación <input value="2026-05-20 - Juan Velasquez" readonly /></label>
+            <div class="warning-box">La Divipol es referencia geográfica, no asociación funcional. La planta aplica para toda la ciudad logística seleccionada.</div>
           </section>
           <section class="map-panel modal-map">
             <div class="mock-map small-map">
@@ -556,7 +857,6 @@
         </label>
         <label>Hora de ejecución <input type="time" value="01:00" /></label>
         <label>Tamaño de lote <input type="number" value="250" /></label>
-        <label>Reintentos máximos <input type="number" value="3" /></label>
         <label>Modo de envío <select><option>Incremental - solo nuevos o modificados</option><option>Sobrescritura de Divipoles seleccionadas</option><option>Reconstrucción total autorizada</option></select></label>
         <label><input type="checkbox" /> Confirmo sobrescritura de información ya cargada en Command para las Divipoles seleccionadas</label>
         <label><input type="checkbox" /> Notificar errores a usuarios administradores</label>
@@ -573,11 +873,11 @@
         <h2>Detalle de geohashes del lote</h2>
         <div class="data-panel compact">
           <table>
-            <thead><tr><th>Geohash</th><th>Código zona</th><th>Ciudad logística</th><th>Divipol</th><th>Resultado</th><th>Mensaje</th><th>Reintentos</th></tr></thead>
+            <thead><tr><th>MAP_PAGE</th><th>Código zona</th><th>Ciudad logística</th><th>Divipol</th><th>Fecha/hora intento</th><th>Resultado</th><th>Mensaje</th><th>Reintentos</th><th>Acciones</th></tr></thead>
             <tbody>
-              <tr><td>d346u9</td><td>B54BE879</td><td>Bogotá / Sabana</td><td>Usaquén / Bogotá</td><td><span class="badge success">Exitoso</span></td><td>Solicitud procesada</td><td>0</td></tr>
-              <tr><td>d2g6dt</td><td>B54BD53A</td><td>Bogotá / Sabana</td><td>Suba / Bogotá</td><td><span class="badge warn">Validación</span></td><td>Campo requerido</td><td>1</td></tr>
-              <tr><td>d345rf</td><td>B54BD5A2</td><td>Bogotá / Sabana</td><td>Chía / Cundinamarca</td><td><span class="badge danger">Error técnico</span></td><td>ORA-00001</td><td>2</td></tr>
+              <tr><td>D346U9</td><td>B54BE879</td><td>Bogotá / Sabana</td><td>Usaquén / Bogotá</td><td>20/05/2026 01:02</td><td><span class="badge success">Exitoso</span></td><td>Solicitud procesada</td><td>0</td><td><button class="link-btn" data-open-modal="technicalDetailModal">Ver detalle técnico</button></td></tr>
+              <tr><td>D2G6DT</td><td>B54BD53A</td><td>Bogotá / Sabana</td><td>Suba / Bogotá</td><td>20/05/2026 01:08</td><td><span class="badge warn">Validación</span></td><td>Campo requerido</td><td>1</td><td><button class="link-btn" data-open-modal="technicalDetailModal">Ver detalle técnico</button></td></tr>
+              <tr><td>D345RF</td><td>B54BD5A2</td><td>Bogotá / Sabana</td><td>Chía / Cundinamarca</td><td>20/05/2026 01:14</td><td><span class="badge danger">Error técnico</span></td><td>RESPONSE_CODE 500</td><td>2</td><td><button class="link-btn" data-open-modal="technicalDetailModal">Ver detalle técnico</button></td></tr>
             </tbody>
           </table>
         </div>
@@ -588,29 +888,29 @@
       </form>
     </dialog>
 
-    <dialog id="userRoleModal" class="modal">
+    <dialog id="technicalDetailModal" class="modal wide">
       <form method="dialog">
-        <h2>Asignar rol</h2>
-        <label>Persona <input value="Abner González" /></label>
-        <label>Correo <input value="abner.gonzalez@argos.co" /></label>
-        <label>Rol <select><option>Operador CPD</option><option>Administrador CPD</option><option>Soporte técnico</option></select></label>
-        <label>Estado <select><option>Activo</option><option>Inactivo</option></select></label>
-        <div class="modal-actions">
-          <button class="btn btn-light">Cancelar</button>
-          <button class="btn btn-primary" data-toast="Rol asignado">Guardar</button>
-        </div>
+        <h2>Detalle técnico del envío</h2>
+        <label>Endpoint consumido <input value="APIM / MAP_PAGE" readonly /></label>
+        <label>Fecha y hora del intento <input value="20/05/2026 01:08" readonly /></label>
+        <label>Cantidad de reintentos <input value="1" readonly /></label>
+        <label>Payload enviado
+          <textarea class="technical-payload" readonly>{ "MAP_PAGE": "D2G6DT", "ZONE_CODE": "B54BD53A", "DETAIL_MAP_PAGE": { "PLANT_MAP_PAGE": [] } }</textarea>
+        </label>
+        <label>Respuesta recibida
+          <textarea class="technical-payload" readonly>{ "RESPONSE_CODE": 400, "MESSAGE": "Solicitud no procesada" }</textarea>
+        </label>
+        <div class="modal-actions"><button class="btn btn-primary">Cerrar</button></div>
       </form>
     </dialog>
 
     <dialog id="deleteModal" class="modal">
       <form method="dialog">
-        <h2>Confirmar eliminación</h2>
-        <p class="modal-copy">Esta acción solo está disponible para usuarios con permiso de administración. El registro quedará guardado en la bitácora con fecha, usuario y detalle.</p>
-        <label>Motivo <select><option>Creación incorrecta</option><option>Duplicado confirmado</option><option>Ajuste operativo solicitado</option></select></label>
-        <label><input type="checkbox" /> Confirmo que revisé dependencias antes de eliminar</label>
+        <h2>Confirmar eliminación lógica</h2>
+        <p class="modal-copy">Esta acción requiere permiso y quedará registrada en la auditoría funcional.</p>
         <div class="modal-actions">
           <button class="btn btn-light">Cancelar</button>
-          <button class="btn btn-primary" data-toast="Eliminación registrada en bitácora">Eliminar</button>
+          <button class="btn btn-primary" data-toast="Eliminación lógica registrada en auditoría">Eliminar lógicamente</button>
         </div>
       </form>
     </dialog>
