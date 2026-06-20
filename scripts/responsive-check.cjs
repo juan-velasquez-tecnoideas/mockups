@@ -3,6 +3,9 @@ const fs = require("node:fs");
 
 const targetUrl = process.argv[2] || "https://juan-velasquez-tecnoideas.github.io/mockups/";
 const outputDir = process.argv[3] || "/private/tmp/geohashes-responsive";
+const diagramUrl = targetUrl.endsWith("index.html")
+  ? targetUrl.replace(/index\.html$/, "diagrama-er-argos.html")
+  : new URL("diagrama-er-argos.html", targetUrl).href;
 const viewports = [
   { name: "desktop", width: 1440, height: 900 },
   { name: "laptop", width: 1024, height: 768 },
@@ -87,6 +90,12 @@ async function click(page, selector) {
     await click(page, '[data-open-modal="zoneModal"]');
     results.push(await layoutState(page, `${viewport.name}:city-modal`));
     await page.screenshot({ path: `${outputDir}/${viewport.name}-city-modal.png`, fullPage: true });
+
+    await page.goto(`${diagramUrl}?responsive=${Date.now()}`, { waitUntil: "networkidle" });
+    results.push(await layoutState(page, `${viewport.name}:er-diagram`));
+    if (viewport.name === "desktop" || viewport.name === "mobile") {
+      await page.screenshot({ path: `${outputDir}/${viewport.name}-er-diagram.png`, fullPage: true });
+    }
 
     await context.close();
   }
