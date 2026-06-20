@@ -231,7 +231,7 @@
           </div>
           <nav>
             <p class="menu-group">Organización Administrativa</p>
-            <button class="tab menu-level-1 is-active" data-view="zonas"><span>▦</span> Ciudad Logística</button>
+            <button class="tab menu-level-1 is-active" data-view="zonas"><span>▦</span> Ciudades Logísticas</button>
             <button class="tab menu-level-2" data-view="divipoles"><span>⌖</span> Divipoles</button>
             <button class="tab menu-level-2" data-view="plantas"><span>⌂</span> Plantas</button>
             <button class="tab menu-level-3" data-view="vehiculos"><span>▣</span> Vehículos</button>
@@ -247,7 +247,7 @@
             <div class="view-header">
               <div>
                 <h1>Ciudades logísticas</h1>
-                <p>Administra las ciudades logísticas donde se generan Divipoles, plantas y geohashes.</p>
+                <p>Administra ciudades logísticas, divipoles, plantas, vehículos.</p>
               </div>
               <button class="btn btn-primary" data-open-modal="zoneModal">+ Nueva ciudad logística</button>
             </div>
@@ -276,7 +276,6 @@
                     <th>Plantas</th>
                     <th>Fecha creación</th>
                     <th>Última modificación</th>
-                    <th>Estado</th>
                     <th>Acciones</th>
                   </tr>
                 </thead>
@@ -289,7 +288,6 @@
                     <td>10</td>
                     <td>2026-04-28</td>
                     <td>2026-05-20</td>
-                    <td><span class="badge success">Activo</span></td>
                     <td><div class="table-actions"><button class="link-btn" data-open-modal="zoneEditModal">Ver / Editar</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td>
                   </tr>
                   <tr>
@@ -300,7 +298,6 @@
                     <td>5</td>
                     <td>2026-04-29</td>
                     <td>2026-05-20</td>
-                    <td><span class="badge success">Activo</span></td>
                     <td><div class="table-actions"><button class="link-btn" data-open-modal="zoneEditModal">Ver / Editar</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td>
                   </tr>
                   <tr>
@@ -311,7 +308,6 @@
                     <td>3</td>
                     <td>2026-05-02</td>
                     <td>2026-05-18</td>
-                    <td><span class="badge warn">Pendiente Command</span></td>
                     <td><div class="table-actions"><button class="link-btn" data-open-modal="zoneEditModal">Ver / Editar</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td>
                   </tr>
                   <tr>
@@ -322,7 +318,6 @@
                     <td>1</td>
                     <td>2026-05-04</td>
                     <td>2026-05-16</td>
-                    <td><span class="badge neutral">Inactivo</span></td>
                     <td><div class="table-actions"><button class="link-btn" data-open-modal="zoneEditModal">Ver / Editar</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td>
                   </tr>
                 </tbody>
@@ -376,15 +371,14 @@
                     <th>Total geohashes</th>
                     <th>Sincronizados</th>
                     <th>Última modificación</th>
-                    <th>Estado</th>
                     <th>Acciones</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr><td>Usaquén / Bogotá</td><td>B54BE76E</td><td>Bogotá / Sabana</td><td>1,420</td><td>1,420</td><td>2026-05-20</td><td><span class="badge success">Activo</span></td><td><div class="table-actions"><button class="link-btn" data-open-modal="divipolEditModal">Ver / Editar</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td></tr>
-                  <tr><td>Suba / Bogotá</td><td>B54BE6EE</td><td>Bogotá / Sabana</td><td>1,250</td><td>1,230</td><td>2026-05-20</td><td><span class="badge warn">Cambios pendientes</span></td><td><div class="table-actions"><button class="link-btn" data-open-modal="divipolEditModal">Ver / Editar</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td></tr>
-                  <tr><td>Chía / Cundinamarca</td><td>B54BEDF9</td><td>Bogotá / Sabana</td><td>1,105</td><td>1,101</td><td>2026-05-19</td><td><span class="badge warn">Cambios pendientes</span></td><td><div class="table-actions"><button class="link-btn" data-open-modal="divipolEditModal">Ver / Editar</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td></tr>
-                  <tr><td>Envigado</td><td>A74BE44A</td><td>Medellín</td><td>980</td><td>980</td><td>2026-05-16</td><td><span class="badge success">Activo</span></td><td><div class="table-actions"><button class="link-btn" data-open-modal="divipolEditModal">Ver / Editar</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td></tr>
+                  <tr><td>Usaquén / Bogotá</td><td>B54BE76E</td><td>Bogotá / Sabana</td><td>1,420</td><td>1,420</td><td>2026-05-20</td><td><div class="table-actions"><button class="link-btn" data-open-modal="divipolEditModal">Ver / Editar</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td></tr>
+                  <tr><td>Suba / Bogotá</td><td>B54BE6EE</td><td>Bogotá / Sabana</td><td>1,250</td><td>1,230</td><td>2026-05-20</td><td><div class="table-actions"><button class="link-btn" data-open-modal="divipolEditModal">Ver / Editar</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td></tr>
+                  <tr><td>Chía / Cundinamarca</td><td>B54BEDF9</td><td>Bogotá / Sabana</td><td>1,105</td><td>1,101</td><td>2026-05-19</td><td><div class="table-actions"><button class="link-btn" data-open-modal="divipolEditModal">Ver / Editar</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td></tr>
+                  <tr><td>Envigado</td><td>A74BE44A</td><td>Medellín</td><td>980</td><td>980</td><td>2026-05-16</td><td><div class="table-actions"><button class="link-btn" data-open-modal="divipolEditModal">Ver / Editar</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td></tr>
                 </tbody>
               </table>
             </div>
@@ -408,7 +402,6 @@
                 </select>
               </label>
               <label class="search-field">Buscar planta <input id="plantSearch" type="search" placeholder="Código o nombre de planta..." /></label>
-              <label>Estado <select><option>Todos</option><option>Activa</option><option>Inactiva</option><option>Pendiente geocerca</option></select></label>
               <button class="btn btn-primary" data-action="consultar">Consultar</button>
             </div>
 
@@ -424,14 +417,13 @@
                     <th>Divipol de ubicación / referencia</th>
                     <th>Fecha creación</th>
                     <th>Última modificación</th>
-                    <th>Estado</th>
                     <th>Acciones</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr><td>513</td><td>Puente Aranda</td><td>4.6243, -74.1071</td><td>Bogotá / Sabana</td><td>Centro</td><td>Usaquén / Bogotá</td><td>2026-04-28</td><td>2026-05-20</td><td><span class="badge success">Activa</span></td><td><div class="table-actions"><button class="link-btn" data-open-modal="plantFenceModal">Ver</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td></tr>
-                  <tr><td>503</td><td>Calle 80</td><td>4.7251, -74.1228</td><td>Bogotá / Sabana</td><td>Centro</td><td>Suba / Bogotá</td><td>2026-04-30</td><td>2026-05-19</td><td><span class="badge success">Activa</span></td><td><div class="table-actions"><button class="link-btn" data-open-modal="plantFenceModal">Ver</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td></tr>
-                  <tr><td>522</td><td>Chía</td><td>4.8612, -74.0548</td><td>Bogotá / Sabana</td><td>Centro</td><td>Chía / Cundinamarca</td><td>2026-05-02</td><td>2026-05-18</td><td><span class="badge warn">Pendiente geocerca</span></td><td><div class="table-actions"><button class="link-btn" data-open-modal="plantFenceModal">Ver</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td></tr>
+                  <tr><td>513</td><td>Puente Aranda</td><td>4.6243, -74.1071</td><td>Bogotá / Sabana</td><td>Centro</td><td>Usaquén / Bogotá</td><td>2026-04-28</td><td>2026-05-20</td><td><div class="table-actions"><button class="link-btn" data-open-modal="plantFenceModal">Ver</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td></tr>
+                  <tr><td>503</td><td>Calle 80</td><td>4.7251, -74.1228</td><td>Bogotá / Sabana</td><td>Centro</td><td>Suba / Bogotá</td><td>2026-04-30</td><td>2026-05-19</td><td><div class="table-actions"><button class="link-btn" data-open-modal="plantFenceModal">Ver</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td></tr>
+                  <tr><td>522</td><td>Chía</td><td>4.8612, -74.0548</td><td>Bogotá / Sabana</td><td>Centro</td><td>Chía / Cundinamarca</td><td>2026-05-02</td><td>2026-05-18</td><td><div class="table-actions"><button class="link-btn" data-open-modal="plantFenceModal">Ver</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td></tr>
                 </tbody>
               </table>
             </div>
@@ -465,7 +457,6 @@
                   <option>Envigado</option>
                 </select>
               </label>
-              <label>Estado <select><option>Todos</option><option>Finalizado</option><option>Con errores</option><option>Pendiente</option></select></label>
               <label>Fecha <input type="date" value="2026-05-20" /></label>
               <label>Código de error <input placeholder="400, 500..." /></label>
               <button class="btn btn-primary" data-action="consultar">Consultar</button>
@@ -496,14 +487,13 @@
                     <th>Exitosos</th>
                     <th>Errores</th>
                     <th>Pendientes</th>
-                    <th>Estado</th>
                     <th>Acciones</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr><td>LOT-20260520-0100</td><td>2026-05-20</td><td>Bogotá / Sabana</td><td>Suba / Bogotá</td><td>Incremental</td><td>01:00</td><td>01:18</td><td>1,250</td><td>1,230</td><td>20</td><td>0</td><td><span class="badge warn">Con errores</span></td><td><button class="link-btn" data-open-modal="batchDetailModal">Ver detalle</button></td></tr>
-                  <tr><td>LOT-20260519-0100</td><td>2026-05-19</td><td>Medellín</td><td>Envigado</td><td>Incremental</td><td>01:00</td><td>01:11</td><td>980</td><td>980</td><td>0</td><td>0</td><td><span class="badge success">Finalizado</span></td><td><button class="link-btn" data-open-modal="batchDetailModal">Ver detalle</button></td></tr>
-                  <tr><td>LOT-20260518-0100</td><td>2026-05-18</td><td>Bogotá / Sabana</td><td>Chía / Cundinamarca</td><td>Sobrescritura</td><td>01:00</td><td>01:15</td><td>1,105</td><td>1,101</td><td>4</td><td>0</td><td><span class="badge warn">Con errores</span></td><td><button class="link-btn" data-open-modal="batchDetailModal">Ver detalle</button></td></tr>
+                  <tr><td>LOT-20260520-0100</td><td>2026-05-20</td><td>Bogotá / Sabana</td><td>Suba / Bogotá</td><td>Incremental</td><td>01:00</td><td>01:18</td><td>1,250</td><td>1,230</td><td>20</td><td>0</td><td><button class="link-btn" data-open-modal="batchDetailModal">Ver detalle</button></td></tr>
+                  <tr><td>LOT-20260519-0100</td><td>2026-05-19</td><td>Medellín</td><td>Envigado</td><td>Incremental</td><td>01:00</td><td>01:11</td><td>980</td><td>980</td><td>0</td><td>0</td><td><button class="link-btn" data-open-modal="batchDetailModal">Ver detalle</button></td></tr>
+                  <tr><td>LOT-20260518-0100</td><td>2026-05-18</td><td>Bogotá / Sabana</td><td>Chía / Cundinamarca</td><td>Sobrescritura</td><td>01:00</td><td>01:15</td><td>1,105</td><td>1,101</td><td>4</td><td>0</td><td><button class="link-btn" data-open-modal="batchDetailModal">Ver detalle</button></td></tr>
                 </tbody>
               </table>
             </div>
@@ -668,9 +658,7 @@
         <div class="edit-grid">
           <section class="config-panel flat">
             <label>Ciudad logística <select><option>Bogotá / Sabana Norte</option><option>Cartagena</option><option>Medellín</option><option>Tunja</option></select></label>
-            <label>País <select><option>Colombia</option></select></label>
             <label>Zona logística <select><option>Centro</option><option>Noroccidente</option><option>Norte</option><option>Sur</option></select></label>
-            <label>Estado <select><option>Activo</option><option>Inactivo</option></select></label>
           </section>
           <section class="map-panel modal-map">
             <div class="mock-map small-map">
@@ -693,9 +681,7 @@
         <div class="edit-grid">
           <section class="config-panel flat">
             <label>Ciudad logística <input value="Bogotá / Sabana" /></label>
-            <label>País <select><option>Colombia</option></select></label>
             <label>Zona logística <select><option>Centro</option><option>Noroccidente</option><option>Norte</option><option>Sur</option></select></label>
-            <label>Estado <select><option>Activo</option><option>Inactivo</option></select></label>
             <label>Fecha creación <input value="2026-04-28 - Juan Velasquez" readonly /></label>
             <label>Última modificación <input value="2026-05-20 - Juan Velasquez" readonly /></label>
             <div class="warning-box">Al ajustar el área de cobertura se descubren nuevos geohashes y quedan pendientes de sincronizar con Command. La eliminación exige permiso y queda en bitácora.</div>
@@ -725,14 +711,13 @@
                   <th>Planta</th>
                   <th>Coordenadas</th>
                   <th>Divipol de ubicación / referencia</th>
-                  <th>Estado</th>
                 </tr>
               </thead>
               <tbody>
-                <tr><td><input type="checkbox" checked /></td><td>513</td><td>Puente Aranda</td><td>4.6243, -74.1071</td><td>Usaquén / Bogotá</td><td><span class="badge success">Activa</span></td></tr>
-                <tr><td><input type="checkbox" checked /></td><td>503</td><td>Calle 80</td><td>4.7251, -74.1228</td><td>Suba / Bogotá</td><td><span class="badge success">Activa</span></td></tr>
-                <tr><td><input type="checkbox" checked /></td><td>522</td><td>Chía</td><td>4.8612, -74.0548</td><td>Chía / Cundinamarca</td><td><span class="badge warn">Pendiente geocerca</span></td></tr>
-                <tr><td><input type="checkbox" /></td><td>301</td><td>Mamonal</td><td>10.3230, -75.5050</td><td>Cartagena</td><td><span class="badge success">Activa</span></td></tr>
+                <tr><td><input type="checkbox" checked /></td><td>513</td><td>Puente Aranda</td><td>4.6243, -74.1071</td><td>Usaquén / Bogotá</td></tr>
+                <tr><td><input type="checkbox" checked /></td><td>503</td><td>Calle 80</td><td>4.7251, -74.1228</td><td>Suba / Bogotá</td></tr>
+                <tr><td><input type="checkbox" checked /></td><td>522</td><td>Chía</td><td>4.8612, -74.0548</td><td>Chía / Cundinamarca</td></tr>
+                <tr><td><input type="checkbox" /></td><td>301</td><td>Mamonal</td><td>10.3230, -75.5050</td><td>Cartagena</td></tr>
               </tbody>
             </table>
           </section>
@@ -752,7 +737,6 @@
             <label>Ciudad logística <select><option>Bogotá / Sabana</option><option>Medellín</option><option>Cartagena</option></select></label>
             <label>Nombre de Divipol <select><option>Usaquén / Bogotá</option><option>Suba / Bogotá</option><option>Chía / Cundinamarca</option><option>Envigado</option></select></label>
             <label>Código zona <input value="B54BE76E" /></label>
-            <label>Estado <select><option>Activo</option><option>Inactivo</option></select></label>
           </section>
           <section class="map-panel modal-map">
             <div class="geometry-tools">
@@ -780,7 +764,6 @@
             <label>Ciudad logística <input value="Bogotá / Sabana" readonly /></label>
             <label>Nombre de Divipol <input value="Suba / Bogotá" /></label>
             <label>Código zona <input value="B54BE6EE" readonly /></label>
-            <label>Estado <select><option>Activo</option><option>Inactivo</option></select></label>
             <label><input type="checkbox" /> Requiere sobrescritura en Command (FLG_OVERRIDE)</label>
             <div class="warning-box">Campos completos y geocerca cerrada son obligatorios para guardar. Eliminar o inactivar exige permiso y queda en bitácora.</div>
           </section>
@@ -822,7 +805,6 @@
             <label>Ciudad logística <input value="Bogotá / Sabana" readonly /></label>
             <label>Zona logística <input value="Centro" readonly /></label>
             <label>Divipol de ubicación / referencia <input value="Usaquén / Bogotá" readonly /></label>
-            <label>Estado <input value="Activa" readonly /></label>
             <label>Fecha creación <input value="2026-04-28 - Abner González" readonly /></label>
             <label>Última modificación <input value="2026-05-20 - Juan Velasquez" readonly /></label>
             <div class="warning-box">La Divipol es referencia geográfica, no asociación funcional. La planta aplica para toda la ciudad logística seleccionada.</div>
