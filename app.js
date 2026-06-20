@@ -56,7 +56,7 @@ detektorLoginBtn.addEventListener("click", () => {
 
 argosCardBtn.addEventListener("click", () => {
   showScreen(app);
-  setView("zonas");
+  setView("inicio");
   showToast("Módulo Argos abierto");
 });
 

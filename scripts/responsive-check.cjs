@@ -75,10 +75,10 @@ async function click(page, selector) {
     await click(page, "#managerCloseBtn");
 
     await click(page, "#argosCardBtn");
-    for (const view of ["zonas", "divipoles", "plantas", "vehiculos", "geocercas"]) {
-      if (view !== "zonas") await click(page, `[data-view="${view}"]`);
+    for (const view of ["inicio", "zonas", "divipoles", "plantas", "vehiculos", "geocercas"]) {
+      if (view !== "inicio") await click(page, `[data-view="${view}"]`);
       results.push(await layoutState(page, `${viewport.name}:argos:${view}`));
-      if (view === "zonas" || view === "geocercas") {
+      if (["inicio", "zonas", "geocercas"].includes(view)) {
         await page.screenshot({ path: `${outputDir}/${viewport.name}-${view}.png`, fullPage: true });
       }
     }

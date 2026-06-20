@@ -230,8 +230,9 @@
             <strong>Argos</strong>
           </div>
           <nav>
+            <button class="tab menu-level-1 is-active" data-view="inicio"><span>⌂</span> Inicio</button>
             <p class="menu-group">Organización Administrativa</p>
-            <button class="tab menu-level-1 is-active" data-view="zonas"><span>▦</span> Ciudades Logísticas</button>
+            <button class="tab menu-level-1" data-view="zonas"><span>▦</span> Ciudades Logísticas</button>
             <button class="tab menu-level-2" data-view="divipoles"><span>⌖</span> Divipoles</button>
             <button class="tab menu-level-2" data-view="plantas"><span>⌂</span> Plantas</button>
             <button class="tab menu-level-3" data-view="vehiculos"><span>▣</span> Vehículos</button>
@@ -243,7 +244,22 @@
 
         <section class="workspace">
         <div class="content-area">
-          <section id="view-zonas" class="view is-active">
+          <section id="view-inicio" class="view is-active">
+            <div class="view-header">
+              <div>
+                <h1>Inicio</h1>
+              </div>
+            </div>
+
+            <div class="metrics-grid">
+              <article class="metric"><span>Ciudades logísticas</span><strong>4</strong></article>
+              <article class="metric"><span>Divipoles</span><strong>159</strong></article>
+              <article class="metric"><span>Plantas</span><strong>19</strong></article>
+              <article class="metric"><span>Total Geohashes</span><strong>4,755</strong></article>
+            </div>
+          </section>
+
+          <section id="view-zonas" class="view">
             <div class="view-header">
               <div>
                 <h1>Ciudades logísticas</h1>
@@ -256,13 +272,6 @@
               <label class="search-field">Buscar ciudad logística <input id="zoneSearch" type="search" placeholder="Nombre o zona logística..." /></label>
               <label>Zona logística <select><option>Todas</option><option>Centro</option><option>Noroccidente</option><option>Norte</option><option>Sur</option></select></label>
               <button class="btn btn-primary" data-action="consultar">Consultar</button>
-            </div>
-
-            <div class="metrics-grid">
-              <article class="metric"><span>Ciudades logísticas activas</span><strong>4</strong></article>
-              <article class="metric"><span>Divipoles</span><strong>159</strong></article>
-              <article class="metric"><span>Plantas</span><strong>19</strong></article>
-              <article class="metric warn"><span>Cambios pendientes</span><strong>94</strong></article>
             </div>
 
             <div class="data-panel">
