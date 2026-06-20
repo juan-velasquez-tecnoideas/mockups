@@ -24,6 +24,7 @@ body {
   background: var(--bg);
   font-family: Inter, "Segoe UI", Arial, sans-serif;
   min-width: 0;
+  overflow-x: hidden;
 }
 
 button,
@@ -31,6 +32,11 @@ input,
 select,
 textarea {
   font: inherit;
+  max-width: 100%;
+}
+
+img {
+  max-width: 100%;
 }
 
 .is-hidden {
@@ -481,6 +487,10 @@ textarea {
   background: #fff;
   border: 1px solid #ddd;
   padding: 20px;
+}
+
+.manager-card {
+  overflow-x: auto;
 }
 
 .manager-actions {
@@ -1959,6 +1969,8 @@ pre {
 
 .modal {
   width: min(520px, 92vw);
+  max-height: calc(100dvh - 32px);
+  overflow-y: auto;
   border: 0;
   border-top: 4px solid var(--lime);
   border-radius: 10px;
@@ -2128,7 +2140,7 @@ pre {
   }
 }
 
-@media (max-width: 1040px) {
+@media (max-width: 1100px) {
   .cards-grid {
     grid-template-columns: repeat(2, 230px);
   }
@@ -2166,5 +2178,349 @@ pre {
   .plant {
     width: 36px;
     height: 36px;
+  }
+}
+
+/* Responsive layout overrides */
+@media (max-width: 1180px) {
+  .corporate-top nav {
+    gap: 12px;
+    font-size: 12px;
+  }
+
+  .corp-logo,
+  .hub-logo {
+    width: 190px;
+  }
+
+  .hero-copy {
+    padding: 48px;
+  }
+
+  .hero-copy h1 {
+    font-size: 38px;
+  }
+
+  .module-layout {
+    grid-template-columns: 220px minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .corporate-top nav {
+    display: none;
+  }
+
+  .corporate-hero,
+  .detektor-login-body {
+    grid-template-columns: 1fr;
+  }
+
+  .corporate-hero {
+    min-height: auto;
+  }
+
+  .hero-media {
+    min-height: 42vh;
+  }
+
+  .hero-copy {
+    min-height: 420px;
+    padding: 44px 32px;
+  }
+
+  .login-promo {
+    padding: 32px 16px;
+  }
+
+  .promo-card {
+    min-height: 360px;
+  }
+
+  .detektor-login-panel {
+    min-height: 560px;
+    padding: 40px 24px;
+  }
+
+  .manager-shell {
+    display: block;
+  }
+
+  .manager-top {
+    min-height: 48px;
+    height: auto;
+  }
+
+  .manager-top > a {
+    display: none;
+  }
+
+  .manager-side {
+    display: flex;
+    overflow-x: auto;
+    padding: 0;
+  }
+
+  .manager-menu {
+    width: auto;
+    min-width: max-content;
+    padding: 0 16px;
+  }
+
+  .manager-content {
+    padding: 20px 16px;
+  }
+
+  .manager-title,
+  .topbar,
+  .screen-filters,
+  .view-header,
+  .legacy-titlebar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .manager-title {
+    gap: 6px;
+  }
+
+  .manager-profile-name {
+    width: 100%;
+  }
+
+  .topbar {
+    gap: 14px;
+    padding-block: 14px;
+  }
+
+  .topbar-left,
+  .topbar-right {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .topbar-right {
+    justify-content: flex-end;
+    flex-wrap: wrap;
+  }
+
+  .module-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .module-sidebar {
+    position: static;
+    min-height: auto;
+  }
+
+  .module-sidebar-brand,
+  .menu-group,
+  .sidebar-manager {
+    display: none;
+  }
+
+  .module-sidebar nav {
+    display: flex;
+    overflow-x: auto;
+    padding: 0;
+    scrollbar-width: thin;
+  }
+
+  .module-sidebar .tab,
+  .module-sidebar .menu-level-2,
+  .module-sidebar .menu-level-3 {
+    width: auto;
+    min-width: max-content;
+    padding: 0 14px;
+    border-left: 0;
+    border-bottom: 3px solid transparent;
+  }
+
+  .module-sidebar .tab.is-active {
+    border-bottom-color: var(--lime);
+  }
+
+  .map-layout,
+  .split-grid,
+  .edit-grid,
+  .technical-grid,
+  .sync-board,
+  .metrics-grid,
+  .association-notes,
+  .mobile-tab-proposal,
+  .audit-field-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .view-header > div:first-child {
+    min-width: 0;
+  }
+
+  .actions,
+  .command-view-actions,
+  .legacy-actions,
+  .manager-actions,
+  .section-title,
+  .modal-actions,
+  .legacy-pagination {
+    flex-wrap: wrap;
+  }
+
+  .screen-filters label,
+  .screen-filters input,
+  .screen-filters select,
+  .screen-filters .btn,
+  .legacy-actions label,
+  .legacy-actions select {
+    width: 100%;
+  }
+
+  .search-field input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  .corporate-top,
+  .hub-topbar {
+    height: 58px;
+    gap: 10px;
+    padding: 0 12px;
+  }
+
+  .corp-logo,
+  .hub-logo {
+    width: 142px;
+    height: 42px;
+  }
+
+  .corp-login-btn {
+    min-height: 34px;
+    padding: 0 13px;
+    font-size: 12px;
+  }
+
+  .hero-media {
+    min-height: 32vh;
+  }
+
+  .hero-copy {
+    min-height: 390px;
+    gap: 14px;
+    padding: 32px 20px;
+  }
+
+  .hero-logo {
+    width: 220px;
+    height: 66px;
+  }
+
+  .hero-copy h1 {
+    font-size: 30px;
+  }
+
+  .hero-copy p {
+    font-size: 16px;
+  }
+
+  .login-brand {
+    height: 58px;
+  }
+
+  .login-promo {
+    display: none;
+  }
+
+  .detektor-login-body,
+  .detektor-login-panel {
+    min-height: calc(100vh - 58px);
+  }
+
+  .detektor-login-panel {
+    padding: 32px 18px;
+  }
+
+  .hub-user strong,
+  .hub-avatar {
+    display: none;
+  }
+
+  .hub-icon {
+    width: 44px;
+    height: 58px;
+  }
+
+  .manager-top img {
+    width: 130px;
+  }
+
+  .manager-top div span {
+    display: none;
+  }
+
+  .manager-card,
+  .manager-permission-panel,
+  .permission-block {
+    padding: 14px;
+  }
+
+  .manager-actions > *,
+  .modal-actions > *,
+  .command-view-actions > * {
+    flex: 1 1 auto;
+  }
+
+  .topbar .powered,
+  .topbar .header-detektor,
+  .topbar-right > .vertical-rule,
+  .topbar .user {
+    display: none;
+  }
+
+  .topbar-left {
+    align-items: flex-start;
+  }
+
+  .header-logo {
+    width: 88px;
+  }
+
+  .content-area,
+  .screen-filters {
+    padding: 12px;
+  }
+
+  .view-header h1,
+  .legacy-titlebar h1 {
+    font-size: 21px;
+  }
+
+  .legacy-admin-shell {
+    padding: 0;
+  }
+
+  .phone-tabs {
+    min-width: 360px;
+  }
+
+  .mobile-tab-proposal {
+    overflow-x: auto;
+  }
+
+  .modal,
+  .modal.wide {
+    width: calc(100vw - 16px);
+    max-height: calc(100dvh - 16px);
+    margin: 8px auto;
+  }
+
+  .modal form {
+    padding: 16px;
+  }
+
+  th,
+  td {
+    padding: 11px 12px;
+    font-size: 12px;
   }
 }
