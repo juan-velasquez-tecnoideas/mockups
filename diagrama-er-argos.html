@@ -245,6 +245,52 @@
         h1 { font-size: 23px; }
         .lane { padding: 14px; }
       }
+
+      @page {
+        size: A3 landscape;
+        margin: 10mm 10mm 14mm;
+      }
+
+      @media print {
+        body {
+          background: #fff;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+
+        header {
+          min-height: 58px;
+          padding: 10px 18px;
+        }
+
+        header a { display: none; }
+
+        main {
+          width: 100%;
+          padding: 18px 0 0;
+        }
+
+        h1 { font-size: 24px; }
+        .intro { margin-bottom: 16px; }
+        .diagram { gap: 14px; }
+
+        .lane {
+          break-inside: avoid;
+          padding: 14px;
+          box-shadow: none;
+        }
+
+        .entity li {
+          min-height: 25px;
+          padding-block: 4px;
+          font-size: 10px;
+        }
+
+        .scope {
+          break-inside: avoid;
+          margin-top: 14px;
+        }
+      }
     </style>
   </head>
   <body>

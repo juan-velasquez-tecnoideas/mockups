@@ -1,0 +1,1177 @@
+%PDF-1.4
+%âãÏÓ
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R 7 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 1190.55 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 6 0 R >>
+endobj
+6 0 obj
+<< /Length 7418 >>
+stream
+q
+0.957 0.969 0.984 rg
+0 0 1190.55 841.89 re f
+Q
+q
+0.031 0.153 0.353 rg
+0 783.89 1190.55 58 re f
+Q
+q
+0.843 0.937 0 rg
+0 780.89 1190.55 3 re f
+Q
+q
+0.843 0.937 0 rg
+35 796.89 28 28 re f
+Q
+BT
+1 1 1 rg
+/F2 18 Tf
+1 0 0 1 73 810.89 Tm
+(Argos) Tj
+ET
+BT
+0.78 0.84 0.91 rg
+/F1 9 Tf
+1 0 0 1 73 796.89 Tm
+(Modelo lógico de información) Tj
+ET
+BT
+0.031 0.153 0.353 rg
+/F2 24 Tf
+1 0 0 1 35 748 Tm
+(Diagrama entidad-relación) Tj
+ET
+BT
+0.369 0.435 0.518 rg
+/F1 11 Tf
+1 0 0 1 35 726 Tm
+(Entidades, atributos y cardinalidades requeridos para Geohashes / MAP_PAGE - Etapa 1.) Tj
+ET
+BT
+0.031 0.153 0.353 rg
+/F2 13 Tf
+1 0 0 1 35 691 Tm
+(Estructura geográfica y operativa) Tj
+ET
+q
+1 1 1 rg
+0.722 0.796 0.878 RG
+0.8 w
+35 483 320 188 re B
+Q
+q
+0.031 0.153 0.353 rg
+35 643 320 28 re f
+Q
+BT
+1 1 1 rg
+/F2 10.5 Tf
+1 0 0 1 47 653 Tm
+(CIUDAD_LOGISTICA) Tj
+ET
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 47 630 Tm
+(IDENTIFICADOR) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+35 624 m 355 624 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 47 611 Tm
+(NOMBRE) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+35 605 m 355 605 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 47 592 Tm
+(ZONA_LOGISTICA) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+35 586 m 355 586 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 47 573 Tm
+(GEOMETRIA) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+35 567 m 355 567 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 47 554 Tm
+(ESTADO) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+35 548 m 355 548 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 47 535 Tm
+(FECHA_CREACION) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+35 529 m 355 529 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 47 516 Tm
+(ULTIMA_MODIFICACION) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+35 510 m 355 510 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 47 497 Tm
+(USUARIO_RESPONSABLE) Tj
+ET
+q
+1 1 1 rg
+0.722 0.796 0.878 RG
+0.8 w
+435 521 320 150 re B
+Q
+q
+0.031 0.153 0.353 rg
+435 643 320 28 re f
+Q
+BT
+1 1 1 rg
+/F2 10.5 Tf
+1 0 0 1 447 653 Tm
+(DIVIPOL) Tj
+ET
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 447 630 Tm
+(ZONE_CODE) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+435 624 m 755 624 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 447 611 Tm
+(NOMBRE) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+435 605 m 755 605 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 447 592 Tm
+(GEOMETRIA) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+435 586 m 755 586 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 447 573 Tm
+(ESTADO) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+435 567 m 755 567 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 447 554 Tm
+(FECHA_CREACION) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+435 548 m 755 548 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 447 535 Tm
+(ULTIMA_MODIFICACION) Tj
+ET
+q
+1 1 1 rg
+0.722 0.796 0.878 RG
+0.8 w
+835 426 320 245 re B
+Q
+q
+0.031 0.153 0.353 rg
+835 643 320 28 re f
+Q
+BT
+1 1 1 rg
+/F2 10.5 Tf
+1 0 0 1 847 653 Tm
+(GEOHASH_MAP_PAGE) Tj
+ET
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 847 630 Tm
+(MAP_PAGE) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+835 624 m 1155 624 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 847 611 Tm
+(DESCR) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+835 605 m 1155 605 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 847 592 Tm
+(MAP_UPPER_LEFT_LONG) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+835 586 m 1155 586 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 847 573 Tm
+(MAP_UPPER_LEFT_LAT) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+835 567 m 1155 567 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 847 554 Tm
+(MAP_LOWER_RIGHT_LONG) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+835 548 m 1155 548 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 847 535 Tm
+(MAP_LOWER_RIGHT_LAT) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+835 529 m 1155 529 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 847 516 Tm
+(FECHA_DETECCION) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+835 510 m 1155 510 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 847 497 Tm
+(TIPO_CAMBIO) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+835 491 m 1155 491 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 847 478 Tm
+(ESTADO_SINCRONIZACION) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+835 472 m 1155 472 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 847 459 Tm
+(ULTIMO_INTENTO) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+835 453 m 1155 453 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 847 440 Tm
+(RESULTADO) Tj
+ET
+q
+0.122 0.373 0.545 RG
+1.5 w
+363 577 m 427 577 l S
+Q
+BT
+0.031 0.153 0.353 rg
+/F2 10 Tf
+1 0 0 1 380 585 Tm
+(1 - N) Tj
+ET
+BT
+0.369 0.435 0.518 rg
+/F2 7.5 Tf
+1 0 0 1 375.8 563 Tm
+(contiene) Tj
+ET
+q
+0.122 0.373 0.545 RG
+1.5 w
+763 548.5 m 827 548.5 l S
+Q
+BT
+0.031 0.153 0.353 rg
+/F2 10 Tf
+1 0 0 1 780 556.5 Tm
+(1 - N) Tj
+ET
+BT
+0.369 0.435 0.518 rg
+/F2 7.5 Tf
+1 0 0 1 780.6 534.5 Tm
+(genera) Tj
+ET
+BT
+0.031 0.153 0.353 rg
+/F2 13 Tf
+1 0 0 1 35 400 Tm
+(Plantas y tiempo semilla) Tj
+ET
+q
+1 1 1 rg
+0.722 0.796 0.878 RG
+0.8 w
+35 325 320 55 re B
+Q
+q
+0.031 0.153 0.353 rg
+35 352 320 28 re f
+Q
+BT
+1 1 1 rg
+/F2 10.5 Tf
+1 0 0 1 47 362 Tm
+(CIUDAD_LOGISTICA) Tj
+ET
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 47 339 Tm
+(IDENTIFICADOR) Tj
+ET
+q
+1 1 1 rg
+0.722 0.796 0.878 RG
+0.8 w
+435 230 320 150 re B
+Q
+q
+0.031 0.153 0.353 rg
+435 352 320 28 re f
+Q
+BT
+1 1 1 rg
+/F2 10.5 Tf
+1 0 0 1 447 362 Tm
+(PLANTA) Tj
+ET
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 447 339 Tm
+(PLANT_CODE) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+435 333 m 755 333 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 447 320 Tm
+(NOMBRE) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+435 314 m 755 314 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 447 301 Tm
+(COORDENADAS) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+435 295 m 755 295 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 447 282 Tm
+(ESTADO) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+435 276 m 755 276 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 447 263 Tm
+(FECHA_CREACION) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+435 257 m 755 257 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 447 244 Tm
+(FECHA_MODIFICACION) Tj
+ET
+q
+1 1 1 rg
+0.722 0.796 0.878 RG
+0.8 w
+835 287 320 93 re B
+Q
+q
+0.122 0.373 0.545 rg
+835 352 320 28 re f
+Q
+BT
+1 1 1 rg
+/F2 10.5 Tf
+1 0 0 1 847 362 Tm
+(PLANT_MAP_PAGE) Tj
+ET
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 847 339 Tm
+(PLANT_CODE) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+835 333 m 1155 333 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 847 320 Tm
+(TRAVEL_TIME) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+835 314 m 1155 314 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 847 301 Tm
+(FLG_OVERRIDE) Tj
+ET
+q
+0.122 0.373 0.545 RG
+1.5 w
+363 305 m 427 305 l S
+Q
+BT
+0.031 0.153 0.353 rg
+/F2 10 Tf
+1 0 0 1 380 313 Tm
+(1 - N) Tj
+ET
+BT
+0.369 0.435 0.518 rg
+/F2 7.5 Tf
+1 0 0 1 344.6 291 Tm
+(asocia funcionalmente) Tj
+ET
+q
+0.122 0.373 0.545 RG
+1.5 w
+763 305 m 827 305 l S
+Q
+BT
+0.031 0.153 0.353 rg
+/F2 10 Tf
+1 0 0 1 780 313 Tm
+(1 - N) Tj
+ET
+BT
+0.369 0.435 0.518 rg
+/F2 7.5 Tf
+1 0 0 1 766.2 291 Tm
+(participa en) Tj
+ET
+q
+0.863 0.925 0.973 rg
+0.722 0.796 0.878 RG
+0.8 w
+35 125 545 72 re B
+Q
+q
+0.122 0.373 0.545 rg
+35 125 4 72 re f
+Q
+BT
+0.031 0.153 0.353 rg
+/F2 10.5 Tf
+1 0 0 1 49 175 Tm
+(GEOHASH_MAP_PAGE 1 - N PLANT_MAP_PAGE) Tj
+ET
+BT
+0.114 0.173 0.259 rg
+/F1 9 Tf
+1 0 0 1 49 157 Tm
+(Cada MAP_PAGE contiene el detalle de las plantas aplicables y su tiempo semilla.) Tj
+ET
+q
+0.863 0.925 0.973 rg
+0.722 0.796 0.878 RG
+0.8 w
+610 125 545 72 re B
+Q
+q
+0.122 0.373 0.545 rg
+610 125 4 72 re f
+Q
+BT
+0.031 0.153 0.353 rg
+/F2 10.5 Tf
+1 0 0 1 624 175 Tm
+(Divipol no asocia plantas) Tj
+ET
+BT
+0.114 0.173 0.259 rg
+/F1 9 Tf
+1 0 0 1 624 157 Tm
+(La relación funcional de plantas corresponde a Ciudad Logística; Divipol determina el ZONE_CODE.) Tj
+ET
+BT
+0.369 0.435 0.518 rg
+/F1 8 Tf
+1 0 0 1 1120.55 20 Tm
+(1 / 2) Tj
+ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 1190.55 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 8 0 R >>
+endobj
+8 0 obj
+<< /Length 6087 >>
+stream
+q
+0.957 0.969 0.984 rg
+0 0 1190.55 841.89 re f
+Q
+q
+0.031 0.153 0.353 rg
+0 783.89 1190.55 58 re f
+Q
+q
+0.843 0.937 0 rg
+0 780.89 1190.55 3 re f
+Q
+q
+0.843 0.937 0 rg
+35 796.89 28 28 re f
+Q
+BT
+1 1 1 rg
+/F2 18 Tf
+1 0 0 1 73 810.89 Tm
+(Argos) Tj
+ET
+BT
+0.78 0.84 0.91 rg
+/F1 9 Tf
+1 0 0 1 73 796.89 Tm
+(Sincronización y auditoría) Tj
+ET
+BT
+0.031 0.153 0.353 rg
+/F2 18 Tf
+1 0 0 1 35 748 Tm
+(Sincronización hacia Command) Tj
+ET
+q
+1 1 1 rg
+0.722 0.796 0.878 RG
+0.8 w
+35 522 320 188 re B
+Q
+q
+0.122 0.373 0.545 rg
+35 682 320 28 re f
+Q
+BT
+1 1 1 rg
+/F2 10.5 Tf
+1 0 0 1 47 692 Tm
+(LOTE_SINCRONIZACION) Tj
+ET
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 47 669 Tm
+(ID_LOTE) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+35 663 m 355 663 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 47 650 Tm
+(INICIO) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+35 644 m 355 644 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 47 631 Tm
+(FIN) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+35 625 m 355 625 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 47 612 Tm
+(ESTADO) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+35 606 m 355 606 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 47 593 Tm
+(TOTAL_PROCESADO) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+35 587 m 355 587 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 47 574 Tm
+(EXITOSOS) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+35 568 m 355 568 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 47 555 Tm
+(ERRORES) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+35 549 m 355 549 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 47 536 Tm
+(PENDIENTES) Tj
+ET
+q
+1 1 1 rg
+0.722 0.796 0.878 RG
+0.8 w
+435 484 320 226 re B
+Q
+q
+0.122 0.373 0.545 rg
+435 682 320 28 re f
+Q
+BT
+1 1 1 rg
+/F2 10.5 Tf
+1 0 0 1 447 692 Tm
+(ENVIO_MAP_PAGE) Tj
+ET
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 447 669 Tm
+(MAP_PAGE) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+435 663 m 755 663 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 447 650 Tm
+(FECHA_HORA_INTENTO) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+435 644 m 755 644 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 447 631 Tm
+(ESTADO) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+435 625 m 755 625 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 447 612 Tm
+(RESPONSE_CODE) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+435 606 m 755 606 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 447 593 Tm
+(MESSAGE) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+435 587 m 755 587 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 447 574 Tm
+(TECHNICAL) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+435 568 m 755 568 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 447 555 Tm
+(PAYLOAD_ENVIADO) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+435 549 m 755 549 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 447 536 Tm
+(PAYLOAD_RECIBIDO) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+435 530 m 755 530 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 447 517 Tm
+(ENDPOINT) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+435 511 m 755 511 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 447 498 Tm
+(CANTIDAD_REINTENTOS) Tj
+ET
+q
+1 1 1 rg
+0.722 0.796 0.878 RG
+0.8 w
+835 655 320 55 re B
+Q
+q
+0.031 0.153 0.353 rg
+835 682 320 28 re f
+Q
+BT
+1 1 1 rg
+/F2 10.5 Tf
+1 0 0 1 847 692 Tm
+(GEOHASH_MAP_PAGE) Tj
+ET
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 847 669 Tm
+(MAP_PAGE) Tj
+ET
+q
+0.122 0.373 0.545 RG
+1.5 w
+363 597 m 427 597 l S
+Q
+BT
+0.031 0.153 0.353 rg
+/F2 10 Tf
+1 0 0 1 380 605 Tm
+(1 - N) Tj
+ET
+BT
+0.369 0.435 0.518 rg
+/F2 7.5 Tf
+1 0 0 1 375.8 583 Tm
+(registra) Tj
+ET
+q
+0.122 0.373 0.545 RG
+1.5 w
+763 597 m 827 597 l S
+Q
+BT
+0.031 0.153 0.353 rg
+/F2 10 Tf
+1 0 0 1 780 605 Tm
+(N - 1) Tj
+ET
+BT
+0.369 0.435 0.518 rg
+/F2 7.5 Tf
+1 0 0 1 763.8 583 Tm
+(corresponde a) Tj
+ET
+BT
+0.031 0.153 0.353 rg
+/F2 18 Tf
+1 0 0 1 35 430 Tm
+(Auditoría funcional) Tj
+ET
+q
+1 1 1 rg
+0.722 0.796 0.878 RG
+0.8 w
+35 250 500 150 re B
+Q
+q
+0.541 0.153 0.176 rg
+35 372 500 28 re f
+Q
+BT
+1 1 1 rg
+/F2 10.5 Tf
+1 0 0 1 47 382 Tm
+(AUDITORIA) Tj
+ET
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 47 359 Tm
+(USUARIO) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+35 353 m 535 353 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 47 340 Tm
+(FECHA_HORA) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+35 334 m 535 334 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 47 321 Tm
+(ENTIDAD_AFECTADA) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+35 315 m 535 315 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 47 302 Tm
+(ACCION_REALIZADA) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+35 296 m 535 296 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 47 283 Tm
+(VALORES_ANTES) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+35 277 m 535 277 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 47 264 Tm
+(VALORES_DESPUES) Tj
+ET
+q
+1 1 1 rg
+0.722 0.796 0.878 RG
+0.8 w
+655 269 500 131 re B
+Q
+q
+0.031 0.153 0.353 rg
+655 372 500 28 re f
+Q
+BT
+1 1 1 rg
+/F2 10.5 Tf
+1 0 0 1 667 382 Tm
+(REFERENCIAS FUNCIONALES \(NO ES ENTIDAD\)) Tj
+ET
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 667 359 Tm
+(CIUDAD_LOGISTICA) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+655 353 m 1155 353 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 667 340 Tm
+(DIVIPOL) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+655 334 m 1155 334 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 667 321 Tm
+(PLANTA / ASOCIACION) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+655 315 m 1155 315 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 667 302 Tm
+(GEOHASH_MAP_PAGE) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+655 296 m 1155 296 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 667 283 Tm
+(SINCRONIZACION / REENVIO) Tj
+ET
+q
+0.122 0.373 0.545 RG
+1.5 w
+543 325 m 647 325 l S
+Q
+BT
+0.031 0.153 0.353 rg
+/F2 10 Tf
+1 0 0 1 580 333 Tm
+(N - 1) Tj
+ET
+BT
+0.369 0.435 0.518 rg
+/F2 7.5 Tf
+1 0 0 1 542.2 311 Tm
+(registra cambios sobre) Tj
+ET
+q
+0.863 0.925 0.973 rg
+0.722 0.796 0.878 RG
+0.8 w
+35 125 1120 72 re B
+Q
+q
+0.122 0.373 0.545 rg
+35 125 4 72 re f
+Q
+BT
+0.031 0.153 0.353 rg
+/F2 10.5 Tf
+1 0 0 1 49 175 Tm
+(Límites del modelo) Tj
+ET
+BT
+0.114 0.173 0.259 rg
+/F1 9 Tf
+1 0 0 1 49 157 Tm
+(Se incluyen únicamente las entidades operativas confirmadas para esta etapa. Usuario y permisos pertenecen al Manager general de Detektor; Argos conserva la referencia requerida para trazabilidad. Los contadores del dashboard) Tj
+ET
+BT
+0.114 0.173 0.259 rg
+/F1 9 Tf
+1 0 0 1 49 145 Tm
+(son datos calculados, no entidades.) Tj
+ET
+BT
+0.369 0.435 0.518 rg
+/F1 8 Tf
+1 0 0 1 1120.55 20 Tm
+(2 / 2) Tj
+ET
+endstream
+endobj
+xref
+0 9
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000127 00000 n 
+0000000224 00000 n 
+0000000326 00000 n 
+0000000469 00000 n 
+0000007939 00000 n 
+0000008082 00000 n 
+trailer
+<< /Size 9 /Root 1 0 R >>
+startxref
+14221
+%%EOF
