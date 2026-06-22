@@ -909,6 +909,16 @@ img {
   line-height: 1;
 }
 
+.field-row {
+  display: flex;
+  gap: 12px;
+}
+
+.field-row label {
+  flex: 1;
+  min-width: 0;
+}
+
 .info-tip {
   position: relative;
   display: inline-grid;

@@ -88,7 +88,9 @@ if (sidebarToggle && moduleLayout) {
 }
 
 tabs.forEach((tab) => {
-  tab.addEventListener("click", () => setView(tab.dataset.view));
+  tab.addEventListener("click", () => {
+    if (tab.dataset.view) setView(tab.dataset.view);
+  });
 });
 
 document.querySelectorAll(".menu-section .menu-group").forEach((groupToggle) => {
@@ -187,6 +189,96 @@ const refreshPlantLayers = (el) => {
   }
 };
 
+// Cuadrícula de geohashes de 6 posiciones (tamaño de celda ~0.0055° x 0.011°)
+const GEOHASH_LAT_STEP = 0.0054932;
+const GEOHASH_LNG_STEP = 0.0109863;
+
+const pointInPolygon = (lat, lng, ring) => {
+  let inside = false;
+  for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+    const yi = ring[i][0];
+    const xi = ring[i][1];
+    const yj = ring[j][0];
+    const xj = ring[j][1];
+    const intersect = (yi > lat) !== (yj > lat) && lng < ((xj - xi) * (lat - yi)) / (yj - yi) + xi;
+    if (intersect) inside = !inside;
+  }
+  return inside;
+};
+
+const cellInAnyPolygon = (lat, lng, polygons) =>
+  polygons.some((ring) => pointInPolygon(lat, lng, ring));
+
+const drawnRings = (el) => {
+  const rings = [];
+  el._drawn.eachLayer((layer) => {
+    if (layer.getLatLngs) {
+      const latlngs = layer.getLatLngs()[0];
+      if (latlngs) rings.push(latlngs.map((p) => [p.lat, p.lng]));
+    }
+  });
+  return rings;
+};
+
+const updateGeohashCounts = (el) => {
+  if (!el._gridCells) return;
+  const rings = drawnRings(el);
+  let newCount = 0;
+  el._gridCells.forEach((cell) => {
+    const inside = cellInAnyPolygon(cell.lat, cell.lng, rings);
+    const isNew = inside && !el._baseline.has(cell.id);
+    if (isNew) newCount += 1;
+    cell.rect.setStyle({
+      fillColor: isNew ? "#2e7d32" : "#1f5f8b",
+      fillOpacity: isNew ? 0.45 : el._baseline.has(cell.id) ? 0.22 : 0,
+    });
+  });
+  const dlg = el.closest("dialog");
+  const newField = dlg && dlg.querySelector("[data-geohash-new]");
+  if (newField) newField.value = String(newCount);
+};
+
+const buildGeohashGrid = (el) => {
+  const map = el._map;
+  if (!map || el._gridCells) return;
+  if (!map.getPane("geohashGrid")) {
+    map.createPane("geohashGrid").style.zIndex = 350;
+  }
+  // Si hay geocerca previa (editar) se usa como baseline; en una ciudad nueva el baseline es vacío
+  const baselineRing = el._cityPoly ? el._cityPoly.getLatLngs()[0].map((p) => [p.lat, p.lng]) : null;
+  const boundsSource = el._cityPoly || L.polygon(CITY_GEOCERCAS[cityNameFor(el)]);
+  const b = boundsSource.getBounds().pad(0.18);
+  const south = Math.floor(b.getSouth() / GEOHASH_LAT_STEP) * GEOHASH_LAT_STEP;
+  const west = Math.floor(b.getWest() / GEOHASH_LNG_STEP) * GEOHASH_LNG_STEP;
+  const cells = [];
+  const baseline = new Set();
+  let id = 0;
+  for (let lat = south; lat < b.getNorth(); lat += GEOHASH_LAT_STEP) {
+    for (let lng = west; lng < b.getEast(); lng += GEOHASH_LNG_STEP) {
+      const cLat = lat + GEOHASH_LAT_STEP / 2;
+      const cLng = lng + GEOHASH_LNG_STEP / 2;
+      const rect = L.rectangle(
+        [[lat, lng], [lat + GEOHASH_LAT_STEP, lng + GEOHASH_LNG_STEP]],
+        { pane: "geohashGrid", color: "#9dbdd8", weight: 0.5, fillColor: "#1f5f8b", fillOpacity: 0, interactive: false },
+      ).addTo(map);
+      const inBaseline = baselineRing ? pointInPolygon(cLat, cLng, baselineRing) : false;
+      if (inBaseline) {
+        baseline.add(id);
+        rect.setStyle({ fillOpacity: 0.22 });
+      }
+      cells.push({ id, lat: cLat, lng: cLng, rect });
+      id += 1;
+    }
+  }
+  el._gridCells = cells;
+  el._baseline = baseline;
+  const dlg = el.closest("dialog");
+  const totalField = dlg && dlg.querySelector("[data-geohash-total]");
+  if (totalField) totalField.value = String(baseline.size);
+  const newField = dlg && dlg.querySelector("[data-geohash-new]");
+  if (newField) newField.value = "0";
+};
+
 const cityNameFor = (el) => {
   const dlg = el.closest("dialog");
   const select = dlg && dlg.querySelector(".config-panel select");
@@ -247,8 +339,9 @@ const initLeafletMap = (el) => {
       color: "#1f5f8b",
       weight: 2,
       fillColor: "#1f5f8b",
-      fillOpacity: 0.18,
+      fillOpacity: el.dataset.geohashGrid === "true" ? 0 : 0.18,
     }).addTo(drawn);
+    el._cityPoly = cityPoly;
     fitTarget = cityPoly;
   }
 
@@ -270,6 +363,11 @@ const initLeafletMap = (el) => {
     if (!fitTarget && el._plantPoly) fitTarget = el._plantPoly;
   }
 
+  // Cuadrícula de geohashes de 6 posiciones bajo la geocerca
+  if (el.dataset.geohashGrid === "true") {
+    buildGeohashGrid(el);
+  }
+
   if (fitTarget) {
     map.fitBounds(fitTarget.getBounds(), { padding: [20, 20] });
   }
@@ -288,10 +386,15 @@ const initLeafletMap = (el) => {
         },
       }),
     );
-    map.on(L.Draw.Event.CREATED, (e) => drawn.addLayer(e.layer));
+    map.on(L.Draw.Event.CREATED, (e) => {
+      drawn.addLayer(e.layer);
+      updateGeohashCounts(el);
+    });
+    map.on(L.Draw.Event.EDITED, () => updateGeohashCounts(el));
+    map.on(L.Draw.Event.DELETED, () => updateGeohashCounts(el));
+    map.on("draw:editvertex", () => updateGeohashCounts(el));
   }
 
-  el._map = map;
   window.setTimeout(() => map.invalidateSize(), 60);
 };
 
@@ -305,6 +408,36 @@ document.querySelectorAll("#divipolModal, #divipolEditModal").forEach((dlg) => {
     });
   }
 });
+
+// Vehículo: la ciudad logística se deriva de la planta
+const PLANT_CITY = {
+  "513 - Puente Aranda": "Bogotá / Sabana",
+  "503 - Calle 80": "Bogotá / Sabana",
+  "522 - Chía": "Bogotá / Sabana",
+};
+document.querySelectorAll("#vehiculoEditModal").forEach((dlg) => {
+  const plantSelect = dlg.querySelector("[data-veh-planta]");
+  const cityInput = dlg.querySelector("[data-veh-ciudad]");
+  if (plantSelect && cityInput) {
+    plantSelect.addEventListener("change", () => {
+      cityInput.value = PLANT_CITY[plantSelect.value] || "";
+    });
+  }
+});
+
+// Vehículos: filtro "Mostrar incompletos" (sin alias, planta o tipo)
+const incompletosBtn = document.querySelector("[data-vehiculo-incompletos]");
+if (incompletosBtn) {
+  incompletosBtn.addEventListener("click", () => {
+    const onlyIncomplete = incompletosBtn.classList.toggle("is-active");
+    incompletosBtn.textContent = onlyIncomplete ? "Mostrar todos" : "Mostrar incompletos";
+    document.querySelectorAll("#view-vehiculos tbody tr").forEach((row) => {
+      const cells = row.querySelectorAll("td");
+      const incomplete = [cells[1], cells[3], cells[4]].some((td) => !td || !td.textContent.trim());
+      row.style.display = onlyIncomplete && !incomplete ? "none" : "";
+    });
+  });
+}
 
 // Modales de planta: cascada ciudad -> zona logística + divipoles, y geocercas de referencia
 document.querySelectorAll("#plantModal, #plantEditModal").forEach((dlg) => {
