@@ -113,6 +113,43 @@ function addNote(commands, x, y, width, height, title, body) {
   addWrappedText(commands, x + 14, y + height - 40, body, width - 28, 9, 12, colors.ink);
 }
 
+function pageOrg() {
+  const c = [];
+  addRect(c, 0, 0, PAGE_WIDTH, PAGE_HEIGHT, colors.page);
+  addHeader(c, "Estructura organizacional");
+  addText(c, 35, 748, "Estructura organizacional (maestro de recursos)", 24, true, colors.navy);
+  addText(c, 35, 726, "Jerarquía maestra: Zona - Ciudad Logística - Planta - Equipo/Flota - Vehículo.", 11, false, colors.muted);
+
+  addText(c, 35, 691, "Zona, ciudad logística y planta", 13, true, colors.navy);
+  const zona = addCard(c, 35, 671, 320, "ZONA", [
+    "CODIGO_ZONA", "NOMBRE", "REGION_OPERATIVA", "ESTADO", "FECHA_CREACION", "ULTIMA_MODIFICACION",
+  ]);
+  const cityOrg = addCard(c, 435, 671, 320, "CIUDAD_LOGISTICA", [
+    "IDENTIFICADOR", "ZONA_ID (FK)", "NOMBRE", "GEOMETRIA", "ESTADO",
+  ]);
+  const plantOrg = addCard(c, 835, 671, 320, "PLANTA", [
+    "PLANT_CODE", "CIUDAD_LOGISTICA_ID (FK)", "NOMBRE", "COORDENADAS", "ESTADO",
+  ]);
+  addRelation(c, zona, cityOrg, "1 - N", "agrupa");
+  addRelation(c, cityOrg, plantOrg, "1 - N", "tiene plantas");
+
+  addText(c, 35, 430, "Planta, equipo/flota y vehículo", 13, true, colors.navy);
+  const plantRef = addCard(c, 35, 410, 320, "PLANTA", ["PLANT_CODE"]);
+  const flota = addCard(c, 435, 410, 320, "EQUIPO_FLOTA", [
+    "CODIGO_FLOTA", "PLANTA_ID (FK)", "NOMBRE", "TIPO", "ESTADO", "FECHA_CREACION", "ULTIMA_MODIFICACION",
+  ]);
+  const vehiculo = addCard(c, 835, 410, 320, "VEHICULO", [
+    "PLACA", "EQUIPO_FLOTA_ID (FK)", "CODIGO_INTERNO", "TIPO", "ESTADO", "FECHA_CREACION", "ULTIMA_MODIFICACION",
+  ]);
+  addRelation(c, plantRef, flota, "1 - N", "tiene equipos/flotas");
+  addRelation(c, flota, vehiculo, "1 - N", "agrupa vehículos");
+
+  addNote(c, 35, 125, 545, 72, "Jerarquía maestra", "Cada nivel pertenece a un único padre: Zona - Ciudad Logística - Planta - Equipo/Flota - Vehículo.");
+  addNote(c, 610, 125, 545, 72, "Zona vs. zona logística", "ZONA es la entidad raíz contenedora. El antiguo atributo 'zona logística' se reemplaza por la FK ZONA_ID en CIUDAD_LOGISTICA.");
+  addFooter(c, 1, 3);
+  return c.join("\n");
+}
+
 function pageOne() {
   const c = [];
   addRect(c, 0, 0, PAGE_WIDTH, PAGE_HEIGHT, colors.page);
@@ -122,14 +159,14 @@ function pageOne() {
 
   addText(c, 35, 691, "Estructura geográfica y operativa", 13, true, colors.navy);
   const city = addCard(c, 35, 671, 320, "CIUDAD_LOGISTICA", [
-    "IDENTIFICADOR", "NOMBRE", "ZONA_LOGISTICA", "GEOMETRIA", "ESTADO",
+    "IDENTIFICADOR", "ZONA_ID (FK)", "NOMBRE", "GEOMETRIA", "ESTADO",
     "FECHA_CREACION", "ULTIMA_MODIFICACION", "USUARIO_RESPONSABLE",
   ]);
   const divipol = addCard(c, 435, 671, 320, "DIVIPOL", [
-    "ZONE_CODE", "NOMBRE", "GEOMETRIA", "ESTADO", "FECHA_CREACION", "ULTIMA_MODIFICACION",
+    "ZONE_CODE", "CIUDAD_LOGISTICA_ID (FK)", "NOMBRE", "GEOMETRIA", "GEOMETRIA_CERRADA", "ESTADO", "FECHA_CREACION", "ULTIMA_MODIFICACION",
   ]);
   const geohash = addCard(c, 835, 671, 320, "GEOHASH_MAP_PAGE", [
-    "MAP_PAGE", "DESCR", "MAP_UPPER_LEFT_LONG", "MAP_UPPER_LEFT_LAT",
+    "MAP_PAGE", "DIVIPOL_ID (FK)", "DESCR", "MAP_UPPER_LEFT_LONG", "MAP_UPPER_LEFT_LAT",
     "MAP_LOWER_RIGHT_LONG", "MAP_LOWER_RIGHT_LAT", "FECHA_DETECCION",
     "TIPO_CAMBIO", "ESTADO_SINCRONIZACION", "ULTIMO_INTENTO", "RESULTADO",
   ]);
@@ -139,17 +176,17 @@ function pageOne() {
   addText(c, 35, 400, "Plantas y tiempo semilla", 13, true, colors.navy);
   const cityPlant = addCard(c, 35, 380, 320, "CIUDAD_LOGISTICA", ["IDENTIFICADOR"]);
   const plant = addCard(c, 435, 380, 320, "PLANTA", [
-    "PLANT_CODE", "NOMBRE", "COORDENADAS", "ESTADO", "FECHA_CREACION", "FECHA_MODIFICACION",
+    "PLANT_CODE", "CIUDAD_LOGISTICA_ID (FK)", "NOMBRE", "COORDENADAS", "ESTADO", "FECHA_CREACION", "FECHA_MODIFICACION",
   ]);
   const plantMap = addCard(c, 835, 380, 320, "PLANT_MAP_PAGE", [
-    "PLANT_CODE", "TRAVEL_TIME", "FLG_OVERRIDE",
+    "MAP_PAGE_ID (FK)", "PLANTA_ID (FK)", "PLANT_CODE", "TRAVEL_TIME", "FLG_OVERRIDE",
   ], colors.blue);
   addRelation(c, cityPlant, plant, "1 - N", "asocia funcionalmente");
   addRelation(c, plant, plantMap, "1 - N", "participa en");
 
   addNote(c, 35, 125, 545, 72, "GEOHASH_MAP_PAGE 1 - N PLANT_MAP_PAGE", "Cada MAP_PAGE contiene el detalle de las plantas aplicables y su tiempo semilla.");
   addNote(c, 610, 125, 545, 72, "Divipol no asocia plantas", "La relación funcional de plantas corresponde a Ciudad Logística; Divipol determina el ZONE_CODE.");
-  addFooter(c, 1, 2);
+  addFooter(c, 2, 3);
   return c.join("\n");
 }
 
@@ -175,12 +212,12 @@ function pageTwo() {
     "USUARIO", "FECHA_HORA", "ENTIDAD_AFECTADA", "ACCION_REALIZADA", "VALORES_ANTES", "VALORES_DESPUES",
   ], colors.red);
   const references = addCard(c, 655, 400, 500, "REFERENCIAS FUNCIONALES (NO ES ENTIDAD)", [
-    "CIUDAD_LOGISTICA", "DIVIPOL", "PLANTA / ASOCIACION", "GEOHASH_MAP_PAGE", "SINCRONIZACION / REENVIO",
+    "ZONA", "CIUDAD_LOGISTICA", "DIVIPOL", "PLANTA / ASOCIACION", "EQUIPO_FLOTA", "VEHICULO", "GEOHASH_MAP_PAGE", "SINCRONIZACION / REENVIO",
   ]);
   addRelation(c, audit, references, "N - 1", "registra cambios sobre");
 
   addNote(c, 35, 125, 1120, 72, "Límites del modelo", "Se incluyen únicamente las entidades operativas confirmadas para esta etapa. Usuario y permisos pertenecen al Manager general de Detektor; Argos conserva la referencia requerida para trazabilidad. Los contadores del dashboard son datos calculados, no entidades.");
-  addFooter(c, 2, 2);
+  addFooter(c, 3, 3);
   return c.join("\n");
 }
 
@@ -220,9 +257,10 @@ function buildPdf(pageStreams) {
 fs.mkdirSync(path.dirname(outputPath), { recursive: true });
 fs.mkdirSync(previewDir, { recursive: true });
 
-const pages = [pageOne(), pageTwo()];
+const pages = [pageOrg(), pageOne(), pageTwo()];
 fs.writeFileSync(outputPath, buildPdf(pages));
-fs.writeFileSync(path.join(previewDir, "diagrama-er-argos-pagina-1.pdf"), buildPdf([pages[0]]));
-fs.writeFileSync(path.join(previewDir, "diagrama-er-argos-pagina-2.pdf"), buildPdf([pages[1]]));
+pages.forEach((page, index) => {
+  fs.writeFileSync(path.join(previewDir, `diagrama-er-argos-pagina-${index + 1}.pdf`), buildPdf([page]));
+});
 
 console.log(outputPath);

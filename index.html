@@ -4,6 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Argos | Gestión de Geohashes</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -184,6 +188,7 @@
               <h3>Permisos del módulo</h3>
               <label><input type="checkbox" checked /> Acceder al módulo Argos</label>
               <label><input type="checkbox" checked /> Consultar y visualizar información</label>
+              <label><input type="checkbox" checked /> Administrar Zonas, equipos/flotas y vehículos</label>
               <label><input type="checkbox" checked /> Editar Ciudades Logísticas, Divipoles, plantas y geohashes</label>
               <label><input type="checkbox" checked /> Generar geohashes</label>
               <label><input type="checkbox" checked /> Ejecutar sincronización</label>
@@ -202,11 +207,12 @@
     <main id="app" class="app-shell is-hidden">
       <header class="topbar">
         <div class="topbar-left">
+          <button id="sidebarToggle" class="icon-btn hamburger-btn" title="Mostrar/ocultar menú" aria-label="Mostrar/ocultar menú" aria-expanded="true">☰</button>
           <img class="brand-logo argos-logo header-logo" src="assets/logos/argos-logo.png" alt="ARGOS" />
           <span class="vertical-rule"></span>
           <div>
             <h2>Argos</h2>
-            <p>Organización administrativa e integraciones Command</p>
+            <p>Modulo administrativo y de gestión</p>
           </div>
         </div>
         <div class="topbar-right">
@@ -225,19 +231,41 @@
 
       <div class="module-layout">
         <aside class="module-sidebar" aria-label="Navegación del módulo Argos">
-          <div class="module-sidebar-brand">
-            <img src="assets/logos/argos-logo.png" alt="Argos" />
-            <strong>Argos</strong>
-          </div>
-          <nav>
+          <nav class="accordion-nav">
             <button class="tab menu-level-1 is-active" data-view="inicio"><span>⌂</span> Inicio</button>
-            <p class="menu-group">Organización Administrativa</p>
-            <button class="tab menu-level-1" data-view="zonas"><span>▦</span> Ciudades Logísticas</button>
-            <button class="tab menu-level-2" data-view="divipoles"><span>⌖</span> Divipoles</button>
-            <button class="tab menu-level-2" data-view="plantas"><span>⌂</span> Plantas</button>
-            <button class="tab menu-level-3" data-view="vehiculos"><span>▣</span> Vehículos</button>
-            <p class="menu-group">Integraciones Command</p>
-            <button class="tab menu-level-1" data-view="geocercas"><span>⌗</span> Geohashes</button>
+            <div class="menu-section">
+              <button class="menu-group" type="button" aria-expanded="false">Organización Administrativa</button>
+              <div class="menu-items">
+                <div class="nav-node">
+                  <button class="tab menu-level-1 has-children" data-view="zona"><span>▩</span> Zonas</button>
+                  <div class="nav-children">
+                    <div class="nav-node">
+                      <button class="tab menu-level-2 has-children" data-view="zonas"><span>▦</span> Ciudades Logísticas</button>
+                      <div class="nav-children">
+                        <button class="tab menu-level-3" data-view="divipoles"><span>⌖</span> Divipoles</button>
+                        <div class="nav-node">
+                          <button class="tab menu-level-3 has-children" data-view="plantas"><span>⌂</span> Plantas</button>
+                          <div class="nav-children">
+                            <div class="nav-node">
+                              <button class="tab menu-level-4 has-children" data-view="flotas"><span>▤</span> Equipo / Flota</button>
+                              <div class="nav-children">
+                                <button class="tab menu-level-5" data-view="vehiculos"><span>▣</span> Vehículos</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="menu-section">
+              <button class="menu-group" type="button" aria-expanded="false">Integraciones Command</button>
+              <div class="menu-items">
+                <button class="tab menu-level-1" data-view="geocercas"><span>⌗</span> Geohashes</button>
+              </div>
+            </div>
           </nav>
           <button id="sidebarManagerBtn" class="sidebar-manager" title="Abrir Manager"><span>⚙</span> Manager</button>
         </aside>
@@ -252,11 +280,53 @@
             </div>
 
             <div class="metrics-grid">
+              <article class="metric"><span>Zonas</span><strong>4</strong></article>
               <article class="metric"><span>Ciudades logísticas</span><strong>4</strong></article>
               <article class="metric"><span>Divipoles</span><strong>159</strong></article>
               <article class="metric"><span>Plantas</span><strong>19</strong></article>
+              <article class="metric"><span>Equipos / flotas</span><strong>27</strong></article>
+              <article class="metric"><span>Vehículos</span><strong>84</strong></article>
               <article class="metric"><span>Total Geohashes</span><strong>4,755</strong></article>
             </div>
+          </section>
+
+          <section id="view-zona" class="view">
+            <div class="view-header">
+              <div>
+                <h1>Zonas</h1>
+                <p>Nivel raíz de la organización. Una zona agrupa ciudades logísticas, plantas, equipos/flotas y vehículos.</p>
+              </div>
+              <button class="btn btn-primary" data-open-modal="zonaModal">+ Nueva zona</button>
+            </div>
+
+            <div class="screen-filters">
+              <label class="search-field">Buscar zona <input type="search" placeholder="Nombre o código de zona..." /></label>
+              <label>Estado <select><option>Todos</option><option>Activo</option><option>Inactivo</option></select></label>
+              <button class="btn btn-primary" data-action="consultar">Consultar</button>
+            </div>
+
+            <div class="data-panel">
+              <table>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Zona</th>
+                    <th>Ciudades logísticas</th>
+                    <th>Plantas</th>
+                    <th>Vehículos</th>
+                    <th>Última modificación</th>
+                    <th>Último modificador</th>
+                    <th>Acciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>ZN-CEN</td><td>Centro</td><td>2</td><td>11</td><td>48</td><td>2026-05-20</td><td>Juan Velasquez</td><td><div class="table-actions"><button class="link-btn" data-open-modal="zonaEditModal">Ver / Editar</button><button class="link-btn danger-link" data-open-modal="zonaDeleteModal">Eliminar</button></div></td></tr>
+                  <tr><td>ZN-NOR</td><td>Noroccidente</td><td>1</td><td>5</td><td>22</td><td>2026-05-20</td><td>Juan Velasquez</td><td><div class="table-actions"><button class="link-btn" data-open-modal="zonaEditModal">Ver / Editar</button><button class="link-btn danger-link" data-open-modal="zonaDeleteModal">Eliminar</button></div></td></tr>
+                  <tr><td>ZN-NTE</td><td>Norte</td><td>1</td><td>3</td><td>14</td><td>2026-05-18</td><td>Abner González</td><td><div class="table-actions"><button class="link-btn" data-open-modal="zonaEditModal">Ver / Editar</button><button class="link-btn danger-link" data-open-modal="zonaDeleteModal">Eliminar</button></div></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="warning-box">La jerarquía maestra es Zona → Ciudad logística → Planta → Equipo/Flota → Vehículo. La eliminación de una zona con ciudades logísticas asociadas exige permiso y queda en auditoría.</div>
           </section>
 
           <section id="view-zonas" class="view">
@@ -285,6 +355,7 @@
                     <th>Plantas</th>
                     <th>Fecha creación</th>
                     <th>Última modificación</th>
+                    <th>Último modificador</th>
                     <th>Acciones</th>
                   </tr>
                 </thead>
@@ -297,6 +368,7 @@
                     <td>10</td>
                     <td>2026-04-28</td>
                     <td>2026-05-20</td>
+                    <td>Juan Velasquez</td>
                     <td><div class="table-actions"><button class="link-btn" data-open-modal="zoneEditModal">Ver / Editar</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td>
                   </tr>
                   <tr>
@@ -307,6 +379,7 @@
                     <td>5</td>
                     <td>2026-04-29</td>
                     <td>2026-05-20</td>
+                    <td>Abner González</td>
                     <td><div class="table-actions"><button class="link-btn" data-open-modal="zoneEditModal">Ver / Editar</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td>
                   </tr>
                   <tr>
@@ -317,6 +390,7 @@
                     <td>3</td>
                     <td>2026-05-02</td>
                     <td>2026-05-18</td>
+                    <td>Juan Velasquez</td>
                     <td><div class="table-actions"><button class="link-btn" data-open-modal="zoneEditModal">Ver / Editar</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td>
                   </tr>
                   <tr>
@@ -327,8 +401,46 @@
                     <td>1</td>
                     <td>2026-05-04</td>
                     <td>2026-05-16</td>
+                    <td>Abner González</td>
                     <td><div class="table-actions"><button class="link-btn" data-open-modal="zoneEditModal">Ver / Editar</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td>
                   </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section id="view-flotas" class="view">
+            <div class="view-header">
+              <div>
+                <h1>Equipo / Flota</h1>
+                <p>Equipos o flotas que agrupan vehículos dentro de cada planta.</p>
+              </div>
+              <button class="btn btn-primary" data-open-modal="flotaModal">+ Nuevo equipo / flota</button>
+            </div>
+            <div class="screen-filters">
+              <label>Zona <select><option>Todas</option><option>Centro</option><option>Noroccidente</option><option>Norte</option></select></label>
+              <label>Ciudad logística <select><option>Bogotá / Sabana</option><option>Medellín</option><option>Cartagena</option></select></label>
+              <label>Planta <select><option>Todas</option><option>513 - Puente Aranda</option><option>503 - Calle 80</option><option>522 - Chía</option></select></label>
+              <button class="btn btn-primary" data-action="consultar">Consultar</button>
+            </div>
+            <div class="data-panel">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Código</th>
+                    <th>Equipo / flota</th>
+                    <th>Planta</th>
+                    <th>Tipo</th>
+                    <th>Vehículos</th>
+                    <th>Estado</th>
+                    <th>Última modificación</th>
+                    <th>Acciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>FL-513-01</td><td>Mixers Puente Aranda</td><td>513 - Puente Aranda</td><td>Concreto</td><td>12</td><td><span class="badge success">Activo</span></td><td>2026-05-20</td><td><div class="table-actions"><button class="link-btn" data-open-modal="flotaEditModal">Ver / Editar</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td></tr>
+                  <tr><td>FL-513-02</td><td>Volquetas Puente Aranda</td><td>513 - Puente Aranda</td><td>Agregados</td><td>6</td><td><span class="badge success">Activo</span></td><td>2026-05-19</td><td><div class="table-actions"><button class="link-btn" data-open-modal="flotaEditModal">Ver / Editar</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td></tr>
+                  <tr><td>FL-503-01</td><td>Mixers Calle 80</td><td>503 - Calle 80</td><td>Concreto</td><td>9</td><td><span class="badge warn">Pendiente</span></td><td>2026-05-18</td><td><div class="table-actions"><button class="link-btn" data-open-modal="flotaEditModal">Ver / Editar</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td></tr>
                 </tbody>
               </table>
             </div>
@@ -338,15 +450,37 @@
             <div class="view-header">
               <div>
                 <h1>Vehículos</h1>
-                <p>Vehículos asociados a la planta seleccionada.</p>
+                <p>Vehículos asociados a cada equipo / flota de la planta seleccionada.</p>
               </div>
+              <button class="btn btn-primary" data-open-modal="vehiculoModal">+ Nuevo vehículo</button>
             </div>
             <div class="screen-filters">
               <label>Ciudad logística <select><option>Bogotá / Sabana</option><option>Medellín</option><option>Cartagena</option></select></label>
               <label>Planta <select><option>513 - Puente Aranda</option><option>503 - Calle 80</option><option>522 - Chía</option></select></label>
+              <label>Equipo / flota <select><option>Todos</option><option>FL-513-01 - Mixers Puente Aranda</option><option>FL-513-02 - Volquetas Puente Aranda</option></select></label>
+              <label class="search-field">Buscar vehículo <input type="search" placeholder="Placa o interno..." /></label>
               <button class="btn btn-primary" data-action="consultar">Consultar</button>
             </div>
-            <div class="data-panel empty-state"><strong>Total de vehículos: 0</strong><span>No hay vehículos asociados a la planta seleccionada.</span></div>
+            <div class="data-panel">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Placa</th>
+                    <th>Interno</th>
+                    <th>Tipo</th>
+                    <th>Equipo / flota</th>
+                    <th>Planta</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>SXL-412</td><td>M-013</td><td>Mixer</td><td>FL-513-01 - Mixers Puente Aranda</td><td>513 - Puente Aranda</td><td><span class="badge success">Activo</span></td><td><div class="table-actions"><button class="link-btn" data-open-modal="vehiculoEditModal">Ver / Editar</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td></tr>
+                  <tr><td>SXL-418</td><td>M-014</td><td>Mixer</td><td>FL-513-01 - Mixers Puente Aranda</td><td>513 - Puente Aranda</td><td><span class="badge success">Activo</span></td><td><div class="table-actions"><button class="link-btn" data-open-modal="vehiculoEditModal">Ver / Editar</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td></tr>
+                  <tr><td>TKN-907</td><td>V-031</td><td>Volqueta</td><td>FL-513-02 - Volquetas Puente Aranda</td><td>513 - Puente Aranda</td><td><span class="badge warn">Mantenimiento</span></td><td><div class="table-actions"><button class="link-btn" data-open-modal="vehiculoEditModal">Ver / Editar</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td></tr>
+                </tbody>
+              </table>
+            </div>
           </section>
 
           <section id="view-divipoles" class="view">
@@ -375,19 +509,18 @@
                 <thead>
                   <tr>
                     <th>Divipol</th>
-                    <th>Código zona</th>
+                    <th>Código Command <span class="info-tip" data-tip="Código de divipol definido por Navisaf en Command">ⓘ</span></th>
                     <th>Ciudad logística</th>
-                    <th>Total geohashes</th>
-                    <th>Sincronizados</th>
                     <th>Última modificación</th>
+                    <th>Último modificador</th>
                     <th>Acciones</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr><td>Usaquén / Bogotá</td><td>B54BE76E</td><td>Bogotá / Sabana</td><td>1,420</td><td>1,420</td><td>2026-05-20</td><td><div class="table-actions"><button class="link-btn" data-open-modal="divipolEditModal">Ver / Editar</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td></tr>
-                  <tr><td>Suba / Bogotá</td><td>B54BE6EE</td><td>Bogotá / Sabana</td><td>1,250</td><td>1,230</td><td>2026-05-20</td><td><div class="table-actions"><button class="link-btn" data-open-modal="divipolEditModal">Ver / Editar</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td></tr>
-                  <tr><td>Chía / Cundinamarca</td><td>B54BEDF9</td><td>Bogotá / Sabana</td><td>1,105</td><td>1,101</td><td>2026-05-19</td><td><div class="table-actions"><button class="link-btn" data-open-modal="divipolEditModal">Ver / Editar</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td></tr>
-                  <tr><td>Envigado</td><td>A74BE44A</td><td>Medellín</td><td>980</td><td>980</td><td>2026-05-16</td><td><div class="table-actions"><button class="link-btn" data-open-modal="divipolEditModal">Ver / Editar</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td></tr>
+                  <tr><td>Usaquén / Bogotá</td><td>B54BE76E</td><td>Bogotá / Sabana</td><td>2026-05-20</td><td>Juan Velasquez</td><td><div class="table-actions"><button class="link-btn" data-open-modal="divipolEditModal">Ver / Editar</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td></tr>
+                  <tr><td>Suba / Bogotá</td><td>B54BE6EE</td><td>Bogotá / Sabana</td><td>2026-05-20</td><td>Juan Velasquez</td><td><div class="table-actions"><button class="link-btn" data-open-modal="divipolEditModal">Ver / Editar</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td></tr>
+                  <tr><td>Chía / Cundinamarca</td><td>B54BEDF9</td><td>Bogotá / Sabana</td><td>2026-05-19</td><td>Abner González</td><td><div class="table-actions"><button class="link-btn" data-open-modal="divipolEditModal">Ver / Editar</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td></tr>
+                  <tr><td>Envigado</td><td>A74BE44A</td><td>Medellín</td><td>2026-05-16</td><td>Juan Velasquez</td><td><div class="table-actions"><button class="link-btn" data-open-modal="divipolEditModal">Ver / Editar</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td></tr>
                 </tbody>
               </table>
             </div>
@@ -399,6 +532,7 @@
                 <h1>Plantas</h1>
                 <p>Consulta las plantas asociadas a cada ciudad logística. La Divipol se muestra solo como referencia geográfica cuando aplique.</p>
               </div>
+              <button class="btn btn-primary" data-open-modal="plantModal">+ Nueva planta</button>
             </div>
 
             <div class="screen-filters">
@@ -419,20 +553,20 @@
                 <thead>
                   <tr>
                     <th>Código planta</th>
-                    <th>Planta</th>
-                    <th>Coordenadas</th>
-                    <th>Ciudad logística</th>
+                    <th>Nombre</th>
                     <th>Zona logística</th>
-                    <th>Divipol de ubicación / referencia</th>
+                    <th>Ciudad logística</th>
+                    <th>Divipol</th>
                     <th>Fecha creación</th>
                     <th>Última modificación</th>
+                    <th>Último modificador</th>
                     <th>Acciones</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr><td>513</td><td>Puente Aranda</td><td>4.6243, -74.1071</td><td>Bogotá / Sabana</td><td>Centro</td><td>Usaquén / Bogotá</td><td>2026-04-28</td><td>2026-05-20</td><td><div class="table-actions"><button class="link-btn" data-open-modal="plantFenceModal">Ver</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td></tr>
-                  <tr><td>503</td><td>Calle 80</td><td>4.7251, -74.1228</td><td>Bogotá / Sabana</td><td>Centro</td><td>Suba / Bogotá</td><td>2026-04-30</td><td>2026-05-19</td><td><div class="table-actions"><button class="link-btn" data-open-modal="plantFenceModal">Ver</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td></tr>
-                  <tr><td>522</td><td>Chía</td><td>4.8612, -74.0548</td><td>Bogotá / Sabana</td><td>Centro</td><td>Chía / Cundinamarca</td><td>2026-05-02</td><td>2026-05-18</td><td><div class="table-actions"><button class="link-btn" data-open-modal="plantFenceModal">Ver</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td></tr>
+                  <tr><td>513</td><td>Puente Aranda</td><td>Centro</td><td>Bogotá / Sabana</td><td>Usaquén / Bogotá</td><td>2026-04-28</td><td>2026-05-20</td><td>Juan Velasquez</td><td><div class="table-actions"><button class="link-btn" data-open-modal="plantEditModal">Ver / Editar</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td></tr>
+                  <tr><td>503</td><td>Calle 80</td><td>Centro</td><td>Bogotá / Sabana</td><td>Suba / Bogotá</td><td>2026-04-30</td><td>2026-05-19</td><td>Juan Velasquez</td><td><div class="table-actions"><button class="link-btn" data-open-modal="plantEditModal">Ver / Editar</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td></tr>
+                  <tr><td>522</td><td>Chía</td><td>Centro</td><td>Bogotá / Sabana</td><td>Chía / Cundinamarca</td><td>2026-05-02</td><td>2026-05-18</td><td>Abner González</td><td><div class="table-actions"><button class="link-btn" data-open-modal="plantEditModal">Ver / Editar</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td></tr>
                 </tbody>
               </table>
             </div>
@@ -666,14 +800,11 @@
         <h2>Nueva ciudad logística</h2>
         <div class="edit-grid">
           <section class="config-panel flat">
-            <label>Ciudad logística <select><option>Bogotá / Sabana Norte</option><option>Cartagena</option><option>Medellín</option><option>Tunja</option></select></label>
+            <label>Nombre <input type="text" placeholder="Nombre de la ciudad logística" /></label>
             <label>Zona logística <select><option>Centro</option><option>Noroccidente</option><option>Norte</option><option>Sur</option></select></label>
           </section>
           <section class="map-panel modal-map">
-            <div class="mock-map small-map">
-              <div class="grid"></div>
-              <div class="polygon zone"></div>
-            </div>
+            <div class="leaflet-map small-map" data-leaflet data-lat="4.711" data-lng="-74.072" data-zoom="10" data-draw="true"></div>
           </section>
         </div>
         <div class="warning-box">Si la ciudad logística ya existe, el sistema bloquea el guardado y muestra el registro existente.</div>
@@ -689,16 +820,12 @@
         <h2>Editar ciudad logística</h2>
         <div class="edit-grid">
           <section class="config-panel flat">
-            <label>Ciudad logística <input value="Bogotá / Sabana" /></label>
+            <label>Nombre <input type="text" value="Bogotá / Sabana" /></label>
             <label>Zona logística <select><option>Centro</option><option>Noroccidente</option><option>Norte</option><option>Sur</option></select></label>
-            <label>Fecha creación <input value="2026-04-28 - Juan Velasquez" readonly /></label>
-            <label>Última modificación <input value="2026-05-20 - Juan Velasquez" readonly /></label>
             <div class="warning-box">Al ajustar el área de cobertura se descubren nuevos geohashes y quedan pendientes de sincronizar con Command. La eliminación exige permiso y queda en bitácora.</div>
           </section>
           <section class="map-panel modal-map">
-            <div class="mock-map small-map">
-              <div class="grid"></div>
-              <div class="polygon zone"></div>
+            <div class="leaflet-map small-map" data-leaflet data-lat="4.711" data-lng="-74.072" data-zoom="10" data-draw="true" data-polygon="true">
               <span class="geohash-count">+94 geohashes descubiertos</span>
             </div>
           </section>
@@ -711,22 +838,32 @@
             <div class="warning-box">Las plantas se seleccionan desde el maestro existente y aplican para toda la ciudad logística. No se asocian directamente a cada Divipol.</div>
             <div class="warning-box">Estas plantas se usarán para calcular el tiempo semilla de cada geohash/MAP_PAGE generado dentro de la ciudad logística.</div>
           </div>
+          <div class="association-toolbar">
+            <label class="search-field">Agregar planta existente
+              <select>
+                <option value="">Selecciona una planta del maestro...</option>
+                <option>301 - Mamonal</option>
+                <option>518 - Funza</option>
+                <option>540 - Soacha</option>
+                <option>602 - Girardota</option>
+              </select>
+            </label>
+            <button type="button" class="btn btn-primary" data-toast="Planta agregada a la ciudad logística">+ Agregar planta</button>
+          </div>
           <section class="data-panel compact">
             <table>
               <thead>
                 <tr>
-                  <th>Seleccionar</th>
                   <th>Código planta</th>
-                  <th>Planta</th>
-                  <th>Coordenadas</th>
-                  <th>Divipol de ubicación / referencia</th>
+                  <th>Nombre</th>
+                  <th>Divipol</th>
+                  <th>Acciones</th>
                 </tr>
               </thead>
               <tbody>
-                <tr><td><input type="checkbox" checked /></td><td>513</td><td>Puente Aranda</td><td>4.6243, -74.1071</td><td>Usaquén / Bogotá</td></tr>
-                <tr><td><input type="checkbox" checked /></td><td>503</td><td>Calle 80</td><td>4.7251, -74.1228</td><td>Suba / Bogotá</td></tr>
-                <tr><td><input type="checkbox" checked /></td><td>522</td><td>Chía</td><td>4.8612, -74.0548</td><td>Chía / Cundinamarca</td></tr>
-                <tr><td><input type="checkbox" /></td><td>301</td><td>Mamonal</td><td>10.3230, -75.5050</td><td>Cartagena</td></tr>
+                <tr><td>513</td><td>Puente Aranda</td><td>Usaquén / Bogotá</td><td><button type="button" class="link-btn danger-link" data-toast="Planta removida de la ciudad logística">Quitar</button></td></tr>
+                <tr><td>503</td><td>Calle 80</td><td>Suba / Bogotá</td><td><button type="button" class="link-btn danger-link" data-toast="Planta removida de la ciudad logística">Quitar</button></td></tr>
+                <tr><td>522</td><td>Chía</td><td>Chía / Cundinamarca</td><td><button type="button" class="link-btn danger-link" data-toast="Planta removida de la ciudad logística">Quitar</button></td></tr>
               </tbody>
             </table>
           </section>
@@ -743,18 +880,13 @@
         <h2>Nueva Divipol</h2>
         <div class="edit-grid">
           <section class="config-panel flat">
-            <label>Ciudad logística <select><option>Bogotá / Sabana</option><option>Medellín</option><option>Cartagena</option></select></label>
-            <label>Nombre de Divipol <select><option>Usaquén / Bogotá</option><option>Suba / Bogotá</option><option>Chía / Cundinamarca</option><option>Envigado</option></select></label>
-            <label>Código zona <input value="B54BE76E" /></label>
+            <label>ID interno <input value="(se genera automáticamente)" readonly /></label>
+            <label>Ciudad logística <select><option>Bogotá / Sabana</option><option>Medellín</option><option>Cartagena</option><option>Tunja</option></select></label>
+            <label>Nombre de Divipol <input type="text" placeholder="Nombre de la Divipol" /></label>
+            <label>Código Command <span class="info-tip" data-tip="Código de divipol definido por Navisaf en Command">ⓘ</span> <input value="B54BE76E" /></label>
           </section>
           <section class="map-panel modal-map">
-            <div class="geometry-tools">
-              <button title="Dibujar geometría">✚</button>
-              <button title="Editar geometría">✎</button>
-              <button title="Borrar geometría">⌫</button>
-              <button title="Deshacer">↶</button>
-            </div>
-            <div class="mock-map small-map"><div class="grid"></div><div class="divipol-outline one"></div></div>
+            <div class="leaflet-map small-map" data-leaflet data-lat="4.711" data-lng="-74.072" data-zoom="10" data-draw="true" data-city-polygon="true"></div>
           </section>
         </div>
         <div class="warning-box">No se permite guardar si la Divipol ya existe o si la geocerca no está creada y cerrada.</div>
@@ -770,29 +902,15 @@
         <h2>Editar Divipol</h2>
         <div class="edit-grid">
           <section class="config-panel flat">
-            <label>Ciudad logística <input value="Bogotá / Sabana" readonly /></label>
-            <label>Nombre de Divipol <input value="Suba / Bogotá" /></label>
-            <label>Código zona <input value="B54BE6EE" readonly /></label>
-            <label><input type="checkbox" /> Requiere sobrescritura en Command (FLG_OVERRIDE)</label>
+            <label>ID interno <input value="DVP-000128" readonly /></label>
+            <label>Ciudad logística <select><option>Bogotá / Sabana</option><option>Medellín</option><option>Cartagena</option><option>Tunja</option></select></label>
+            <label>Nombre de Divipol <input type="text" value="Suba / Bogotá" /></label>
+            <label>Código Command <span class="info-tip" data-tip="Código de divipol definido por Navisaf en Command">ⓘ</span> <input value="B54BE6EE" /></label>
             <div class="warning-box">Campos completos y geocerca cerrada son obligatorios para guardar. Eliminar o inactivar exige permiso y queda en bitácora.</div>
           </section>
           <section class="map-panel modal-map">
-            <div class="map-toolbar">
-              <div class="geometry-tools">
-                <button title="Dibujar geometría">✚</button>
-                <button title="Editar geometría">✎</button>
-                <button title="Borrar geometría">⌫</button>
-                <button title="Deshacer">↶</button>
-              </div>
-              <button class="chip is-on">Nombres</button>
-            </div>
-            <div class="mock-map small-map">
-              <div class="grid"></div>
-              <div class="polygon zone"></div>
-              <div class="divipol-outline one"></div>
-              <span class="plant p1">513</span>
-              <span class="plant p2">503</span>
-              <span class="geohash-count">Área de Divipol en edición</span>
+            <div class="leaflet-map small-map" data-leaflet data-lat="4.711" data-lng="-74.072" data-zoom="10" data-draw="true" data-city-polygon="true" data-divipol-polygon="true">
+              <span class="geohash-count">Geocerca de Divipol en edición</span>
             </div>
           </section>
         </div>
@@ -803,33 +921,64 @@
       </form>
     </dialog>
 
-    <dialog id="plantFenceModal" class="modal wide">
+    <dialog id="plantModal" class="modal wide">
       <form method="dialog">
-        <h2>Geocerca de planta</h2>
+        <h2>Nueva planta</h2>
         <div class="edit-grid">
           <section class="config-panel flat">
-            <label>Código planta <input value="513" readonly /></label>
-            <label>Planta <input value="Puente Aranda" readonly /></label>
-            <label>Coordenadas <input value="4.6243, -74.1071" readonly /></label>
-            <label>Ciudad logística <input value="Bogotá / Sabana" readonly /></label>
-            <label>Zona logística <input value="Centro" readonly /></label>
-            <label>Divipol de ubicación / referencia <input value="Usaquén / Bogotá" readonly /></label>
-            <label>Fecha creación <input value="2026-04-28 - Abner González" readonly /></label>
-            <label>Última modificación <input value="2026-05-20 - Juan Velasquez" readonly /></label>
-            <div class="warning-box">La Divipol es referencia geográfica, no asociación funcional. La planta aplica para toda la ciudad logística seleccionada.</div>
+            <label>Código planta <input type="text" placeholder="Código de la planta" /></label>
+            <label>Nombre de la planta <input type="text" placeholder="Nombre de la planta" /></label>
+            <label>Ciudad logística
+              <select data-plant-city>
+                <option>Bogotá / Sabana</option>
+                <option>Medellín</option>
+                <option>Cartagena</option>
+                <option>Tunja</option>
+              </select>
+            </label>
+            <label>Zona logística <input data-plant-zona value="Centro" readonly /></label>
+            <label>Divipol de ubicación / referencia <select data-plant-divipol></select></label>
+            <div class="warning-box">La zona logística se hereda de la ciudad logística. La Divipol es referencia geográfica, no asociación funcional.</div>
           </section>
           <section class="map-panel modal-map">
-            <div class="mock-map small-map">
-              <div class="grid"></div>
-              <div class="polygon zone"></div>
-              <div class="plant-fence"></div>
-              <span class="plant p1">513</span>
-              <span class="map-label l1">Puente Aranda</span>
+            <div class="leaflet-map small-map" data-leaflet data-lat="4.711" data-lng="-74.072" data-zoom="10" data-draw="true" data-city-polygon="true" data-divipol-ref="true" data-plant-polygon="true"></div>
+          </section>
+        </div>
+        <div class="modal-actions">
+          <button class="btn btn-light">Cancelar</button>
+          <button class="btn btn-primary" data-toast="Planta guardada">Guardar</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog id="plantEditModal" class="modal wide">
+      <form method="dialog">
+        <h2>Editar planta</h2>
+        <div class="edit-grid">
+          <section class="config-panel flat">
+            <label>Código planta <input type="text" value="513" /></label>
+            <label>Nombre de la planta <input type="text" value="Puente Aranda" /></label>
+            <label>Ciudad logística
+              <select data-plant-city>
+                <option>Bogotá / Sabana</option>
+                <option>Medellín</option>
+                <option>Cartagena</option>
+                <option>Tunja</option>
+              </select>
+            </label>
+            <label>Zona logística <input data-plant-zona value="Centro" readonly /></label>
+            <label>Divipol de ubicación / referencia <select data-plant-divipol></select></label>
+            <div class="warning-box">La zona logística se hereda de la ciudad logística. La Divipol es referencia geográfica, no asociación funcional.</div>
+          </section>
+          <section class="map-panel modal-map">
+            <div class="leaflet-map small-map" data-leaflet data-lat="4.711" data-lng="-74.072" data-zoom="10" data-draw="true" data-city-polygon="true" data-divipol-ref="true" data-plant-polygon="true">
+              <span class="geohash-count">Geocerca de planta en edición</span>
             </div>
           </section>
         </div>
         <div class="modal-actions">
-          <button class="btn btn-primary">Cerrar</button>
+          <button class="btn btn-light">Cancelar</button>
+          <button class="btn btn-primary" data-toast="Planta actualizada">Guardar planta</button>
         </div>
       </form>
     </dialog>
@@ -892,6 +1041,109 @@
           <textarea class="technical-payload" readonly>{ "RESPONSE_CODE": 400, "MESSAGE": "Solicitud no procesada" }</textarea>
         </label>
         <div class="modal-actions"><button class="btn btn-primary">Cerrar</button></div>
+      </form>
+    </dialog>
+
+    <dialog id="zonaModal" class="modal">
+      <form method="dialog">
+        <h2>Nueva zona</h2>
+        <label>ID de zona <input placeholder="ZN-..." /></label>
+        <label>Nombre de zona <input type="text" placeholder="Nombre de la zona" /></label>
+        <div class="warning-box">La zona es el nivel raíz. Si la zona ya existe, el sistema bloquea el guardado y muestra el registro existente.</div>
+        <div class="modal-actions">
+          <button class="btn btn-light">Cancelar</button>
+          <button class="btn btn-primary" data-toast="Zona guardada">Guardar</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog id="zonaEditModal" class="modal">
+      <form method="dialog">
+        <h2>Editar zona</h2>
+        <label>ID de zona <input value="ZN-CEN" readonly /></label>
+        <label>Nombre de zona <input type="text" value="Centro" /></label>
+        <div class="warning-box">Esta zona agrupa 2 ciudades logísticas. Editar o eliminar exige permiso y queda en auditoría.</div>
+        <div class="modal-actions">
+          <button class="btn btn-light">Cancelar</button>
+          <button class="btn btn-primary" data-toast="Zona actualizada">Guardar zona</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog id="flotaModal" class="modal">
+      <form method="dialog">
+        <h2>Nuevo equipo / flota</h2>
+        <label>Ciudad logística <select><option>Bogotá / Sabana</option><option>Medellín</option><option>Cartagena</option></select></label>
+        <label>Planta <select><option>513 - Puente Aranda</option><option>503 - Calle 80</option><option>522 - Chía</option></select></label>
+        <label>Código <input placeholder="FL-..." /></label>
+        <label>Nombre del equipo / flota <input placeholder="Ej. Mixers Puente Aranda" /></label>
+        <label>Tipo <select><option>Concreto</option><option>Agregados</option><option>Mixto</option></select></label>
+        <label>Estado <select><option>Activo</option><option>Inactivo</option></select></label>
+        <div class="warning-box">El equipo / flota pertenece a una única planta. Si el código ya existe, el sistema bloquea el guardado.</div>
+        <div class="modal-actions">
+          <button class="btn btn-light">Cancelar</button>
+          <button class="btn btn-primary" data-toast="Equipo / flota guardado">Guardar</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog id="flotaEditModal" class="modal">
+      <form method="dialog">
+        <h2>Editar equipo / flota</h2>
+        <label>Planta <input value="513 - Puente Aranda" readonly /></label>
+        <label>Código <input value="FL-513-01" readonly /></label>
+        <label>Nombre del equipo / flota <input value="Mixers Puente Aranda" /></label>
+        <label>Tipo <select><option>Concreto</option><option>Agregados</option><option>Mixto</option></select></label>
+        <label>Estado <select><option>Activo</option><option>Inactivo</option></select></label>
+        <div class="warning-box">Este equipo / flota agrupa 12 vehículos. Inactivar o eliminar exige permiso y queda en auditoría.</div>
+        <div class="modal-actions">
+          <button class="btn btn-light">Cancelar</button>
+          <button class="btn btn-primary" data-toast="Equipo / flota actualizado">Guardar equipo / flota</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog id="vehiculoModal" class="modal">
+      <form method="dialog">
+        <h2>Nuevo vehículo</h2>
+        <label>Planta <select><option>513 - Puente Aranda</option><option>503 - Calle 80</option><option>522 - Chía</option></select></label>
+        <label>Equipo / flota <select><option>FL-513-01 - Mixers Puente Aranda</option><option>FL-513-02 - Volquetas Puente Aranda</option></select></label>
+        <label>Placa <input placeholder="AAA-000" /></label>
+        <label>Código interno <input placeholder="M-000" /></label>
+        <label>Tipo <select><option>Mixer</option><option>Volqueta</option><option>Tractocamión</option></select></label>
+        <label>Estado <select><option>Activo</option><option>Mantenimiento</option><option>Inactivo</option></select></label>
+        <div class="warning-box">El vehículo pertenece a un único equipo / flota. La placa no puede duplicarse.</div>
+        <div class="modal-actions">
+          <button class="btn btn-light">Cancelar</button>
+          <button class="btn btn-primary" data-toast="Vehículo guardado">Guardar</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog id="vehiculoEditModal" class="modal">
+      <form method="dialog">
+        <h2>Editar vehículo</h2>
+        <label>Equipo / flota <select><option>FL-513-01 - Mixers Puente Aranda</option><option>FL-513-02 - Volquetas Puente Aranda</option></select></label>
+        <label>Placa <input value="SXL-412" /></label>
+        <label>Código interno <input value="M-013" /></label>
+        <label>Tipo <select><option>Mixer</option><option>Volqueta</option><option>Tractocamión</option></select></label>
+        <label>Estado <select><option>Activo</option><option>Mantenimiento</option><option>Inactivo</option></select></label>
+        <div class="warning-box">Reasignar el vehículo a otro equipo / flota queda registrado en la auditoría funcional.</div>
+        <div class="modal-actions">
+          <button class="btn btn-light">Cancelar</button>
+          <button class="btn btn-primary" data-toast="Vehículo actualizado">Guardar vehículo</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog id="zonaDeleteModal" class="modal">
+      <form method="dialog">
+        <h2>Confirmar eliminación de zona</h2>
+        <p class="modal-copy">Al eliminar la zona, sus ciudades logísticas asociadas quedarán <strong>sin zona</strong> hasta que se les asigne una nueva. Esta acción requiere permiso y quedará registrada en la auditoría funcional.</p>
+        <div class="modal-actions">
+          <button class="btn btn-light">Cancelar</button>
+          <button class="btn btn-primary" data-toast="Zona eliminada; sus ciudades logísticas quedaron sin zona">Eliminar zona</button>
+        </div>
       </form>
     </dialog>
 

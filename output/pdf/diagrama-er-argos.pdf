@@ -4,7 +4,7 @@
 << /Type /Catalog /Pages 2 0 R >>
 endobj
 2 0 obj
-<< /Type /Pages /Kids [5 0 R 7 0 R] /Count 2 >>
+<< /Type /Pages /Kids [5 0 R 7 0 R 9 0 R] /Count 3 >>
 endobj
 3 0 obj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
@@ -16,7 +16,598 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 1190.55 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 6 0 R >>
 endobj
 6 0 obj
-<< /Length 7418 >>
+<< /Length 6989 >>
+stream
+q
+0.957 0.969 0.984 rg
+0 0 1190.55 841.89 re f
+Q
+q
+0.031 0.153 0.353 rg
+0 783.89 1190.55 58 re f
+Q
+q
+0.843 0.937 0 rg
+0 780.89 1190.55 3 re f
+Q
+q
+0.843 0.937 0 rg
+35 796.89 28 28 re f
+Q
+BT
+1 1 1 rg
+/F2 18 Tf
+1 0 0 1 73 810.89 Tm
+(Argos) Tj
+ET
+BT
+0.78 0.84 0.91 rg
+/F1 9 Tf
+1 0 0 1 73 796.89 Tm
+(Estructura organizacional) Tj
+ET
+BT
+0.031 0.153 0.353 rg
+/F2 24 Tf
+1 0 0 1 35 748 Tm
+(Estructura organizacional \(maestro de recursos\)) Tj
+ET
+BT
+0.369 0.435 0.518 rg
+/F1 11 Tf
+1 0 0 1 35 726 Tm
+(Jerarquía maestra: Zona - Ciudad Logística - Planta - Equipo/Flota - Vehículo.) Tj
+ET
+BT
+0.031 0.153 0.353 rg
+/F2 13 Tf
+1 0 0 1 35 691 Tm
+(Zona, ciudad logística y planta) Tj
+ET
+q
+1 1 1 rg
+0.722 0.796 0.878 RG
+0.8 w
+35 521 320 150 re B
+Q
+q
+0.031 0.153 0.353 rg
+35 643 320 28 re f
+Q
+BT
+1 1 1 rg
+/F2 10.5 Tf
+1 0 0 1 47 653 Tm
+(ZONA) Tj
+ET
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 47 630 Tm
+(CODIGO_ZONA) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+35 624 m 355 624 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 47 611 Tm
+(NOMBRE) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+35 605 m 355 605 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 47 592 Tm
+(REGION_OPERATIVA) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+35 586 m 355 586 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 47 573 Tm
+(ESTADO) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+35 567 m 355 567 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 47 554 Tm
+(FECHA_CREACION) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+35 548 m 355 548 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 47 535 Tm
+(ULTIMA_MODIFICACION) Tj
+ET
+q
+1 1 1 rg
+0.722 0.796 0.878 RG
+0.8 w
+435 540 320 131 re B
+Q
+q
+0.031 0.153 0.353 rg
+435 643 320 28 re f
+Q
+BT
+1 1 1 rg
+/F2 10.5 Tf
+1 0 0 1 447 653 Tm
+(CIUDAD_LOGISTICA) Tj
+ET
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 447 630 Tm
+(IDENTIFICADOR) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+435 624 m 755 624 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 447 611 Tm
+(ZONA_ID \(FK\)) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+435 605 m 755 605 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 447 592 Tm
+(NOMBRE) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+435 586 m 755 586 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 447 573 Tm
+(GEOMETRIA) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+435 567 m 755 567 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 447 554 Tm
+(ESTADO) Tj
+ET
+q
+1 1 1 rg
+0.722 0.796 0.878 RG
+0.8 w
+835 540 320 131 re B
+Q
+q
+0.031 0.153 0.353 rg
+835 643 320 28 re f
+Q
+BT
+1 1 1 rg
+/F2 10.5 Tf
+1 0 0 1 847 653 Tm
+(PLANTA) Tj
+ET
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 847 630 Tm
+(PLANT_CODE) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+835 624 m 1155 624 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 847 611 Tm
+(CIUDAD_LOGISTICA_ID \(FK\)) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+835 605 m 1155 605 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 847 592 Tm
+(NOMBRE) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+835 586 m 1155 586 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 847 573 Tm
+(COORDENADAS) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+835 567 m 1155 567 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 847 554 Tm
+(ESTADO) Tj
+ET
+q
+0.122 0.373 0.545 RG
+1.5 w
+363 596 m 427 596 l S
+Q
+BT
+0.031 0.153 0.353 rg
+/F2 10 Tf
+1 0 0 1 380 604 Tm
+(1 - N) Tj
+ET
+BT
+0.369 0.435 0.518 rg
+/F2 7.5 Tf
+1 0 0 1 380.6 582 Tm
+(agrupa) Tj
+ET
+q
+0.122 0.373 0.545 RG
+1.5 w
+763 605.5 m 827 605.5 l S
+Q
+BT
+0.031 0.153 0.353 rg
+/F2 10 Tf
+1 0 0 1 780 613.5 Tm
+(1 - N) Tj
+ET
+BT
+0.369 0.435 0.518 rg
+/F2 7.5 Tf
+1 0 0 1 763.8 591.5 Tm
+(tiene plantas) Tj
+ET
+BT
+0.031 0.153 0.353 rg
+/F2 13 Tf
+1 0 0 1 35 430 Tm
+(Planta, equipo/flota y vehículo) Tj
+ET
+q
+1 1 1 rg
+0.722 0.796 0.878 RG
+0.8 w
+35 355 320 55 re B
+Q
+q
+0.031 0.153 0.353 rg
+35 382 320 28 re f
+Q
+BT
+1 1 1 rg
+/F2 10.5 Tf
+1 0 0 1 47 392 Tm
+(PLANTA) Tj
+ET
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 47 369 Tm
+(PLANT_CODE) Tj
+ET
+q
+1 1 1 rg
+0.722 0.796 0.878 RG
+0.8 w
+435 241 320 169 re B
+Q
+q
+0.031 0.153 0.353 rg
+435 382 320 28 re f
+Q
+BT
+1 1 1 rg
+/F2 10.5 Tf
+1 0 0 1 447 392 Tm
+(EQUIPO_FLOTA) Tj
+ET
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 447 369 Tm
+(CODIGO_FLOTA) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+435 363 m 755 363 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 447 350 Tm
+(PLANTA_ID \(FK\)) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+435 344 m 755 344 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 447 331 Tm
+(NOMBRE) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+435 325 m 755 325 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 447 312 Tm
+(TIPO) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+435 306 m 755 306 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 447 293 Tm
+(ESTADO) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+435 287 m 755 287 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 447 274 Tm
+(FECHA_CREACION) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+435 268 m 755 268 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 447 255 Tm
+(ULTIMA_MODIFICACION) Tj
+ET
+q
+1 1 1 rg
+0.722 0.796 0.878 RG
+0.8 w
+835 241 320 169 re B
+Q
+q
+0.031 0.153 0.353 rg
+835 382 320 28 re f
+Q
+BT
+1 1 1 rg
+/F2 10.5 Tf
+1 0 0 1 847 392 Tm
+(VEHICULO) Tj
+ET
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 847 369 Tm
+(PLACA) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+835 363 m 1155 363 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 847 350 Tm
+(EQUIPO_FLOTA_ID \(FK\)) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+835 344 m 1155 344 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 847 331 Tm
+(CODIGO_INTERNO) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+835 325 m 1155 325 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 847 312 Tm
+(TIPO) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+835 306 m 1155 306 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 847 293 Tm
+(ESTADO) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+835 287 m 1155 287 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 847 274 Tm
+(FECHA_CREACION) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+835 268 m 1155 268 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 847 255 Tm
+(ULTIMA_MODIFICACION) Tj
+ET
+q
+0.122 0.373 0.545 RG
+1.5 w
+363 325.5 m 427 325.5 l S
+Q
+BT
+0.031 0.153 0.353 rg
+/F2 10 Tf
+1 0 0 1 380 333.5 Tm
+(1 - N) Tj
+ET
+BT
+0.369 0.435 0.518 rg
+/F2 7.5 Tf
+1 0 0 1 347 311.5 Tm
+(tiene equipos/flotas) Tj
+ET
+q
+0.122 0.373 0.545 RG
+1.5 w
+763 325.5 m 827 325.5 l S
+Q
+BT
+0.031 0.153 0.353 rg
+/F2 10 Tf
+1 0 0 1 780 333.5 Tm
+(1 - N) Tj
+ET
+BT
+0.369 0.435 0.518 rg
+/F2 7.5 Tf
+1 0 0 1 756.6 311.5 Tm
+(agrupa vehículos) Tj
+ET
+q
+0.863 0.925 0.973 rg
+0.722 0.796 0.878 RG
+0.8 w
+35 125 545 72 re B
+Q
+q
+0.122 0.373 0.545 rg
+35 125 4 72 re f
+Q
+BT
+0.031 0.153 0.353 rg
+/F2 10.5 Tf
+1 0 0 1 49 175 Tm
+(Jerarquía maestra) Tj
+ET
+BT
+0.114 0.173 0.259 rg
+/F1 9 Tf
+1 0 0 1 49 157 Tm
+(Cada nivel pertenece a un único padre: Zona - Ciudad Logística - Planta - Equipo/Flota - Vehículo.) Tj
+ET
+q
+0.863 0.925 0.973 rg
+0.722 0.796 0.878 RG
+0.8 w
+610 125 545 72 re B
+Q
+q
+0.122 0.373 0.545 rg
+610 125 4 72 re f
+Q
+BT
+0.031 0.153 0.353 rg
+/F2 10.5 Tf
+1 0 0 1 624 175 Tm
+(Zona vs. zona logística) Tj
+ET
+BT
+0.114 0.173 0.259 rg
+/F1 9 Tf
+1 0 0 1 624 157 Tm
+(ZONA es la entidad raíz contenedora. El antiguo atributo 'zona logística' se reemplaza por la FK ZONA_ID en) Tj
+ET
+BT
+0.114 0.173 0.259 rg
+/F1 9 Tf
+1 0 0 1 624 145 Tm
+(CIUDAD_LOGISTICA.) Tj
+ET
+BT
+0.369 0.435 0.518 rg
+/F1 8 Tf
+1 0 0 1 1120.55 20 Tm
+(1 / 3) Tj
+ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 1190.55 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 8 0 R >>
+endobj
+8 0 obj
+<< /Length 8228 >>
 stream
 q
 0.957 0.969 0.984 rg
@@ -95,7 +686,7 @@ BT
 0.114 0.173 0.259 rg
 /F1 8.5 Tf
 1 0 0 1 47 611 Tm
-(NOMBRE) Tj
+(ZONA_ID \(FK\)) Tj
 ET
 q
 0.88 0.91 0.95 RG
@@ -106,7 +697,7 @@ BT
 0.114 0.173 0.259 rg
 /F1 8.5 Tf
 1 0 0 1 47 592 Tm
-(ZONA_LOGISTICA) Tj
+(NOMBRE) Tj
 ET
 q
 0.88 0.91 0.95 RG
@@ -167,7 +758,7 @@ q
 1 1 1 rg
 0.722 0.796 0.878 RG
 0.8 w
-435 521 320 150 re B
+435 483 320 188 re B
 Q
 q
 0.031 0.153 0.353 rg
@@ -194,7 +785,7 @@ BT
 0.114 0.173 0.259 rg
 /F1 8.5 Tf
 1 0 0 1 447 611 Tm
-(NOMBRE) Tj
+(CIUDAD_LOGISTICA_ID \(FK\)) Tj
 ET
 q
 0.88 0.91 0.95 RG
@@ -205,7 +796,7 @@ BT
 0.114 0.173 0.259 rg
 /F1 8.5 Tf
 1 0 0 1 447 592 Tm
-(GEOMETRIA) Tj
+(NOMBRE) Tj
 ET
 q
 0.88 0.91 0.95 RG
@@ -216,7 +807,7 @@ BT
 0.114 0.173 0.259 rg
 /F1 8.5 Tf
 1 0 0 1 447 573 Tm
-(ESTADO) Tj
+(GEOMETRIA) Tj
 ET
 q
 0.88 0.91 0.95 RG
@@ -227,7 +818,7 @@ BT
 0.114 0.173 0.259 rg
 /F1 8.5 Tf
 1 0 0 1 447 554 Tm
-(FECHA_CREACION) Tj
+(GEOMETRIA_CERRADA) Tj
 ET
 q
 0.88 0.91 0.95 RG
@@ -238,13 +829,35 @@ BT
 0.114 0.173 0.259 rg
 /F1 8.5 Tf
 1 0 0 1 447 535 Tm
+(ESTADO) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+435 529 m 755 529 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 447 516 Tm
+(FECHA_CREACION) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+435 510 m 755 510 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 447 497 Tm
 (ULTIMA_MODIFICACION) Tj
 ET
 q
 1 1 1 rg
 0.722 0.796 0.878 RG
 0.8 w
-835 426 320 245 re B
+835 407 320 264 re B
 Q
 q
 0.031 0.153 0.353 rg
@@ -271,7 +884,7 @@ BT
 0.114 0.173 0.259 rg
 /F1 8.5 Tf
 1 0 0 1 847 611 Tm
-(DESCR) Tj
+(DIVIPOL_ID \(FK\)) Tj
 ET
 q
 0.88 0.91 0.95 RG
@@ -282,7 +895,7 @@ BT
 0.114 0.173 0.259 rg
 /F1 8.5 Tf
 1 0 0 1 847 592 Tm
-(MAP_UPPER_LEFT_LONG) Tj
+(DESCR) Tj
 ET
 q
 0.88 0.91 0.95 RG
@@ -293,7 +906,7 @@ BT
 0.114 0.173 0.259 rg
 /F1 8.5 Tf
 1 0 0 1 847 573 Tm
-(MAP_UPPER_LEFT_LAT) Tj
+(MAP_UPPER_LEFT_LONG) Tj
 ET
 q
 0.88 0.91 0.95 RG
@@ -304,7 +917,7 @@ BT
 0.114 0.173 0.259 rg
 /F1 8.5 Tf
 1 0 0 1 847 554 Tm
-(MAP_LOWER_RIGHT_LONG) Tj
+(MAP_UPPER_LEFT_LAT) Tj
 ET
 q
 0.88 0.91 0.95 RG
@@ -315,7 +928,7 @@ BT
 0.114 0.173 0.259 rg
 /F1 8.5 Tf
 1 0 0 1 847 535 Tm
-(MAP_LOWER_RIGHT_LAT) Tj
+(MAP_LOWER_RIGHT_LONG) Tj
 ET
 q
 0.88 0.91 0.95 RG
@@ -326,7 +939,7 @@ BT
 0.114 0.173 0.259 rg
 /F1 8.5 Tf
 1 0 0 1 847 516 Tm
-(FECHA_DETECCION) Tj
+(MAP_LOWER_RIGHT_LAT) Tj
 ET
 q
 0.88 0.91 0.95 RG
@@ -337,7 +950,7 @@ BT
 0.114 0.173 0.259 rg
 /F1 8.5 Tf
 1 0 0 1 847 497 Tm
-(TIPO_CAMBIO) Tj
+(FECHA_DETECCION) Tj
 ET
 q
 0.88 0.91 0.95 RG
@@ -348,7 +961,7 @@ BT
 0.114 0.173 0.259 rg
 /F1 8.5 Tf
 1 0 0 1 847 478 Tm
-(ESTADO_SINCRONIZACION) Tj
+(TIPO_CAMBIO) Tj
 ET
 q
 0.88 0.91 0.95 RG
@@ -359,7 +972,7 @@ BT
 0.114 0.173 0.259 rg
 /F1 8.5 Tf
 1 0 0 1 847 459 Tm
-(ULTIMO_INTENTO) Tj
+(ESTADO_SINCRONIZACION) Tj
 ET
 q
 0.88 0.91 0.95 RG
@@ -370,6 +983,17 @@ BT
 0.114 0.173 0.259 rg
 /F1 8.5 Tf
 1 0 0 1 847 440 Tm
+(ULTIMO_INTENTO) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+835 434 m 1155 434 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 847 421 Tm
 (RESULTADO) Tj
 ET
 q
@@ -392,18 +1016,18 @@ ET
 q
 0.122 0.373 0.545 RG
 1.5 w
-763 548.5 m 827 548.5 l S
+763 539 m 827 539 l S
 Q
 BT
 0.031 0.153 0.353 rg
 /F2 10 Tf
-1 0 0 1 780 556.5 Tm
+1 0 0 1 780 547 Tm
 (1 - N) Tj
 ET
 BT
 0.369 0.435 0.518 rg
 /F2 7.5 Tf
-1 0 0 1 780.6 534.5 Tm
+1 0 0 1 780.6 525 Tm
 (genera) Tj
 ET
 BT
@@ -438,7 +1062,7 @@ q
 1 1 1 rg
 0.722 0.796 0.878 RG
 0.8 w
-435 230 320 150 re B
+435 211 320 169 re B
 Q
 q
 0.031 0.153 0.353 rg
@@ -465,7 +1089,7 @@ BT
 0.114 0.173 0.259 rg
 /F1 8.5 Tf
 1 0 0 1 447 320 Tm
-(NOMBRE) Tj
+(CIUDAD_LOGISTICA_ID \(FK\)) Tj
 ET
 q
 0.88 0.91 0.95 RG
@@ -476,7 +1100,7 @@ BT
 0.114 0.173 0.259 rg
 /F1 8.5 Tf
 1 0 0 1 447 301 Tm
-(COORDENADAS) Tj
+(NOMBRE) Tj
 ET
 q
 0.88 0.91 0.95 RG
@@ -487,7 +1111,7 @@ BT
 0.114 0.173 0.259 rg
 /F1 8.5 Tf
 1 0 0 1 447 282 Tm
-(ESTADO) Tj
+(COORDENADAS) Tj
 ET
 q
 0.88 0.91 0.95 RG
@@ -498,7 +1122,7 @@ BT
 0.114 0.173 0.259 rg
 /F1 8.5 Tf
 1 0 0 1 447 263 Tm
-(FECHA_CREACION) Tj
+(ESTADO) Tj
 ET
 q
 0.88 0.91 0.95 RG
@@ -509,13 +1133,24 @@ BT
 0.114 0.173 0.259 rg
 /F1 8.5 Tf
 1 0 0 1 447 244 Tm
+(FECHA_CREACION) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+435 238 m 755 238 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 447 225 Tm
 (FECHA_MODIFICACION) Tj
 ET
 q
 1 1 1 rg
 0.722 0.796 0.878 RG
 0.8 w
-835 287 320 93 re B
+835 249 320 131 re B
 Q
 q
 0.122 0.373 0.545 rg
@@ -531,7 +1166,7 @@ BT
 0.114 0.173 0.259 rg
 /F1 8.5 Tf
 1 0 0 1 847 339 Tm
-(PLANT_CODE) Tj
+(MAP_PAGE_ID \(FK\)) Tj
 ET
 q
 0.88 0.91 0.95 RG
@@ -542,7 +1177,7 @@ BT
 0.114 0.173 0.259 rg
 /F1 8.5 Tf
 1 0 0 1 847 320 Tm
-(TRAVEL_TIME) Tj
+(PLANTA_ID \(FK\)) Tj
 ET
 q
 0.88 0.91 0.95 RG
@@ -553,40 +1188,62 @@ BT
 0.114 0.173 0.259 rg
 /F1 8.5 Tf
 1 0 0 1 847 301 Tm
+(PLANT_CODE) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+835 295 m 1155 295 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 847 282 Tm
+(TRAVEL_TIME) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+835 276 m 1155 276 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 847 263 Tm
 (FLG_OVERRIDE) Tj
 ET
 q
 0.122 0.373 0.545 RG
 1.5 w
-363 305 m 427 305 l S
+363 295.5 m 427 295.5 l S
 Q
 BT
 0.031 0.153 0.353 rg
 /F2 10 Tf
-1 0 0 1 380 313 Tm
+1 0 0 1 380 303.5 Tm
 (1 - N) Tj
 ET
 BT
 0.369 0.435 0.518 rg
 /F2 7.5 Tf
-1 0 0 1 344.6 291 Tm
+1 0 0 1 344.6 281.5 Tm
 (asocia funcionalmente) Tj
 ET
 q
 0.122 0.373 0.545 RG
 1.5 w
-763 305 m 827 305 l S
+763 295.5 m 827 295.5 l S
 Q
 BT
 0.031 0.153 0.353 rg
 /F2 10 Tf
-1 0 0 1 780 313 Tm
+1 0 0 1 780 303.5 Tm
 (1 - N) Tj
 ET
 BT
 0.369 0.435 0.518 rg
 /F2 7.5 Tf
-1 0 0 1 766.2 291 Tm
+1 0 0 1 766.2 281.5 Tm
 (participa en) Tj
 ET
 q
@@ -637,15 +1294,15 @@ BT
 0.369 0.435 0.518 rg
 /F1 8 Tf
 1 0 0 1 1120.55 20 Tm
-(1 / 2) Tj
+(2 / 3) Tj
 ET
 endstream
 endobj
-7 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 1190.55 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 8 0 R >>
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 1190.55 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 10 0 R >>
 endobj
-8 0 obj
-<< /Length 6087 >>
+10 0 obj
+<< /Length 6453 >>
 stream
 q
 0.957 0.969 0.984 rg
@@ -1044,7 +1701,7 @@ q
 1 1 1 rg
 0.722 0.796 0.878 RG
 0.8 w
-655 269 500 131 re B
+655 212 500 188 re B
 Q
 q
 0.031 0.153 0.353 rg
@@ -1060,7 +1717,7 @@ BT
 0.114 0.173 0.259 rg
 /F1 8.5 Tf
 1 0 0 1 667 359 Tm
-(CIUDAD_LOGISTICA) Tj
+(ZONA) Tj
 ET
 q
 0.88 0.91 0.95 RG
@@ -1071,7 +1728,7 @@ BT
 0.114 0.173 0.259 rg
 /F1 8.5 Tf
 1 0 0 1 667 340 Tm
-(DIVIPOL) Tj
+(CIUDAD_LOGISTICA) Tj
 ET
 q
 0.88 0.91 0.95 RG
@@ -1082,7 +1739,7 @@ BT
 0.114 0.173 0.259 rg
 /F1 8.5 Tf
 1 0 0 1 667 321 Tm
-(PLANTA / ASOCIACION) Tj
+(DIVIPOL) Tj
 ET
 q
 0.88 0.91 0.95 RG
@@ -1093,7 +1750,7 @@ BT
 0.114 0.173 0.259 rg
 /F1 8.5 Tf
 1 0 0 1 667 302 Tm
-(GEOHASH_MAP_PAGE) Tj
+(PLANTA / ASOCIACION) Tj
 ET
 q
 0.88 0.91 0.95 RG
@@ -1104,23 +1761,56 @@ BT
 0.114 0.173 0.259 rg
 /F1 8.5 Tf
 1 0 0 1 667 283 Tm
+(EQUIPO_FLOTA) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+655 277 m 1155 277 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 667 264 Tm
+(VEHICULO) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+655 258 m 1155 258 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 667 245 Tm
+(GEOHASH_MAP_PAGE) Tj
+ET
+q
+0.88 0.91 0.95 RG
+0.5 w
+655 239 m 1155 239 l S
+Q
+BT
+0.114 0.173 0.259 rg
+/F1 8.5 Tf
+1 0 0 1 667 226 Tm
 (SINCRONIZACION / REENVIO) Tj
 ET
 q
 0.122 0.373 0.545 RG
 1.5 w
-543 325 m 647 325 l S
+543 306 m 647 306 l S
 Q
 BT
 0.031 0.153 0.353 rg
 /F2 10 Tf
-1 0 0 1 580 333 Tm
+1 0 0 1 580 314 Tm
 (N - 1) Tj
 ET
 BT
 0.369 0.435 0.518 rg
 /F2 7.5 Tf
-1 0 0 1 542.2 311 Tm
+1 0 0 1 542.2 292 Tm
 (registra cambios sobre) Tj
 ET
 q
@@ -1155,23 +1845,25 @@ BT
 0.369 0.435 0.518 rg
 /F1 8 Tf
 1 0 0 1 1120.55 20 Tm
-(2 / 2) Tj
+(3 / 3) Tj
 ET
 endstream
 endobj
 xref
-0 9
+0 11
 0000000000 65535 f 
 0000000015 00000 n 
 0000000064 00000 n 
-0000000127 00000 n 
-0000000224 00000 n 
-0000000326 00000 n 
-0000000469 00000 n 
-0000007939 00000 n 
-0000008082 00000 n 
+0000000133 00000 n 
+0000000230 00000 n 
+0000000332 00000 n 
+0000000475 00000 n 
+0000007516 00000 n 
+0000007659 00000 n 
+0000015939 00000 n 
+0000016083 00000 n 
 trailer
-<< /Size 9 /Root 1 0 R >>
+<< /Size 11 /Root 1 0 R >>
 startxref
-14221
+22589
 %%EOF

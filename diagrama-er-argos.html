@@ -308,14 +308,87 @@
 
       <section class="diagram" aria-label="Diagrama entidad-relación del módulo Argos">
         <div class="lane">
+          <h2>Estructura organizacional (maestro de recursos)</h2>
+          <div class="flow">
+            <article class="entity">
+              <h3>ZONA</h3>
+              <ul>
+                <li><span class="key">ID</span> CODIGO_ZONA</li>
+                <li>NOMBRE</li>
+                <li>REGION_OPERATIVA</li>
+                <li>ESTADO</li>
+                <li>FECHA_CREACION</li>
+                <li>ULTIMA_MODIFICACION</li>
+              </ul>
+            </article>
+            <div class="relation"><span class="cardinality">1 ─ N</span><span class="label">agrupa</span></div>
+            <article class="entity">
+              <h3>CIUDAD_LOGISTICA</h3>
+              <ul>
+                <li><span class="key">ID</span> IDENTIFICADOR</li>
+                <li><span class="key">FK</span> ZONA_ID</li>
+                <li>NOMBRE</li>
+                <li>...</li>
+              </ul>
+            </article>
+            <div class="relation"><span class="cardinality">1 ─ N</span><span class="label">tiene plantas</span></div>
+            <article class="entity">
+              <h3>PLANTA</h3>
+              <ul>
+                <li><span class="key">ID</span> PLANT_CODE</li>
+                <li><span class="key">FK</span> CIUDAD_LOGISTICA_ID</li>
+                <li>NOMBRE</li>
+                <li>...</li>
+              </ul>
+            </article>
+          </div>
+          <div class="flow" style="margin-top: 14px">
+            <article class="entity">
+              <h3>PLANTA</h3>
+              <ul><li><span class="key">ID</span> PLANT_CODE</li></ul>
+            </article>
+            <div class="relation"><span class="cardinality">1 ─ N</span><span class="label">tiene equipos/flotas</span></div>
+            <article class="entity">
+              <h3>EQUIPO_FLOTA</h3>
+              <ul>
+                <li><span class="key">ID</span> CODIGO_FLOTA</li>
+                <li><span class="key">FK</span> PLANTA_ID</li>
+                <li>NOMBRE</li>
+                <li>TIPO</li>
+                <li>ESTADO</li>
+                <li>FECHA_CREACION</li>
+                <li>ULTIMA_MODIFICACION</li>
+              </ul>
+            </article>
+            <div class="relation"><span class="cardinality">1 ─ N</span><span class="label">agrupa vehículos</span></div>
+            <article class="entity">
+              <h3>VEHICULO</h3>
+              <ul>
+                <li><span class="key">ID</span> PLACA</li>
+                <li><span class="key">FK</span> EQUIPO_FLOTA_ID</li>
+                <li>CODIGO_INTERNO</li>
+                <li>TIPO</li>
+                <li>ESTADO</li>
+                <li>FECHA_CREACION</li>
+                <li>ULTIMA_MODIFICACION</li>
+              </ul>
+            </article>
+          </div>
+          <div class="relationship-note" style="margin-top: 14px">
+            <article><strong>Jerarquía maestra</strong><br />Zona → Ciudad Logística → Planta → Equipo/Flota → Vehículo. Cada nivel pertenece a un único padre.</article>
+            <article><strong>Zona vs. Zona logística</strong><br />ZONA es la entidad raíz contenedora. El antiguo atributo "zona logística" de Ciudad Logística se reemplaza por la FK ZONA_ID.</article>
+          </div>
+        </div>
+
+        <div class="lane">
           <h2>Estructura geográfica y operativa</h2>
           <div class="flow">
             <article class="entity">
               <h3>CIUDAD_LOGISTICA</h3>
               <ul>
                 <li><span class="key">ID</span> IDENTIFICADOR</li>
+                <li><span class="key">FK</span> ZONA_ID</li>
                 <li>NOMBRE</li>
-                <li>ZONA_LOGISTICA</li>
                 <li>GEOMETRIA</li>
                 <li>ESTADO</li>
                 <li>FECHA_CREACION</li>
@@ -328,8 +401,10 @@
               <h3>DIVIPOL</h3>
               <ul>
                 <li><span class="key">ID</span> ZONE_CODE</li>
+                <li><span class="key">FK</span> CIUDAD_LOGISTICA_ID</li>
                 <li>NOMBRE</li>
                 <li>GEOMETRIA</li>
+                <li>GEOMETRIA_CERRADA</li>
                 <li>ESTADO</li>
                 <li>FECHA_CREACION</li>
                 <li>ULTIMA_MODIFICACION</li>
@@ -340,6 +415,7 @@
               <h3>GEOHASH_MAP_PAGE</h3>
               <ul>
                 <li><span class="key">ID</span> MAP_PAGE</li>
+                <li><span class="key">FK</span> DIVIPOL_ID</li>
                 <li>DESCR</li>
                 <li>MAP_UPPER_LEFT_LONG</li>
                 <li>MAP_UPPER_LEFT_LAT</li>
@@ -367,6 +443,7 @@
               <h3>PLANTA</h3>
               <ul>
                 <li><span class="key">ID</span> PLANT_CODE</li>
+                <li><span class="key">FK</span> CIUDAD_LOGISTICA_ID</li>
                 <li>NOMBRE</li>
                 <li>COORDENADAS</li>
                 <li>ESTADO</li>
@@ -378,6 +455,8 @@
             <article class="entity integration">
               <h3>PLANT_MAP_PAGE</h3>
               <ul>
+                <li><span class="key">FK</span> MAP_PAGE_ID</li>
+                <li><span class="key">FK</span> PLANTA_ID</li>
                 <li>PLANT_CODE</li>
                 <li>TRAVEL_TIME</li>
                 <li>FLG_OVERRIDE</li>
@@ -448,9 +527,12 @@
             <article class="entity">
               <h3>REFERENCIAS FUNCIONALES (NO ES ENTIDAD)</h3>
               <ul>
+                <li>ZONA</li>
                 <li>CIUDAD_LOGISTICA</li>
                 <li>DIVIPOL</li>
                 <li>PLANTA / ASOCIACION</li>
+                <li>EQUIPO_FLOTA</li>
+                <li>VEHICULO</li>
                 <li>GEOHASH_MAP_PAGE</li>
                 <li>SINCRONIZACION / REENVIO</li>
               </ul>
