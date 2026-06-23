@@ -641,104 +641,116 @@
           </section>
 
           <section id="view-geocercas" class="view">
-            <div class="legacy-admin-shell">
-              <div class="legacy-titlebar">
-                <h1>Geohashes / Mapas</h1>
-                <div class="command-view-actions">
-                  <button class="btn btn-light" data-nav="sync">Sincronización</button>
-                  <button class="btn btn-light" data-nav="bitacora">Bitácora</button>
-                </div>
+            <div class="view-header">
+              <div>
+                <h1>Geohashes</h1>
+                <p>Estado, bitácora y programación de la sincronización de geohashes hacia Command.</p>
               </div>
+            </div>
 
-              <div class="legacy-card">
-                <div class="legacy-actions">
-                  <label>Ciudad logística
-                    <select>
-                      <option>Bogotá / Sabana</option>
-                      <option>Medellín</option>
-                      <option>Cartagena</option>
-                      <option>Tunja</option>
-                    </select>
+            <div class="gh-tabs">
+              <button class="gh-tab is-active" data-gh-tab="dashboard" type="button">Dashboard</button>
+              <button class="gh-tab" data-gh-tab="bitacora" type="button">Bitácora de sincronizaciones</button>
+              <button class="gh-tab" data-gh-tab="settings" type="button">Settings</button>
+            </div>
+
+            <div class="gh-panel is-active" data-gh-panel="dashboard">
+              <div class="metrics-grid">
+                <article class="metric"><span>Última sincronización</span><strong>2026-05-20 01:18</strong></article>
+                <article class="metric"><span>Geohashes sincronizados</span><strong>4,661</strong></article>
+                <article class="metric"><span>Geohashes pendientes</span><strong>94</strong></article>
+                <article class="metric"><span>Ciudades logísticas</span><strong>4</strong></article>
+              </div>
+              <div class="section-title compact-title"><h3>Cobertura de geohashes por ciudad logística</h3></div>
+              <div class="leaflet-map dashboard-map" data-leaflet data-lat="6.5" data-lng="-74.5" data-zoom="6" data-all-cities-grid="true"></div>
+            </div>
+
+            <div class="gh-panel" data-gh-panel="bitacora">
+              <div class="data-panel">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Fecha</th>
+                      <th>Hora</th>
+                      <th>Tipo de sincronización</th>
+                      <th>Resultado</th>
+                      <th>Acciones</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>2026-05-20</td><td>01:18</td><td>Incremental programada</td><td><span class="badge warn">Con errores</span></td><td><button class="link-btn" data-open-modal="syncDetailModal">Detalles</button></td></tr>
+                    <tr><td>2026-05-19</td><td>01:11</td><td>Incremental programada</td><td><span class="badge success">Exitosa</span></td><td><button class="link-btn" data-open-modal="syncDetailModal">Detalles</button></td></tr>
+                    <tr><td>2026-05-18</td><td>01:15</td><td>Sobrescritura manual</td><td><span class="badge warn">Con errores</span></td><td><button class="link-btn" data-open-modal="syncDetailModal">Detalles</button></td></tr>
+                    <tr><td>2026-05-17</td><td>14:02</td><td>Ejecución manual</td><td><span class="badge success">Exitosa</span></td><td><button class="link-btn" data-open-modal="syncDetailModal">Detalles</button></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="gh-panel" data-gh-panel="settings">
+              <div class="settings-grid">
+                <section class="settings-card">
+                  <h3>Sincronización recurrente</h3>
+                  <p class="muted-hint">Programa el proceso de forma recurrente, similar a una reunión periódica de Outlook.</p>
+                  <label class="switch-row"><input type="checkbox" /> Activar sincronización recurrente</label>
+                  <div class="field-row">
+                    <label>Frecuencia <select><option>Diaria</option><option>Semanal</option><option>Mensual</option></select></label>
+                    <label>Repetir cada <input type="number" min="1" value="1" /></label>
+                  </div>
+                  <label>Días de la semana
+                    <div class="weekday-row">
+                      <label><input type="checkbox" checked /> L</label>
+                      <label><input type="checkbox" checked /> M</label>
+                      <label><input type="checkbox" checked /> M</label>
+                      <label><input type="checkbox" checked /> J</label>
+                      <label><input type="checkbox" checked /> V</label>
+                      <label><input type="checkbox" /> S</label>
+                      <label><input type="checkbox" /> D</label>
+                    </div>
                   </label>
-                  <button class="legacy-primary" data-action="consultar">Consultar</button>
-                  <button class="legacy-primary" data-action="generate">Generar geohashes de 6 posiciones</button>
-                </div>
+                  <div class="field-row">
+                    <label>Hora de ejecución <input type="time" value="01:00" /></label>
+                    <label>Inicia el <input type="date" value="2026-06-24" /></label>
+                  </div>
+                  <label>Finaliza
+                    <select><option>Nunca</option><option>En una fecha</option><option>Después de N ejecuciones</option></select>
+                  </label>
+                  <label>Alcance
+                    <select><option>Todas las ciudades logísticas</option><option>Bogotá / Sabana</option><option>Medellín</option><option>Cartagena</option><option>Tunja</option></select>
+                  </label>
+                  <label class="switch-row"><input type="checkbox" /> Override: reenviar geohashes ya existentes</label>
+                  <div class="modal-actions">
+                    <button class="btn btn-primary" data-toast="Programación recurrente guardada" type="button">Guardar programación</button>
+                  </div>
+                </section>
 
-                <div class="map-panel geohash-map-panel">
-                  <div class="map-toolbar">
-                    <button class="chip is-on">Marcadores</button>
-                    <button class="chip is-on">Nombres</button>
-                    <button class="chip is-on">Geohashes</button>
-                    <button class="chip is-on">Colores</button>
+                <section class="settings-card">
+                  <h3>Sincronización aislada</h3>
+                  <p class="muted-hint">Agenda una única ejecución en una fecha y hora específicas.</p>
+                  <div class="field-row">
+                    <label>Fecha <input type="date" value="2026-06-25" /></label>
+                    <label>Hora <input type="time" value="01:00" /></label>
                   </div>
-                  <div class="mock-map small-map">
-                    <div class="grid"></div>
-                    <div class="polygon zone"></div>
-                    <div class="divipol-outline one"></div>
-                    <span class="plant p1">513</span>
-                    <span class="plant p2">503</span>
-                    <span class="map-label l1">Usaquén / Bogotá</span>
+                  <label>Alcance
+                    <select><option>Todas las ciudades logísticas</option><option>Bogotá / Sabana</option><option>Medellín</option><option>Cartagena</option><option>Tunja</option></select>
+                  </label>
+                  <label class="switch-row"><input type="checkbox" /> Override: reenviar geohashes ya existentes</label>
+                  <div class="modal-actions">
+                    <button class="btn btn-primary" data-toast="Sincronización aislada agendada" type="button">Agendar</button>
                   </div>
-                </div>
+                </section>
 
-                <div class="legacy-table-wrap">
-                  <table class="legacy-table">
-                    <thead>
-                      <tr>
-                        <th>Código zona</th>
-                        <th>Divipol</th>
-                        <th>Total geohashes</th>
-                        <th>Sincronizados</th>
-                        <th>Pendientes</th>
-                        <th>Última modificación</th>
-                        <th>Acciones</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>B54BE76E</td>
-                        <td>Usaquén / Bogotá</td>
-                        <td>1,420</td>
-                        <td>1,420</td>
-                        <td>0</td>
-                        <td>20/05/2026 14:36:38</td>
-                        <td><button class="link-btn" data-open-modal="batchDetailModal">Ver detalle</button></td>
-                      </tr>
-                      <tr>
-                        <td>B54BE6EE</td>
-                        <td>Suba / Bogotá</td>
-                        <td>1,250</td>
-                        <td>1,230</td>
-                        <td>20</td>
-                        <td>20/05/2026 10:28:36</td>
-                        <td><button class="link-btn" data-open-modal="batchDetailModal">Ver detalle</button></td>
-                      </tr>
-                      <tr>
-                        <td>B54BEDF9</td>
-                        <td>Chía / Cundinamarca</td>
-                        <td>1,105</td>
-                        <td>1,101</td>
-                        <td>4</td>
-                        <td>19/05/2026 05:34:23</td>
-                        <td><button class="link-btn" data-open-modal="batchDetailModal">Ver detalle</button></td>
-                      </tr>
-                      <tr>
-                        <td>A74BE44A</td>
-                        <td>Envigado</td>
-                        <td>980</td>
-                        <td>980</td>
-                        <td>0</td>
-                        <td>16/05/2026 17:43:22</td>
-                        <td><button class="link-btn" data-open-modal="batchDetailModal">Ver detalle</button></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  <div class="legacy-pagination">
-                    <span>Mostrando 1 a 4 de 4 Divipoles</span>
-                    <span>« ‹ <strong>1</strong> › »</span>
-                    <select><option>5</option><option>10</option><option>25</option></select>
+                <section class="settings-card">
+                  <h3>Ejecución manual</h3>
+                  <p class="muted-hint">Lanza el proceso de sincronización ahora mismo.</p>
+                  <label>Alcance
+                    <select><option>Todas las ciudades logísticas</option><option>Bogotá / Sabana</option><option>Medellín</option><option>Cartagena</option><option>Tunja</option></select>
+                  </label>
+                  <label class="switch-row"><input type="checkbox" /> Override: reenviar geohashes ya existentes</label>
+                  <div class="modal-actions">
+                    <button class="btn btn-primary" data-toast="Ejecución manual lanzada" type="button">Lanzar ahora</button>
                   </div>
-                </div>
+                </section>
               </div>
             </div>
           </section>
@@ -948,6 +960,26 @@
             <div class="leaflet-map small-map" data-leaflet data-lat="4.711" data-lng="-74.072" data-zoom="10" data-draw="true" data-city-polygon="true" data-divipol-ref="true" data-plant-polygon="true"></div>
           </section>
         </div>
+        <section class="association-block association-master">
+          <div class="section-title compact-title">
+            <h3>Vehículos asociados a la planta</h3>
+          </div>
+          <div class="association-toolbar">
+            <label class="search-field">Agregar vehículo por alias
+              <input type="text" list="vehAliasList" data-veh-combo placeholder="Escribe el alias del vehículo..." />
+            </label>
+            <button type="button" class="btn btn-primary" data-toast="Vehículo asociado a la planta">+ Agregar</button>
+          </div>
+          <p class="muted-hint" data-veh-hint></p>
+          <section class="data-panel compact">
+            <table>
+              <thead><tr><th>Placa</th><th>Alias</th><th>Tipo</th><th>Estado</th><th>Acciones</th></tr></thead>
+              <tbody data-veh-tbody>
+                <tr class="empty-row"><td colspan="5">Aún no hay vehículos asociados a esta planta.</td></tr>
+              </tbody>
+            </table>
+          </section>
+        </section>
         <div class="modal-actions">
           <button class="btn btn-light">Cancelar</button>
           <button class="btn btn-primary" data-toast="Planta guardada">Guardar</button>
@@ -979,6 +1011,28 @@
             </div>
           </section>
         </div>
+        <section class="association-block association-master">
+          <div class="section-title compact-title">
+            <h3>Vehículos asociados a la planta</h3>
+          </div>
+          <div class="association-toolbar">
+            <label class="search-field">Agregar vehículo por alias
+              <input type="text" list="vehAliasList" data-veh-combo placeholder="Escribe el alias del vehículo..." />
+            </label>
+            <button type="button" class="btn btn-primary" data-toast="Vehículo asociado a la planta">+ Agregar</button>
+          </div>
+          <p class="muted-hint" data-veh-hint></p>
+          <section class="data-panel compact">
+            <table>
+              <thead><tr><th>Placa</th><th>Alias</th><th>Tipo</th><th>Estado</th><th>Acciones</th></tr></thead>
+              <tbody data-veh-tbody>
+                <tr><td>C124978</td><td>013</td><td>Mixer</td><td><span class="badge success">Activo</span></td><td><button type="button" class="link-btn danger-link" data-toast="Vehículo removido de la planta">Quitar</button></td></tr>
+                <tr><td>P240890</td><td>014</td><td>Mixer</td><td><span class="badge success">Activo</span></td><td><button type="button" class="link-btn danger-link" data-toast="Vehículo removido de la planta">Quitar</button></td></tr>
+                <tr><td>C118245</td><td>031</td><td>Volqueta</td><td><span class="badge warn">Mantenimiento</span></td><td><button type="button" class="link-btn danger-link" data-toast="Vehículo removido de la planta">Quitar</button></td></tr>
+              </tbody>
+            </table>
+          </section>
+        </section>
         <div class="modal-actions">
           <button class="btn btn-light">Cancelar</button>
           <button class="btn btn-primary" data-toast="Planta actualizada">Guardar planta</button>
@@ -1136,6 +1190,34 @@
         </div>
       </form>
     </dialog>
+
+    <dialog id="syncDetailModal" class="modal wide">
+      <form method="dialog">
+        <h2>Detalle de sincronización</h2>
+        <div class="sync-board">
+          <article><h2>Estado</h2><strong>Con errores</strong></article>
+          <article><h2>Procesados</h2><strong>1,250</strong></article>
+          <article><h2>Exitosos</h2><strong>1,230</strong></article>
+          <article><h2>Errores</h2><strong>20</strong></article>
+        </div>
+        <div class="section-title compact-title"><h3>Bitácora de errores</h3></div>
+        <div class="data-panel compact">
+          <table>
+            <thead><tr><th>MAP_PAGE</th><th>Ciudad logística</th><th>Divipol</th><th>RESPONSE_CODE</th><th>Mensaje</th></tr></thead>
+            <tbody>
+              <tr><td>D2G6DT</td><td>Bogotá / Sabana</td><td>Suba / Bogotá</td><td>400</td><td>Campo requerido faltante</td></tr>
+              <tr><td>D345RF</td><td>Bogotá / Sabana</td><td>Chía / Cundinamarca</td><td>500</td><td>Error técnico ORA-00001</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="muted-hint">Cuando la sincronización es exitosa, este detalle muestra solo el resumen sin bitácora de errores.</p>
+        <div class="modal-actions">
+          <button class="btn btn-primary">Cerrar</button>
+        </div>
+      </form>
+    </dialog>
+
+    <datalist id="vehAliasList"></datalist>
 
     <script src="app.js"></script>
   </body>

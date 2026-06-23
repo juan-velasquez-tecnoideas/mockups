@@ -40,6 +40,11 @@ const setView = (name) => {
   tabs.forEach((tab) => tab.classList.toggle("is-active", tab.dataset.view === menuView));
   views.forEach((view) => view.classList.toggle("is-active", view.id === `view-${name}`));
   document.querySelector(".content-area").scrollTo({ top: 0, behavior: "smooth" });
+  // Inicializa mapas Leaflet embebidos en la vista activa (fuera de modales)
+  const activeView = document.getElementById(`view-${name}`);
+  if (activeView) {
+    activeView.querySelectorAll("[data-leaflet]").forEach((el) => window.setTimeout(() => initLeafletMap(el), 80));
+  }
 };
 
 const closeOpenModals = () => {
@@ -368,6 +373,43 @@ const initLeafletMap = (el) => {
     buildGeohashGrid(el);
   }
 
+  // Dashboard: geocercas de todas las ciudades logísticas + grilla de geohashes
+  if (el.dataset.allCitiesGrid === "true") {
+    if (!map.getPane("geohashGrid")) {
+      map.createPane("geohashGrid").style.zIndex = 350;
+    }
+    let firstPoly = null;
+    Object.entries(CITY_GEOCERCAS).forEach(([name, coords]) => {
+      const poly = L.polygon(coords, {
+        color: "#08275a",
+        weight: 2,
+        fillColor: "#1f5f8b",
+        fillOpacity: 0.1,
+      }).addTo(map);
+      poly.bindTooltip(name, { sticky: true });
+      if (!firstPoly) firstPoly = poly;
+      const bounds = poly.getBounds();
+      const south = Math.floor(bounds.getSouth() / GEOHASH_LAT_STEP) * GEOHASH_LAT_STEP;
+      const west = Math.floor(bounds.getWest() / GEOHASH_LNG_STEP) * GEOHASH_LNG_STEP;
+      for (let lat = south; lat < bounds.getNorth(); lat += GEOHASH_LAT_STEP) {
+        for (let lng = west; lng < bounds.getEast(); lng += GEOHASH_LNG_STEP) {
+          if (pointInPolygon(lat + GEOHASH_LAT_STEP / 2, lng + GEOHASH_LNG_STEP / 2, coords)) {
+            L.rectangle([[lat, lng], [lat + GEOHASH_LAT_STEP, lng + GEOHASH_LNG_STEP]], {
+              pane: "geohashGrid",
+              color: "#5a86ad",
+              weight: 0.6,
+              fillColor: "#1f5f8b",
+              fillOpacity: 0.2,
+              interactive: false,
+            }).addTo(map);
+          }
+        }
+      }
+    });
+    // Encuadra en la primera ciudad (Bogotá) para que la grilla de 6 posiciones sea visible
+    fitTarget = firstPoly;
+  }
+
   if (fitTarget) {
     map.fitBounds(fitTarget.getBounds(), { padding: [20, 20] });
   }
@@ -407,6 +449,53 @@ document.querySelectorAll("#divipolModal, #divipolEditModal").forEach((dlg) => {
       if (mapEl._map) drawCityRef(mapEl);
     });
   }
+});
+
+// Tabs internos de la pantalla Geohashes (Dashboard / Bitácora / Settings)
+document.querySelectorAll(".gh-tab").forEach((tab) => {
+  tab.addEventListener("click", () => {
+    const root = tab.closest("#view-geocercas") || document;
+    const target = tab.dataset.ghTab;
+    root.querySelectorAll(".gh-tab").forEach((t) => t.classList.toggle("is-active", t === tab));
+    root.querySelectorAll(".gh-panel").forEach((p) => p.classList.toggle("is-active", p.dataset.ghPanel === target));
+    const activePanel = root.querySelector(`.gh-panel[data-gh-panel="${target}"]`);
+    if (activePanel) {
+      activePanel.querySelectorAll("[data-leaflet]").forEach((el) => window.setTimeout(() => initLeafletMap(el), 60));
+    }
+  });
+});
+
+// Maestro de vehículos (alias) para asociar a una planta
+const VEHICLE_MASTER = [
+  { alias: "013", placa: "C124978", tipo: "Mixer", estado: "Activo", planta: "513 - Puente Aranda" },
+  { alias: "014", placa: "P240890", tipo: "Mixer", estado: "Activo", planta: "513 - Puente Aranda" },
+  { alias: "031", placa: "C118245", tipo: "Volqueta", estado: "Mantenimiento", planta: "513 - Puente Aranda" },
+  { alias: "050", placa: "C140330", tipo: "Mixer", estado: "Activo", planta: "503 - Calle 80" },
+  { alias: "061", placa: "P318877", tipo: "Bomba", estado: "Activo", planta: "522 - Chía" },
+  { alias: "077", placa: "P305512", tipo: "", estado: "Sin asignar", planta: "" },
+  { alias: "082", placa: "C150220", tipo: "", estado: "Sin asignar", planta: "" },
+];
+
+const vehDatalist = document.querySelector("#vehAliasList");
+if (vehDatalist) {
+  vehDatalist.innerHTML = VEHICLE_MASTER.map((v) => {
+    const label = v.planta ? `${v.alias} · ${v.placa} — ya en ${v.planta}` : `${v.alias} · ${v.placa} — sin planta`;
+    return `<option value="${v.alias}">${label}</option>`;
+  }).join("");
+}
+
+document.querySelectorAll("#plantModal [data-veh-combo], #plantEditModal [data-veh-combo]").forEach((combo) => {
+  const hint = combo.closest(".association-block").querySelector("[data-veh-hint]");
+  combo.addEventListener("input", () => {
+    const veh = VEHICLE_MASTER.find((v) => v.alias === combo.value.trim());
+    if (veh && veh.planta) {
+      hint.textContent = `El vehículo alias ${veh.alias} (placa ${veh.placa}) ya pertenece a la planta ${veh.planta}. Al agregarlo se reasignará a esta planta.`;
+    } else if (veh) {
+      hint.textContent = `El vehículo alias ${veh.alias} (placa ${veh.placa}) no está asignado a ninguna planta.`;
+    } else {
+      hint.textContent = "";
+    }
+  });
 });
 
 // Vehículo: la ciudad logística se deriva de la planta
