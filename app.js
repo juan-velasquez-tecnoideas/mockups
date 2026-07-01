@@ -285,6 +285,7 @@ const buildGeohashGrid = (el) => {
 };
 
 const cityNameFor = (el) => {
+  if (el._cityName && CITY_GEOCERCAS[el._cityName]) return el._cityName;
   const dlg = el.closest("dialog");
   const select = dlg && dlg.querySelector(".config-panel select");
   return (select && CITY_GEOCERCAS[select.value]) ? select.value : DEFAULT_CITY;
@@ -502,6 +503,7 @@ document.querySelectorAll("#plantModal [data-veh-combo], #plantEditModal [data-v
 const PLANT_CITY = {
   "Puente Aranda": "Bogotá / Sabana",
   "Calle 80": "Bogotá / Sabana",
+  "Cajicá": "Bogotá / Sabana",
   "Chía": "Bogotá / Sabana",
 };
 document.querySelectorAll("#vehiculoEditModal").forEach((dlg) => {
@@ -512,6 +514,27 @@ document.querySelectorAll("#vehiculoEditModal").forEach((dlg) => {
       cityInput.value = PLANT_CITY[plantSelect.value] || "";
     });
   }
+});
+
+// Modales de línea de producción: la ciudad/geocercas de referencia se derivan de la planta
+document.querySelectorAll("#lineaModal, #lineaEditModal").forEach((dlg) => {
+  const plantSelect = dlg.querySelector("[data-linea-planta]");
+  const cityInput = dlg.querySelector("[data-linea-ciudad]");
+  const mapEl = dlg.querySelector("[data-leaflet]");
+  if (!plantSelect) return;
+  const sync = () => {
+    const city = PLANT_CITY[plantSelect.value] || DEFAULT_CITY;
+    if (cityInput) cityInput.value = city;
+    if (mapEl) {
+      mapEl._cityName = city;
+      if (mapEl._map) {
+        drawCityRef(mapEl);
+        refreshPlantLayers(mapEl);
+      }
+    }
+  };
+  plantSelect.addEventListener("change", sync);
+  sync();
 });
 
 // Vehículos: filtro "Mostrar incompletos" (sin alias, planta o tipo)

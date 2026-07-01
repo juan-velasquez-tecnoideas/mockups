@@ -243,7 +243,12 @@
                       <button class="tab menu-level-2 has-children" data-view="zonas"><span>▦</span> Ciudades Logísticas</button>
                       <div class="nav-children">
                         <button class="tab menu-level-3" data-view="divipoles"><span>⌖</span> Divipoles</button>
-                        <button class="tab menu-level-3" data-view="plantas"><span>⌂</span> Plantas</button>
+                        <div class="nav-node">
+                          <button class="tab menu-level-3 has-children" data-view="plantas"><span>⌂</span> Plantas</button>
+                          <div class="nav-children">
+                            <button class="tab menu-level-4" data-view="lineas"><span>⚙</span> Líneas de producción</button>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -570,6 +575,44 @@
             </div>
 
             <div class="warning-box">La Divipol es referencia geográfica, no asociación funcional. Las plantas aplican para toda la ciudad logística al calcular tiempos semilla contra geohashes/MAP_PAGE.</div>
+          </section>
+
+          <section id="view-lineas" class="view">
+            <div class="view-header">
+              <div>
+                <h1>Líneas de producción</h1>
+                <p>Cada línea de producción pertenece a una planta y tiene su propia geocerca.</p>
+              </div>
+              <button class="btn btn-primary" data-open-modal="lineaModal">+ Nueva línea de producción</button>
+            </div>
+            <div class="screen-filters">
+              <label>Ciudad logística <select><option>Todas</option><option>Bogotá / Sabana</option><option>Medellín</option><option>Cartagena</option><option>Tunja</option></select></label>
+              <label>Planta <select><option>Todas</option><option>Puente Aranda</option><option>Calle 80</option><option>Cajicá</option></select></label>
+              <button class="btn btn-primary" data-action="consultar">Consultar</button>
+            </div>
+            <div class="data-panel">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Código de línea</th>
+                    <th>Planta</th>
+                    <th>Ciudad logística</th>
+                    <th>Divipol</th>
+                    <th>Geocerca</th>
+                    <th>Fecha creación</th>
+                    <th>Última modificación</th>
+                    <th>Último modificador</th>
+                    <th>Acciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>513</td><td>Puente Aranda</td><td>Bogotá / Sabana</td><td>Usaquén / Bogotá</td><td>Cerrada</td><td>2026-04-28</td><td>2026-05-20</td><td>Juan Velasquez</td><td><div class="table-actions"><button class="link-btn" data-open-modal="lineaEditModal">Ver / Editar</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td></tr>
+                  <tr><td>503</td><td>Calle 80</td><td>Bogotá / Sabana</td><td>Suba / Bogotá</td><td>Cerrada</td><td>2026-04-30</td><td>2026-05-19</td><td>Juan Velasquez</td><td><div class="table-actions"><button class="link-btn" data-open-modal="lineaEditModal">Ver / Editar</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td></tr>
+                  <tr><td>106</td><td>Cajicá</td><td>Bogotá / Sabana</td><td>Chía / Cundinamarca</td><td>Cerrada</td><td>2026-05-02</td><td>2026-05-18</td><td>Abner González</td><td><div class="table-actions"><button class="link-btn" data-open-modal="lineaEditModal">Ver / Editar</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td></tr>
+                  <tr><td>107</td><td>Cajicá</td><td>Bogotá / Sabana</td><td>Chía / Cundinamarca</td><td>Requiere cierre</td><td>2026-05-05</td><td>2026-05-18</td><td>Abner González</td><td><div class="table-actions"><button class="link-btn" data-open-modal="lineaEditModal">Ver / Editar</button><button class="link-btn danger-link" data-open-modal="deleteModal">Eliminar</button></div></td></tr>
+                </tbody>
+              </table>
+            </div>
           </section>
 
           <section id="view-sync" class="view">
@@ -940,44 +983,19 @@
     <dialog id="plantModal" class="modal wide">
       <form method="dialog">
         <h2>Nueva planta</h2>
-        <div class="edit-grid">
-          <section class="config-panel flat">
-            <label>Nombre de la planta <input type="text" placeholder="Nombre de la planta" /></label>
-            <label>Ciudad logística
-              <select data-plant-city>
-                <option>Bogotá / Sabana</option>
-                <option>Medellín</option>
-                <option>Cartagena</option>
-                <option>Tunja</option>
-              </select>
-            </label>
-            <label>Zona logística <input data-plant-zona value="Centro" readonly /></label>
-            <label>Divipol de ubicación / referencia <select data-plant-divipol></select></label>
-            <div class="warning-box">La zona logística se hereda de la ciudad logística. La Divipol es referencia geográfica, no asociación funcional.</div>
-          </section>
-          <section class="map-panel modal-map">
-            <div class="leaflet-map small-map" data-leaflet data-lat="4.711" data-lng="-74.072" data-zoom="10" data-draw="true" data-city-polygon="true" data-divipol-ref="true" data-plant-polygon="true"></div>
-          </section>
-        </div>
-        <section class="association-block association-master">
-          <div class="section-title compact-title">
-            <h3>Líneas de producción</h3>
-          </div>
-          <p class="muted-hint">Una planta puede tener una o más líneas de producción (por ejemplo Cajicá con las líneas 106 y 107).</p>
-          <div class="association-toolbar">
-            <label class="search-field">Código de línea de producción
-              <input type="text" placeholder="Ej. 513" />
-            </label>
-            <button type="button" class="btn btn-primary" data-toast="Línea de producción agregada">+ Agregar línea</button>
-          </div>
-          <section class="data-panel compact">
-            <table>
-              <thead><tr><th>Código de línea</th><th>Estado</th><th>Acciones</th></tr></thead>
-              <tbody>
-                <tr class="empty-row"><td colspan="3">Aún no hay líneas de producción para esta planta.</td></tr>
-              </tbody>
-            </table>
-          </section>
+        <section class="config-panel flat">
+          <label>Nombre de la planta <input type="text" placeholder="Nombre de la planta" /></label>
+          <label>Ciudad logística
+            <select data-plant-city>
+              <option>Bogotá / Sabana</option>
+              <option>Medellín</option>
+              <option>Cartagena</option>
+              <option>Tunja</option>
+            </select>
+          </label>
+          <label>Zona logística <input data-plant-zona value="Centro" readonly /></label>
+          <label>Divipol de ubicación / referencia <select data-plant-divipol></select></label>
+          <div class="warning-box">La zona logística se hereda de la ciudad logística. La geocerca se administra por línea de producción, no por planta.</div>
         </section>
         <section class="association-block association-master">
           <div class="section-title compact-title">
@@ -1009,46 +1027,18 @@
     <dialog id="plantEditModal" class="modal wide">
       <form method="dialog">
         <h2>Editar planta</h2>
-        <div class="edit-grid">
-          <section class="config-panel flat">
-            <label>Nombre de la planta <input type="text" value="Cajicá" /></label>
-            <label>Ciudad logística
-              <select data-plant-city>
-                <option>Bogotá / Sabana</option>
-                <option>Medellín</option>
-                <option>Cartagena</option>
-                <option>Tunja</option>
-              </select>
-            </label>
-            <label>Divipol de ubicación / referencia <select data-plant-divipol></select></label>
-            <div class="warning-box">La zona logística se hereda de la ciudad logística. La Divipol es referencia geográfica, no asociación funcional.</div>
-          </section>
-          <section class="map-panel modal-map">
-            <div class="leaflet-map small-map" data-leaflet data-lat="4.711" data-lng="-74.072" data-zoom="10" data-draw="true" data-city-polygon="true" data-divipol-ref="true" data-plant-polygon="true">
-              <span class="geohash-count">Geocerca de planta en edición</span>
-            </div>
-          </section>
-        </div>
-        <section class="association-block association-master">
-          <div class="section-title compact-title">
-            <h3>Líneas de producción</h3>
-          </div>
-          <p class="muted-hint">Una planta puede tener una o más líneas de producción. Cajicá tiene 2 líneas.</p>
-          <div class="association-toolbar">
-            <label class="search-field">Código de línea de producción
-              <input type="text" placeholder="Ej. 108" />
-            </label>
-            <button type="button" class="btn btn-primary" data-toast="Línea de producción agregada">+ Agregar línea</button>
-          </div>
-          <section class="data-panel compact">
-            <table>
-              <thead><tr><th>Código de línea</th><th>Estado</th><th>Acciones</th></tr></thead>
-              <tbody>
-                <tr><td>106</td><td><span class="badge success">Activa</span></td><td><button type="button" class="link-btn danger-link" data-toast="Línea de producción removida">Quitar</button></td></tr>
-                <tr><td>107</td><td><span class="badge success">Activa</span></td><td><button type="button" class="link-btn danger-link" data-toast="Línea de producción removida">Quitar</button></td></tr>
-              </tbody>
-            </table>
-          </section>
+        <section class="config-panel flat">
+          <label>Nombre de la planta <input type="text" value="Cajicá" /></label>
+          <label>Ciudad logística
+            <select data-plant-city>
+              <option>Bogotá / Sabana</option>
+              <option>Medellín</option>
+              <option>Cartagena</option>
+              <option>Tunja</option>
+            </select>
+          </label>
+          <label>Divipol de ubicación / referencia <select data-plant-divipol></select></label>
+          <div class="warning-box">La zona logística se hereda de la ciudad logística. La geocerca se administra por línea de producción, no por planta.</div>
         </section>
         <section class="association-block association-master">
           <div class="section-title compact-title">
@@ -1075,6 +1065,64 @@
         <div class="modal-actions">
           <button class="btn btn-light">Cancelar</button>
           <button class="btn btn-primary" data-toast="Planta actualizada">Guardar planta</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog id="lineaModal" class="modal wide">
+      <form method="dialog">
+        <h2>Nueva línea de producción</h2>
+        <div class="edit-grid">
+          <section class="config-panel flat">
+            <label>Código de línea <input type="text" placeholder="Ej. 513" /></label>
+            <label>Planta
+              <select data-linea-planta>
+                <option>Puente Aranda</option>
+                <option>Calle 80</option>
+                <option>Cajicá</option>
+              </select>
+            </label>
+            <label>Ciudad logística <input data-linea-ciudad value="Bogotá / Sabana" readonly /></label>
+            <label>Divipol de referencia <input value="Usaquén / Bogotá" readonly /></label>
+            <div class="warning-box">La geocerca de la línea se dibuja sobre las geocercas de la ciudad logística y la Divipol, que se muestran como referencia.</div>
+          </section>
+          <section class="map-panel modal-map">
+            <div class="leaflet-map small-map" data-leaflet data-lat="4.711" data-lng="-74.072" data-zoom="10" data-draw="true" data-city-polygon="true" data-divipol-ref="true" data-plant-polygon="true"></div>
+          </section>
+        </div>
+        <div class="modal-actions">
+          <button class="btn btn-light">Cancelar</button>
+          <button class="btn btn-primary" data-toast="Línea de producción guardada">Guardar</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog id="lineaEditModal" class="modal wide">
+      <form method="dialog">
+        <h2>Editar línea de producción</h2>
+        <div class="edit-grid">
+          <section class="config-panel flat">
+            <label>Código de línea <input type="text" value="106" /></label>
+            <label>Planta
+              <select data-linea-planta>
+                <option>Cajicá</option>
+                <option>Puente Aranda</option>
+                <option>Calle 80</option>
+              </select>
+            </label>
+            <label>Ciudad logística <input data-linea-ciudad value="Bogotá / Sabana" readonly /></label>
+            <label>Divipol de referencia <input value="Chía / Cundinamarca" readonly /></label>
+            <div class="warning-box">La geocerca de la línea se dibuja sobre las geocercas de la ciudad logística y la Divipol, que se muestran como referencia. Editar o eliminar exige permiso y queda en auditoría.</div>
+          </section>
+          <section class="map-panel modal-map">
+            <div class="leaflet-map small-map" data-leaflet data-lat="4.711" data-lng="-74.072" data-zoom="10" data-draw="true" data-city-polygon="true" data-divipol-ref="true" data-plant-polygon="true">
+              <span class="geohash-count">Geocerca de línea en edición</span>
+            </div>
+          </section>
+        </div>
+        <div class="modal-actions">
+          <button class="btn btn-light">Cancelar</button>
+          <button class="btn btn-primary" data-toast="Línea de producción actualizada">Guardar línea</button>
         </div>
       </form>
     </dialog>
