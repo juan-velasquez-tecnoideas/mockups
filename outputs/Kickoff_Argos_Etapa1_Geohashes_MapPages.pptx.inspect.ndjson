@@ -1,0 +1,252 @@
+{"kind":"deck","id":"pr/39l8ck","name":"Deck"}
+{"kind":"layout","layoutId":"ffab3749-b1c3-4943-add7-500d63fae5df","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"8878ef91-848e-491a-8996-8bc76f36ab1e","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/zzwvlr","slide":1,"title":"PLAN DE TRABAJO","textShapes":10}
+{"kind":"textbox","id":"sh/zqtcj6to","slide":1,"text":"PLAN DE TRABAJO","textPreview":"PLAN DE TRABAJO","textChars":15,"textLines":1,"bbox":[42,40,300,32]}
+{"kind":"textbox","id":"sh/obm58z25","slide":1,"text":"Kickoff Argos\nEtapa 1","textPreview":"Kickoff Argos | Etapa 1","textChars":21,"textLines":2,"bbox":[42,165,610,180]}
+{"kind":"textbox","id":"sh/hwfyxobm","slide":1,"text":"Módulo Geohashes / Map Pages\n30 de junio de 2026 · tarde","textPreview":"Módulo Geohashes / Map Pages | 30 de junio de 2026 · tarde","textChars":56,"textLines":2,"bbox":[42,382,530,88]}
+{"kind":"shape","id":"sh/6xkf6dcb","slide":1,"bbox":[760,0,520,720]}
+{"kind":"textbox","id":"sh/zed8v6ps","slide":1,"text":"Etapa 1","textPreview":"Etapa 1","textChars":7,"textLines":1,"bbox":[824,92,330,70]}
+{"kind":"shape","id":"sh/oza1gvy9","slide":1,"bbox":[828,239,10,10]}
+{"kind":"textbox","id":"sh/hk3q5o7q","slide":1,"text":"Captura y administración de datos","textPreview":"Captura y administración de datos","textChars":33,"textLines":1,"bbox":[856,230,332,62]}
+{"kind":"shape","id":"sh/al87ed8b","slide":1,"bbox":[828,297,10,10]}
+{"kind":"textbox","id":"sh/z61032ls","slide":1,"text":"API pública para Skytrack y Tracking","textPreview":"API pública para Skytrack y Tracking","textChars":36,"textLines":1,"bbox":[856,288,332,62]}
+{"kind":"shape","id":"sh/za1gvy90","slide":1,"bbox":[828,355,10,10]}
+{"kind":"textbox","id":"sh/ap4r65wj","slide":1,"text":"Geohashes MAP_PAGE de 6 posiciones","textPreview":"Geohashes MAP_PAGE de 6 posiciones","textChars":34,"textLines":1,"bbox":[856,346,332,62]}
+{"kind":"shape","id":"sh/hgn29gr2","slide":1,"bbox":[828,413,10,10]}
+{"kind":"textbox","id":"sh/svu9knih","slide":1,"text":"Sincronización incremental hacia Command","textPreview":"Sincronización incremental hacia Command","textChars":40,"textLines":1,"bbox":[856,404,332,62]}
+{"kind":"textbox","id":"sh/zidonyd0","slide":1,"text":"Detektor / Tecnoideas · Argos Colombia","textPreview":"Detektor / Tecnoideas · Argos Colombia","textChars":38,"textLines":1,"bbox":[42,660,550,28]}
+{"kind":"textbox","id":"sh/a1gvy90j","slide":1,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[1184,660,54,26]}
+{"kind":"notes","id":"nt/zzwvlr","slide":1,"text":""}
+{"kind":"slide","id":"sl/7amgiw","slide":2,"title":"Agenda","textShapes":10}
+{"kind":"textbox","id":"sh/qxs72x4n","slide":2,"text":"Agenda","textPreview":"Agenda","textChars":6,"textLines":1,"bbox":[42,36,620,96]}
+{"kind":"textbox","id":"sh/xobm58z2","slide":2,"text":"Conversación de alineación para salir del kickoff con alcance, ruta y validaciones claras.","textPreview":"Conversación de alineación para salir del kickoff con alcance, ruta y validaciones claras.","textChars":90,"textLines":1,"bbox":[700,42,498,86]}
+{"kind":"textbox","id":"sh/83itgfml","slide":2,"text":"Kickoff Argos Etapa 1","textPreview":"Kickoff Argos Etapa 1","textChars":21,"textLines":1,"bbox":[42,660,360,26]}
+{"kind":"textbox","id":"sh/fu18jqh0","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[1184,660,54,26]}
+{"kind":"shape","id":"sh/m94fu18j","slide":2,"bbox":[624,181,10,10]}
+{"kind":"textbox","id":"sh/x0nuxc3y","slide":2,"text":"1. Objetivo y alcance de la Etapa 1","textPreview":"1. Objetivo y alcance de la Etapa 1","textChars":35,"textLines":1,"bbox":[652,172,532,66]}
+{"kind":"shape","id":"sh/4fu18jqh","slide":2,"bbox":[624,243,10,10]}
+{"kind":"textbox","id":"sh/f6dcbulw","slide":2,"text":"2. Frentes paralelos y responsabilidades","textPreview":"2. Frentes paralelos y responsabilidades","textChars":40,"textLines":1,"bbox":[652,234,532,66]}
+{"kind":"shape","id":"sh/mlkjm1cf","slide":2,"bbox":[624,305,10,10]}
+{"kind":"textbox","id":"sh/gbq1oryt","slide":2,"text":"3. Entrega temprana: captura + API","textPreview":"3. Entrega temprana: captura + API","textChars":34,"textLines":1,"bbox":[652,296,532,66]}
+{"kind":"shape","id":"sh/5wjudg7a","slide":2,"bbox":[624,367,10,10]}
+{"kind":"textbox","id":"sh/y90je9cv","slide":2,"text":"4. Cronograma de sprints y ruta crítica","textPreview":"4. Cronograma de sprints y ruta crítica","textChars":39,"textLines":1,"bbox":[652,358,532,66]}
+{"kind":"shape","id":"sh/nuxc3ylc","slide":2,"bbox":[624,429,10,10]}
+{"kind":"textbox","id":"sh/gn29gr2p","slide":2,"text":"5. Riesgos, dependencias y decisiones del kickoff","textPreview":"5. Riesgos, dependencias y decisiones del kickoff","textChars":49,"textLines":1,"bbox":[652,420,532,66]}
+{"kind":"shape","id":"sh/58z25kb6","slide":2,"bbox":[624,491,10,10]}
+{"kind":"textbox","id":"sh/yhgn29gr","slide":2,"text":"6. Aprobación del plan y próximos pasos","textPreview":"6. Aprobación del plan y próximos pasos","textChars":39,"textLines":1,"bbox":[652,482,532,66]}
+{"kind":"notes","id":"nt/7amgiw","slide":2,"text":""}
+{"kind":"slide","id":"sl/e0ecow","slide":3,"title":"Objetivo","textShapes":9}
+{"kind":"textbox","id":"sh/fyxobm58","slide":3,"text":"Objetivo","textPreview":"Objetivo","textChars":8,"textLines":1,"bbox":[42,36,620,96]}
+{"kind":"textbox","id":"sh/8jqh0fep","slide":3,"text":"Construir la base operativa del módulo sin afectar Tracking y dejando preparada la integración con Command.","textPreview":"Construir la base operativa del módulo sin afectar Tracking y dejando preparada la integración con Command.","textChars":107,"textLines":1,"bbox":[700,42,498,86]}
+{"kind":"textbox","id":"sh/x4nap4r6","slide":3,"text":"Kickoff Argos Etapa 1","textPreview":"Kickoff Argos Etapa 1","textChars":21,"textLines":1,"bbox":[42,660,360,26]}
+{"kind":"textbox","id":"sh/qpg3ex0n","slide":3,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[1184,660,54,26]}
+{"kind":"textbox","id":"sh/fa9w3m94","slide":3,"text":"Implementar un módulo para administrar la estructura logística y geográfica de Argos, calcular tiempos semilla operativos y exponer consultas consumibles por Skytrack y Tracking.","textPreview":"Implementar un módulo para administrar la estructura logística y geográfica de Argos, calcular tiempos semilla operativos y exponer consu...","textChars":178,"textLines":1,"bbox":[42,198,610,210]}
+{"kind":"shape","id":"sh/8v6psfil","slide":3,"bbox":[700,210,500,150]}
+{"kind":"textbox","id":"sh/xczed8v6","slide":3,"text":"RESULTADO ESPERADO","textPreview":"RESULTADO ESPERADO","textChars":18,"textLines":1,"bbox":[722,228,456,30]}
+{"kind":"textbox","id":"sh/qtcj6tov","slide":3,"text":"Un flujo completo desde catálogos y captura de datos hasta geohashes MAP_PAGE listos para sincronización incremental.","textPreview":"Un flujo completo desde catálogos y captura de datos hasta geohashes MAP_PAGE listos para sincronización incremental.","textChars":117,"textLines":1,"bbox":[722,266,456,78]}
+{"kind":"shape","id":"sh/je9cvixc","slide":3,"bbox":[700,392,500,150]}
+{"kind":"textbox","id":"sh/nih4byhg","slide":3,"text":"CRITERIO DE ARRANQUE","textPreview":"CRITERIO DE ARRANQUE","textChars":20,"textLines":1,"bbox":[722,410,456,30]}
+{"kind":"textbox","id":"sh/yxobm58z","slide":3,"text":"Alinear contratos, data maestra, ambientes y reglas de negocio mínimas con Argos/Summa.","textPreview":"Alinear contratos, data maestra, ambientes y reglas de negocio mínimas con Argos/Summa.","textChars":87,"textLines":1,"bbox":[722,448,456,78]}
+{"kind":"notes","id":"nt/e0ecow","slide":3,"text":""}
+{"kind":"slide","id":"sl/limjup","slide":4,"title":"Alcance Etapa 1","textShapes":16}
+{"kind":"textbox","id":"sh/1032lszq","slide":4,"text":"Alcance Etapa 1","textPreview":"Alcance Etapa 1","textChars":15,"textLines":1,"bbox":[42,36,620,96]}
+{"kind":"textbox","id":"sh/u9knih4b","slide":4,"text":"Incluye administración, geografía, consulta y sincronización. Deja fuera automatizaciones avanzadas para Etapa 2.","textPreview":"Incluye administración, geografía, consulta y sincronización. Deja fuera automatizaciones avanzadas para Etapa 2.","textChars":113,"textLines":1,"bbox":[700,42,498,86]}
+{"kind":"textbox","id":"sh/judg7ads","slide":4,"text":"Kickoff Argos Etapa 1","textPreview":"Kickoff Argos Etapa 1","textChars":21,"textLines":1,"bbox":[42,660,360,26]}
+{"kind":"textbox","id":"sh/c7u54zid","slide":4,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[1184,660,54,26]}
+{"kind":"shape","id":"sh/1orytsvu","slide":4,"bbox":[42,190,360,145]}
+{"kind":"textbox","id":"sh/u18jqh0f","slide":4,"text":"Administración","textPreview":"Administración","textChars":14,"textLines":1,"bbox":[64,208,316,30]}
+{"kind":"textbox","id":"sh/jm1cfa9w","slide":4,"text":"Zonas, ciudades logísticas, Divipoles, plantas, flotas y vehículos.","textPreview":"Zonas, ciudades logísticas, Divipoles, plantas, flotas y vehículos.","textChars":67,"textLines":1,"bbox":[64,246,316,73]}
+{"kind":"shape","id":"sh/cvixczed","slide":4,"bbox":[440,190,360,145]}
+{"kind":"textbox","id":"sh/5gbq1ory","slide":4,"text":"Geografía","textPreview":"Geografía","textChars":9,"textLines":1,"bbox":[462,208,316,30]}
+{"kind":"textbox","id":"sh/18jqh0fe","slide":4,"text":"Geocercas, geohashes de 6 posiciones y visualización en mapa.","textPreview":"Geocercas, geohashes de 6 posiciones y visualización en mapa.","textChars":61,"textLines":1,"bbox":[462,246,316,73]}
+{"kind":"shape","id":"sh/8nqxs72x","slide":4,"bbox":[838,190,360,145]}
+{"kind":"textbox","id":"sh/j2t83itg","slide":4,"text":"Operación","textPreview":"Operación","textChars":9,"textLines":1,"bbox":[860,208,316,30]}
+{"kind":"textbox","id":"sh/qh0fepkz","slide":4,"text":"Tiempo semilla entre geohash/mapa y plantas aplicables.","textPreview":"Tiempo semilla entre geohash/mapa y plantas aplicables.","textChars":55,"textLines":1,"bbox":[860,246,316,73]}
+{"kind":"shape","id":"sh/1w7mp0bi","slide":4,"bbox":[42,375,360,145]}
+{"kind":"textbox","id":"sh/8bat47y1","slide":4,"text":"Integración","textPreview":"Integración","textChars":11,"textLines":1,"bbox":[64,393,316,30]}
+{"kind":"textbox","id":"sh/jqh0fepk","slide":4,"text":"API pública de consulta y sincronización MAP_PAGE vía APIM.","textPreview":"API pública de consulta y sincronización MAP_PAGE vía APIM.","textChars":59,"textLines":1,"bbox":[64,431,316,73]}
+{"kind":"shape","id":"sh/q5o7qpg3","slide":4,"bbox":[440,375,360,145]}
+{"kind":"textbox","id":"sh/1kre1w7m","slide":4,"text":"Control","textPreview":"Control","textChars":7,"textLines":1,"bbox":[462,393,316,30]}
+{"kind":"textbox","id":"sh/c3ylc7u5","slide":4,"text":"Bitácora, reintentos, auditoría y criterios de performance.","textPreview":"Bitácora, reintentos, auditoría y criterios de performance.","textChars":59,"textLines":1,"bbox":[462,431,316,73]}
+{"kind":"shape","id":"sh/orytsvu9","slide":4,"bbox":[838,375,360,145]}
+{"kind":"textbox","id":"sh/hcrmhk3q","slide":4,"text":"Fuera de alcance","textPreview":"Fuera de alcance","textChars":16,"textLines":1,"bbox":[860,393,316,30]}
+{"kind":"textbox","id":"sh/al87ed8b","slide":4,"text":"Ubicación automática de obras, POC cartográfica y tiempos dinámicos.","textPreview":"Ubicación automática de obras, POC cartográfica y tiempos dinámicos.","textChars":68,"textLines":1,"bbox":[860,431,316,73]}
+{"kind":"notes","id":"nt/limjup","slide":4,"text":""}
+{"kind":"slide","id":"sl/xcdl3h","slide":5,"title":"Tres frentes paralelos","textShapes":16}
+{"kind":"textbox","id":"sh/s36hcrmh","slide":5,"text":"Tres frentes paralelos","textPreview":"Tres frentes paralelos","textChars":22,"textLines":1,"bbox":[42,36,620,96]}
+{"kind":"textbox","id":"sh/zidonyd0","slide":5,"text":"La ruta crítica vive en Core; Menú y Manager habilitan acceso y seguridad sin extender el cierre.","textPreview":"La ruta crítica vive en Core; Menú y Manager habilitan acceso y seguridad sin extender el cierre.","textChars":97,"textLines":1,"bbox":[700,42,498,86]}
+{"kind":"textbox","id":"sh/a1gvy90j","slide":5,"text":"Kickoff Argos Etapa 1","textPreview":"Kickoff Argos Etapa 1","textChars":21,"textLines":1,"bbox":[42,660,360,26]}
+{"kind":"textbox","id":"sh/hgn29gr2","slide":5,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1184,660,54,26]}
+{"kind":"shape","id":"sh/svu9knih","slide":5,"bbox":[42,190,360,342]}
+{"kind":"textbox","id":"sh/za1gvy90","slide":5,"text":"Core módulo","textPreview":"Core módulo","textChars":11,"textLines":1,"bbox":[64,214,310,42]}
+{"kind":"textbox","id":"sh/ap4r65wj","slide":5,"text":"Ing. Senior fullstack","textPreview":"Ing. Senior fullstack","textChars":21,"textLines":1,"bbox":[64,270,310,34]}
+{"kind":"textbox","id":"sh/h4byhgn2","slide":5,"text":"Entidades, captura, API, geohashes, tiempo semilla, sincronización, migración y UAT.","textPreview":"Entidades, captura, API, geohashes, tiempo semilla, sincronización, migración y UAT.","textChars":84,"textLines":1,"bbox":[64,326,310,122]}
+{"kind":"textbox","id":"sh/sji5snel","slide":5,"text":"S1-S9","textPreview":"S1-S9","textChars":5,"textLines":1,"bbox":[64,470,120,42]}
+{"kind":"shape","id":"sh/qh0fepkz","slide":5,"bbox":[440,190,360,342]}
+{"kind":"textbox","id":"sh/j2t83itg","slide":5,"text":"Menú de tarjetas","textPreview":"Menú de tarjetas","textChars":16,"textLines":1,"bbox":[462,214,310,42]}
+{"kind":"textbox","id":"sh/8nqxs72x","slide":5,"text":"Ingeniero 2","textPreview":"Ingeniero 2","textChars":11,"textLines":1,"bbox":[462,270,310,34]}
+{"kind":"textbox","id":"sh/18jqh0fe","slide":5,"text":"Acceso inicial al módulo Argos desde la plataforma Detektor.","textPreview":"Acceso inicial al módulo Argos desde la plataforma Detektor.","textChars":60,"textLines":1,"bbox":[462,326,310,122]}
+{"kind":"textbox","id":"sh/q5o7qpg3","slide":5,"text":"S1-S2","textPreview":"S1-S2","textChars":5,"textLines":1,"bbox":[462,470,120,42]}
+{"kind":"shape","id":"sh/jqh0fepk","slide":5,"bbox":[838,190,360,342]}
+{"kind":"textbox","id":"sh/8bat47y1","slide":5,"text":"Manager","textPreview":"Manager","textChars":7,"textLines":1,"bbox":[860,214,310,42]}
+{"kind":"textbox","id":"sh/1w7mp0bi","slide":5,"text":"Ingeniero 3","textPreview":"Ingeniero 3","textChars":11,"textLines":1,"bbox":[860,270,310,34]}
+{"kind":"textbox","id":"sh/uxc3ylc7","slide":5,"text":"Usuarios y permisos por perfil cuando existan las acciones a proteger.","textPreview":"Usuarios y permisos por perfil cuando existan las acciones a proteger.","textChars":70,"textLines":1,"bbox":[860,326,310,122]}
+{"kind":"textbox","id":"sh/ji5snelo","slide":5,"text":"S5-S9","textPreview":"S5-S9","textChars":5,"textLines":1,"bbox":[860,470,120,42]}
+{"kind":"notes","id":"nt/xcdl3h","slide":5,"text":""}
+{"kind":"slide","id":"sl/88wr8o","slide":6,"title":"Entrega temprana","textShapes":10}
+{"kind":"textbox","id":"sh/epkzupwb","slide":6,"text":"Entrega temprana","textPreview":"Entrega temprana","textChars":16,"textLines":1,"bbox":[42,36,620,96]}
+{"kind":"textbox","id":"sh/pg3ex0nu","slide":6,"text":"El primer hito desbloquea captura de información y consumo por sistemas externos al cierre del Sprint 2.","textPreview":"El primer hito desbloquea captura de información y consumo por sistemas externos al cierre del Sprint 2.","textChars":104,"textLines":1,"bbox":[700,42,498,86]}
+{"kind":"textbox","id":"sh/wval87ed","slide":6,"text":"Kickoff Argos Etapa 1","textPreview":"Kickoff Argos Etapa 1","textChars":21,"textLines":1,"bbox":[42,660,360,26]}
+{"kind":"textbox","id":"sh/7mp0bi9s","slide":6,"text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[1184,660,54,26]}
+{"kind":"textbox","id":"sh/e1w7mp0b","slide":6,"text":"Entrega 1\nCaptura + API","textPreview":"Entrega 1 | Captura + API","textChars":23,"textLines":2,"bbox":[42,205,360,120]}
+{"kind":"textbox","id":"sh/psfil0rq","slide":6,"text":"Disponible al cierre de S2: 04 de agosto de 2026.","textPreview":"Disponible al cierre de S2: 04 de agosto de 2026.","textChars":49,"textLines":1,"bbox":[42,352,430,70]}
+{"kind":"shape","id":"sh/w7mp0bi9","slide":6,"bbox":[570,199,10,10]}
+{"kind":"textbox","id":"sh/7u54zido","slide":6,"text":"Carga inicial de catálogos desde archivos de Argos","textPreview":"Carga inicial de catálogos desde archivos de Argos","textChars":50,"textLines":1,"bbox":[598,190,547,72]}
+{"kind":"shape","id":"sh/ed8bat47","slide":6,"bbox":[570,267,10,10]}
+{"kind":"textbox","id":"sh/onyd0z61","slide":6,"text":"CRUD de captura para todos los niveles base","textPreview":"CRUD de captura para todos los niveles base","textChars":43,"textLines":1,"bbox":[598,258,547,72]}
+{"kind":"shape","id":"sh/d8v6psfi","slide":6,"bbox":[570,335,10,10]}
+{"kind":"textbox","id":"sh/6hcrmhk3","slide":6,"text":"BD PostgreSQL y migraciones desde S1","textPreview":"BD PostgreSQL y migraciones desde S1","textChars":36,"textLines":1,"bbox":[598,326,547,72]}
+{"kind":"shape","id":"sh/z25kb6xk","slide":6,"bbox":[570,403,10,10]}
+{"kind":"textbox","id":"sh/ovahoza1","slide":6,"text":"API pública con filtros en cascada para Skytrack y Tracking","textPreview":"API pública con filtros en cascada para Skytrack y Tracking","textChars":59,"textLines":1,"bbox":[598,394,547,72]}
+{"kind":"notes","id":"nt/88wr8o","slide":6,"text":""}
+{"kind":"slide","id":"sl/23k9ek","slide":7,"title":"Plan de sprints","textShapes":26}
+{"kind":"textbox","id":"sh/r2p8nqxs","slide":7,"text":"Plan de sprints","textPreview":"Plan de sprints","textChars":15,"textLines":1,"bbox":[42,36,620,96]}
+{"kind":"textbox","id":"sh/kjm1cfa9","slide":7,"text":"9 sprints de 2.5 semanas: inicio 29 de junio de 2026 y cierre estimado 9 de diciembre de 2026.","textPreview":"9 sprints de 2.5 semanas: inicio 29 de junio de 2026 y cierre estimado 9 de diciembre de 2026.","textChars":94,"textLines":1,"bbox":[700,42,498,86]}
+{"kind":"textbox","id":"sh/94fu18jq","slide":7,"text":"Kickoff Argos Etapa 1","textPreview":"Kickoff Argos Etapa 1","textChars":21,"textLines":1,"bbox":[42,660,360,26]}
+{"kind":"textbox","id":"sh/2p8nqxs7","slide":7,"text":"07","textPreview":"07","textChars":2,"textLines":1,"bbox":[1184,660,54,26]}
+{"kind":"shape","id":"sh/ra5gbq1o","slide":7,"bbox":[70,282,78,78]}
+{"kind":"textbox","id":"sh/gvy90je9","slide":7,"text":"S1","textPreview":"S1","textChars":2,"textLines":1,"bbox":[80,299,58,34]}
+{"kind":"textbox","id":"sh/9gr2p8nq","slide":7,"text":"Setup + modelo","textPreview":"Setup + modelo","textChars":14,"textLines":1,"bbox":[60,376,98,52]}
+{"kind":"shape","id":"sh/2t83itgf","slide":7,"bbox":[152,320,38,2]}
+{"kind":"shape","id":"sh/re1w7mp0","slide":7,"bbox":[191,282,78,78]}
+{"kind":"textbox","id":"sh/bulwval8","slide":7,"text":"S2","textPreview":"S2","textChars":2,"textLines":1,"bbox":[201,299,58,34]}
+{"kind":"textbox","id":"sh/i9s36hcr","slide":7,"text":"Captura + API","textPreview":"Captura + API","textChars":13,"textLines":1,"bbox":[181,376,98,52]}
+{"kind":"shape","id":"sh/p0bi9s36","slide":7,"bbox":[273,320,38,2]}
+{"kind":"shape","id":"sh/0fepkzup","slide":7,"bbox":[312,282,78,78]}
+{"kind":"textbox","id":"sh/bi9s36hc","slide":7,"text":"S3","textPreview":"S3","textChars":2,"textLines":1,"bbox":[322,299,58,34]}
+{"kind":"textbox","id":"sh/ixczed8v","slide":7,"text":"Geometría","textPreview":"Geometría","textChars":9,"textLines":1,"bbox":[302,376,98,52]}
+{"kind":"shape","id":"sh/tovahoza","slide":7,"bbox":[394,320,38,2]}
+{"kind":"shape","id":"sh/032lszqt","slide":7,"bbox":[433,282,78,78]}
+{"kind":"textbox","id":"sh/b6xkf6dc","slide":7,"text":"S4","textPreview":"S4","textChars":2,"textLines":1,"bbox":[443,299,58,34]}
+{"kind":"textbox","id":"sh/il0rqd4v","slide":7,"text":"Geohashes","textPreview":"Geohashes","textChars":9,"textLines":1,"bbox":[423,376,98,52]}
+{"kind":"shape","id":"sh/ulwval87","slide":7,"bbox":[515,320,38,2]}
+{"kind":"shape","id":"sh/j6tovaho","slide":7,"bbox":[554,282,78,78]}
+{"kind":"textbox","id":"sh/crmhk3q5","slide":7,"text":"S5","textPreview":"S5","textChars":2,"textLines":1,"bbox":[564,299,58,34]}
+{"kind":"textbox","id":"sh/1cfa9w3m","slide":7,"text":"Tiempo semilla","textPreview":"Tiempo semilla","textChars":14,"textLines":1,"bbox":[544,376,98,52]}
+{"kind":"shape","id":"sh/uxc3ylc7","slide":7,"bbox":[636,320,38,2]}
+{"kind":"shape","id":"sh/ji5snelo","slide":7,"bbox":[675,282,78,78]}
+{"kind":"textbox","id":"sh/c3ylc7u5","slide":7,"text":"S6","textPreview":"S6","textChars":2,"textLines":1,"bbox":[685,299,58,34]}
+{"kind":"textbox","id":"sh/1kre1w7m","slide":7,"text":"Auditoría","textPreview":"Auditoría","textChars":9,"textLines":1,"bbox":[665,376,98,52]}
+{"kind":"shape","id":"sh/q5o7qpg3","slide":7,"bbox":[757,320,38,2]}
+{"kind":"shape","id":"sh/jqh0fepk","slide":7,"bbox":[796,282,78,78]}
+{"kind":"textbox","id":"sh/p8nqxs72","slide":7,"text":"S7","textPreview":"S7","textChars":2,"textLines":1,"bbox":[806,299,58,34]}
+{"kind":"textbox","id":"sh/0nuxc3yl","slide":7,"text":"Envío APIM","textPreview":"Envío APIM","textChars":10,"textLines":1,"bbox":[786,376,98,52]}
+{"kind":"shape","id":"sh/72x4nap4","slide":7,"bbox":[878,320,38,2]}
+{"kind":"shape","id":"sh/ih4byhgn","slide":7,"bbox":[917,282,78,78]}
+{"kind":"textbox","id":"sh/pkzupwb2","slide":7,"text":"S8","textPreview":"S8","textChars":2,"textLines":1,"bbox":[927,299,58,34]}
+{"kind":"textbox","id":"sh/0z61032l","slide":7,"text":"Errores + bitácora","textPreview":"Errores + bitácora","textChars":18,"textLines":1,"bbox":[907,376,98,52]}
+{"kind":"shape","id":"sh/7ed8bat4","slide":7,"bbox":[999,320,38,2]}
+{"kind":"shape","id":"sh/itgfmlkj","slide":7,"bbox":[1038,282,78,78]}
+{"kind":"textbox","id":"sh/pwb2hwfy","slide":7,"text":"S9","textPreview":"S9","textChars":2,"textLines":1,"bbox":[1048,299,58,34]}
+{"kind":"textbox","id":"sh/0bi9s36h","slide":7,"text":"UAT + cierre","textPreview":"UAT + cierre","textChars":12,"textLines":1,"bbox":[1028,376,98,52]}
+{"kind":"shape","id":"sh/4fu18jqh","slide":7,"bbox":[42,500,580,118]}
+{"kind":"textbox","id":"sh/x0nuxc3y","slide":7,"text":"RUTA CRÍTICA","textPreview":"RUTA CRÍTICA","textChars":12,"textLines":1,"bbox":[64,518,536,30]}
+{"kind":"textbox","id":"sh/m94fu18j","slide":7,"text":"Core S1-S9. Menú termina temprano (S1-S2) y Manager cierra permisos en paralelo (S5-S9).","textPreview":"Core S1-S9. Menú termina temprano (S1-S2) y Manager cierra permisos en paralelo (S5-S9).","textChars":88,"textLines":1,"bbox":[64,556,536,46]}
+{"kind":"shape","id":"sh/fu18jqh0","slide":7,"bbox":[658,500,540,118]}
+{"kind":"textbox","id":"sh/83itgfml","slide":7,"text":"HITO DE NEGOCIO","textPreview":"HITO DE NEGOCIO","textChars":15,"textLines":1,"bbox":[680,518,496,30]}
+{"kind":"textbox","id":"sh/xobm58z2","slide":7,"text":"Entrega 1 habilita validación temprana con usuarios y consumidores externos.","textPreview":"Entrega 1 habilita validación temprana con usuarios y consumidores externos.","textChars":76,"textLines":1,"bbox":[680,556,496,46]}
+{"kind":"notes","id":"nt/23k9ek","slide":7,"text":""}
+{"kind":"slide","id":"sl/crq02c","slide":8,"title":"API pública de consulta","textShapes":22}
+{"kind":"textbox","id":"sh/fil0rqd4","slide":8,"text":"API pública de consulta","textPreview":"API pública de consulta","textChars":23,"textLines":1,"bbox":[42,36,620,96]}
+{"kind":"textbox","id":"sh/83itgfml","slide":8,"text":"Servicio REST de solo lectura para filtros en cascada zona -> ciudad -> equipo -> vehículo.","textPreview":"Servicio REST de solo lectura para filtros en cascada zona -> ciudad -> equipo -> vehículo.","textChars":91,"textLines":1,"bbox":[700,42,498,86]}
+{"kind":"textbox","id":"sh/xobm58z2","slide":8,"text":"Kickoff Argos Etapa 1","textPreview":"Kickoff Argos Etapa 1","textChars":21,"textLines":1,"bbox":[42,660,360,26]}
+{"kind":"textbox","id":"sh/m94fu18j","slide":8,"text":"08","textPreview":"08","textChars":2,"textLines":1,"bbox":[1184,660,54,26]}
+{"kind":"shape","id":"sh/fu18jqh0","slide":8,"bbox":[42,180,1138,52]}
+{"kind":"textbox","id":"sh/4fu18jqh","slide":8,"text":"Componente","textPreview":"Componente","textChars":10,"textLines":1,"bbox":[70,193,310,28]}
+{"kind":"textbox","id":"sh/x0nuxc3y","slide":8,"text":"Descripción","textPreview":"Descripción","textChars":11,"textLines":1,"bbox":[440,193,310,28]}
+{"kind":"textbox","id":"sh/mlkjm1cf","slide":8,"text":"Filtros / consumidor","textPreview":"Filtros / consumidor","textChars":20,"textLines":1,"bbox":[810,193,310,28]}
+{"kind":"shape","id":"sh/f6dcbulw","slide":8,"bbox":[42,232,1138,64]}
+{"kind":"textbox","id":"sh/vixczed8","slide":8,"text":"GET /zonas","textPreview":"GET /zonas","textChars":10,"textLines":1,"bbox":[70,247,326,38]}
+{"kind":"textbox","id":"sh/2x4nap4r","slide":8,"text":"Todas las zonas","textPreview":"Todas las zonas","textChars":15,"textLines":1,"bbox":[440,247,326,38]}
+{"kind":"textbox","id":"sh/donyd0z6","slide":8,"text":"Sin filtro","textPreview":"Sin filtro","textChars":10,"textLines":1,"bbox":[810,247,326,38]}
+{"kind":"shape","id":"sh/k3q5o7qp","slide":8,"bbox":[42,297,1138,64]}
+{"kind":"textbox","id":"sh/val87ed8","slide":8,"text":"GET /ciudades-logisticas","textPreview":"GET /ciudades-logisticas","textChars":24,"textLines":1,"bbox":[70,312,326,38]}
+{"kind":"textbox","id":"sh/6psfil0r","slide":8,"text":"Ciudades logísticas","textPreview":"Ciudades logísticas","textChars":19,"textLines":1,"bbox":[440,312,326,38]}
+{"kind":"textbox","id":"sh/dcbulwva","slide":8,"text":"?zona","textPreview":"?zona","textChars":5,"textLines":1,"bbox":[810,312,326,38]}
+{"kind":"shape","id":"sh/kre1w7mp","slide":8,"bbox":[42,362,1138,64]}
+{"kind":"textbox","id":"sh/v6psfil0","slide":8,"text":"GET /equipos","textPreview":"GET /equipos","textChars":12,"textLines":1,"bbox":[70,377,326,38]}
+{"kind":"textbox","id":"sh/2lszqtcj","slide":8,"text":"Equipos / flotas","textPreview":"Equipos / flotas","textChars":16,"textLines":1,"bbox":[440,377,326,38]}
+{"kind":"textbox","id":"sh/ap4r65wj","slide":8,"text":"?zona, ?ciudad","textPreview":"?zona, ?ciudad","textChars":14,"textLines":1,"bbox":[810,377,326,38]}
+{"kind":"shape","id":"sh/za1gvy90","slide":8,"bbox":[42,427,1138,64]}
+{"kind":"textbox","id":"sh/svu9knih","slide":8,"text":"GET /vehiculos","textPreview":"GET /vehiculos","textChars":14,"textLines":1,"bbox":[70,442,326,38]}
+{"kind":"textbox","id":"sh/hgn29gr2","slide":8,"text":"Vehículos paginados","textPreview":"Vehículos paginados","textChars":19,"textLines":1,"bbox":[440,442,326,38]}
+{"kind":"textbox","id":"sh/a1gvy90j","slide":8,"text":"?zona, ?ciudad, ?equipo","textPreview":"?zona, ?ciudad, ?equipo","textChars":23,"textLines":1,"bbox":[810,442,326,38]}
+{"kind":"shape","id":"sh/zidonyd0","slide":8,"bbox":[42,492,1138,64]}
+{"kind":"textbox","id":"sh/s36hcrmh","slide":8,"text":"Auth + contrato","textPreview":"Auth + contrato","textChars":15,"textLines":1,"bbox":[70,507,326,38]}
+{"kind":"textbox","id":"sh/hoza1gvy","slide":8,"text":"Token/API key, OpenAPI, /api/v1","textPreview":"Token/API key, OpenAPI, /api/v1","textChars":31,"textLines":1,"bbox":[440,507,326,38]}
+{"kind":"textbox","id":"sh/a5gbq1or","slide":8,"text":"Skytrack, Tracking","textPreview":"Skytrack, Tracking","textChars":18,"textLines":1,"bbox":[810,507,326,38]}
+{"kind":"notes","id":"nt/crq02c","slide":8,"text":""}
+{"kind":"slide","id":"sl/r2pq5r","slide":9,"title":"Sincronización hacia Command","textShapes":16}
+{"kind":"textbox","id":"sh/65wjudg7","slide":9,"text":"Sincronización hacia Command","textPreview":"Sincronización hacia Command","textChars":28,"textLines":1,"bbox":[42,36,620,96]}
+{"kind":"textbox","id":"sh/hwfyxobm","slide":9,"text":"La integración se deja hacia el final para reducir bloqueo por APIM y validar antes con mocks.","textPreview":"La integración se deja hacia el final para reducir bloqueo por APIM y validar antes con mocks.","textChars":94,"textLines":1,"bbox":[700,42,498,86]}
+{"kind":"textbox","id":"sh/obm58z25","slide":9,"text":"Kickoff Argos Etapa 1","textPreview":"Kickoff Argos Etapa 1","textChars":21,"textLines":1,"bbox":[42,660,360,26]}
+{"kind":"textbox","id":"sh/zed8v6ps","slide":9,"text":"09","textPreview":"09","textChars":2,"textLines":1,"bbox":[1184,660,54,26]}
+{"kind":"shape","id":"sh/6xkf6dcb","slide":9,"bbox":[72,245,170,90]}
+{"kind":"shape","id":"sh/hk3q5o7q","slide":9,"bbox":[316,245,170,90]}
+{"kind":"shape","id":"sh/oza1gvy9","slide":9,"bbox":[560,245,170,90]}
+{"kind":"shape","id":"sh/z61032ls","slide":9,"bbox":[804,245,170,90]}
+{"kind":"shape","id":"sh/al87ed8b","slide":9,"bbox":[1048,245,120,90]}
+{"kind":"textbox","id":"sh/k3q5o7qp","slide":9,"text":"Pendientes","textPreview":"Pendientes","textChars":10,"textLines":1,"bbox":[76,275,160,32]}
+{"kind":"textbox","id":"sh/donyd0z6","slide":9,"text":"Lote","textPreview":"Lote","textChars":4,"textLines":1,"bbox":[320,275,160,32]}
+{"kind":"textbox","id":"sh/2x4nap4r","slide":9,"text":"APIM","textPreview":"APIM","textChars":4,"textLines":1,"bbox":[564,275,160,32]}
+{"kind":"textbox","id":"sh/vixczed8","slide":9,"text":"Command","textPreview":"Command","textChars":7,"textLines":1,"bbox":[808,275,160,32]}
+{"kind":"textbox","id":"sh/kre1w7mp","slide":9,"text":"Bitácora","textPreview":"Bitácora","textChars":8,"textLines":1,"bbox":[1052,275,112,32]}
+{"kind":"textbox","id":"sh/dcbulwva","slide":9,"text":"->","textPreview":"->","textChars":2,"textLines":1,"bbox":[250,271,42,30]}
+{"kind":"textbox","id":"sh/6psfil0r","slide":9,"text":"->","textPreview":"->","textChars":2,"textLines":1,"bbox":[494,271,42,30]}
+{"kind":"textbox","id":"sh/val87ed8","slide":9,"text":"->","textPreview":"->","textChars":2,"textLines":1,"bbox":[738,271,42,30]}
+{"kind":"textbox","id":"sh/knih4byh","slide":9,"text":"->","textPreview":"->","textChars":2,"textLines":1,"bbox":[982,271,42,30]}
+{"kind":"shape","id":"sh/d8bat47y","slide":9,"bbox":[180,434,10,10]}
+{"kind":"textbox","id":"sh/d4vmtwra","slide":9,"text":"S6: marcar pendientes y proceso por lotes","textPreview":"S6: marcar pendientes y proceso por lotes","textChars":41,"textLines":1,"bbox":[208,425,872,59]}
+{"kind":"shape","id":"sh/oj2t83it","slide":9,"bbox":[180,489,10,10]}
+{"kind":"textbox","id":"sh/vy90je9c","slide":9,"text":"S7: envío MAP_PAGE, FLG_OVERRIDE, reenvío y programación","textPreview":"S7: envío MAP_PAGE, FLG_OVERRIDE, reenvío y programación","textChars":56,"textLines":1,"bbox":[208,480,872,59]}
+{"kind":"shape","id":"sh/6dcbulwv","slide":9,"bbox":[180,544,10,10]}
+{"kind":"textbox","id":"sh/dsji5sne","slide":9,"text":"S8: respuestas, errores, notificaciones, bitácora y reintentos","textPreview":"S8: respuestas, errores, notificaciones, bitácora y reintentos","textChars":62,"textLines":1,"bbox":[208,535,872,59]}
+{"kind":"notes","id":"nt/r2pq5r","slide":9,"text":""}
+{"kind":"slide","id":"sl/7k47gp","slide":10,"title":"Riesgos y decisiones","textShapes":14}
+{"kind":"textbox","id":"sh/61032lsz","slide":10,"text":"Riesgos y decisiones","textPreview":"Riesgos y decisiones","textChars":20,"textLines":1,"bbox":[42,36,620,96]}
+{"kind":"textbox","id":"sh/dsji5sne","slide":10,"text":"Los temas de validación del kickoff deben cerrar temprano para proteger S6-S8.","textPreview":"Los temas de validación del kickoff deben cerrar temprano para proteger S6-S8.","textChars":78,"textLines":1,"bbox":[700,42,498,86]}
+{"kind":"textbox","id":"sh/o7qpg3ex","slide":10,"text":"Kickoff Argos Etapa 1","textPreview":"Kickoff Argos Etapa 1","textChars":21,"textLines":1,"bbox":[42,660,360,26]}
+{"kind":"textbox","id":"sh/vy90je9c","slide":10,"text":"10","textPreview":"10","textChars":2,"textLines":1,"bbox":[1184,660,54,26]}
+{"kind":"shape","id":"sh/6dcbulwv","slide":10,"bbox":[42,168,530,108]}
+{"kind":"textbox","id":"sh/d4vmtwra","slide":10,"text":"APIM y ambientes","textPreview":"APIM y ambientes","textChars":16,"textLines":1,"bbox":[64,186,486,30]}
+{"kind":"textbox","id":"sh/oj2t83it","slide":10,"text":"Confirmar disponibilidad, contrato REST, auth y tamaño de lote.","textPreview":"Confirmar disponibilidad, contrato REST, auth y tamaño de lote.","textChars":63,"textLines":1,"bbox":[64,224,486,36]}
+{"kind":"shape","id":"sh/z25kb6xk","slide":10,"bbox":[627,168,530,108]}
+{"kind":"textbox","id":"sh/6hcrmhk3","slide":10,"text":"Filtros API","textPreview":"Filtros API","textChars":11,"textLines":1,"bbox":[649,186,486,30]}
+{"kind":"textbox","id":"sh/gr2p8nqx","slide":10,"text":"Definir AND recomendado vs OR para la cascada.","textPreview":"Definir AND recomendado vs OR para la cascada.","textChars":46,"textLines":1,"bbox":[649,224,486,36]}
+{"kind":"shape","id":"sh/9cvixcze","slide":10,"bbox":[42,308,530,108]}
+{"kind":"textbox","id":"sh/ylc7u54z","slide":10,"text":"Data maestra","textPreview":"Data maestra","textChars":12,"textLines":1,"bbox":[64,326,486,30]}
+{"kind":"textbox","id":"sh/r65wjudg","slide":10,"text":"Códigos zona/Divipol/plantas y archivos de carga inicial.","textPreview":"Códigos zona/Divipol/plantas y archivos de carga inicial.","textChars":57,"textLines":1,"bbox":[64,364,486,36]}
+{"kind":"shape","id":"sh/g3ex0nux","slide":10,"bbox":[627,308,530,108]}
+{"kind":"textbox","id":"sh/5o7qpg3e","slide":10,"text":"Tiempo semilla","textPreview":"Tiempo semilla","textChars":14,"textLines":1,"bbox":[649,326,486,30]}
+{"kind":"textbox","id":"sh/yxobm58z","slide":10,"text":"Regla mínima viable, fuente de datos y momento de carga.","textPreview":"Regla mínima viable, fuente de datos y momento de carga.","textChars":56,"textLines":1,"bbox":[649,364,486,36]}
+{"kind":"shape","id":"sh/nih4byhg","slide":10,"bbox":[42,448,1138,108]}
+{"kind":"textbox","id":"sh/g7adsji5","slide":10,"text":"Seguridad","textPreview":"Seguridad","textChars":9,"textLines":1,"bbox":[64,466,1094,30]}
+{"kind":"textbox","id":"sh/9s36hcrm","slide":10,"text":"Perfiles, usuarios y acciones protegidas del módulo.","textPreview":"Perfiles, usuarios y acciones protegidas del módulo.","textChars":52,"textLines":1,"bbox":[64,504,1094,36]}
+{"kind":"notes","id":"nt/7k47gp","slide":10,"text":""}
+{"kind":"slide","id":"sl/01xwbx","slide":11,"title":"Cierre del kickoff","textShapes":11}
+{"kind":"textbox","id":"sh/ahoza1gv","slide":11,"text":"Cierre del kickoff","textPreview":"Cierre del kickoff","textChars":18,"textLines":1,"bbox":[42,36,620,96]}
+{"kind":"textbox","id":"sh/l87ed8ba","slide":11,"text":"Con aprobación, las partes confirman alcance, frentes, secuencia de entregas y cronograma estimado.","textPreview":"Con aprobación, las partes confirman alcance, frentes, secuencia de entregas y cronograma estimado.","textChars":99,"textLines":1,"bbox":[700,42,498,86]}
+{"kind":"textbox","id":"sh/sneloj2t","slide":11,"text":"Kickoff Argos Etapa 1","textPreview":"Kickoff Argos Etapa 1","textChars":21,"textLines":1,"bbox":[42,660,360,26]}
+{"kind":"textbox","id":"sh/3ex0nuxc","slide":11,"text":"11","textPreview":"11","textChars":2,"textLines":1,"bbox":[1184,660,54,26]}
+{"kind":"shape","id":"sh/at47y1kr","slide":11,"bbox":[42,190,360,240]}
+{"kind":"textbox","id":"sh/lkjm1cfa","slide":11,"text":"APROBACIONES","textPreview":"APROBACIONES","textChars":12,"textLines":1,"bbox":[64,208,316,30]}
+{"kind":"textbox","id":"sh/szqtcj6t","slide":11,"text":"Detektor / Tecnoideas\nArgos / Summa\nNombre · cargo · fecha","textPreview":"Detektor / Tecnoideas | Argos / Summa | Nombre · cargo · fecha","textChars":58,"textLines":3,"bbox":[64,246,316,168]}
+{"kind":"shape","id":"sh/3itgfmlk","slide":11,"bbox":[462,190,360,240]}
+{"kind":"textbox","id":"sh/ex0nuxc3","slide":11,"text":"ESTIMACIÓN","textPreview":"ESTIMACIÓN","textChars":10,"textLines":1,"bbox":[484,208,316,30]}
+{"kind":"textbox","id":"sh/wfyxobm5","slide":11,"text":"454 horas\nUSD 11,350\nNo incluye impuestos, licencias ni infraestructura.","textPreview":"454 horas | USD 11,350 | No incluye impuestos, licencias ni infraestructura.","textChars":72,"textLines":3,"bbox":[484,246,316,168]}
+{"kind":"shape","id":"sh/l0rqd4vm","slide":11,"bbox":[882,190,316,240]}
+{"kind":"textbox","id":"sh/ed8bat47","slide":11,"text":"PRÓXIMOS PASOS","textPreview":"PRÓXIMOS PASOS","textChars":14,"textLines":1,"bbox":[904,208,272,30]}
+{"kind":"textbox","id":"sh/7u54zido","slide":11,"text":"Validar pendientes críticos, calendarizar sesiones técnicas APIM/data y arrancar S1 con modelo de datos y catálogos.","textPreview":"Validar pendientes críticos, calendarizar sesiones técnicas APIM/data y arrancar S1 con modelo de datos y catálogos.","textChars":116,"textLines":1,"bbox":[904,246,272,168]}
+{"kind":"textbox","id":"sh/wra5gbq1","slide":11,"text":"Fuente: Plan_de_Trabajo_Argos_Etapa1.docx, versión 1.0, 24 de junio de 2026.","textPreview":"Fuente: Plan_de_Trabajo_Argos_Etapa1.docx, versión 1.0, 24 de junio de 2026.","textChars":76,"textLines":1,"bbox":[42,552,920,30]}
+{"kind":"notes","id":"nt/01xwbx","slide":11,"text":""}

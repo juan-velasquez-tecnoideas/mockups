@@ -467,11 +467,11 @@ document.querySelectorAll(".gh-tab").forEach((tab) => {
 
 // Maestro de vehículos (alias) para asociar a una planta
 const VEHICLE_MASTER = [
-  { alias: "013", placa: "C124978", tipo: "Mixer", estado: "Activo", planta: "513 - Puente Aranda" },
-  { alias: "014", placa: "P240890", tipo: "Mixer", estado: "Activo", planta: "513 - Puente Aranda" },
-  { alias: "031", placa: "C118245", tipo: "Volqueta", estado: "Mantenimiento", planta: "513 - Puente Aranda" },
-  { alias: "050", placa: "C140330", tipo: "Mixer", estado: "Activo", planta: "503 - Calle 80" },
-  { alias: "061", placa: "P318877", tipo: "Bomba", estado: "Activo", planta: "522 - Chía" },
+  { alias: "013", placa: "C124978", tipo: "Mixer", estado: "Activo", planta: "Puente Aranda" },
+  { alias: "014", placa: "P240890", tipo: "Mixer", estado: "Activo", planta: "Puente Aranda" },
+  { alias: "031", placa: "C118245", tipo: "Volqueta", estado: "Mantenimiento", planta: "Puente Aranda" },
+  { alias: "050", placa: "C140330", tipo: "Mixer", estado: "Activo", planta: "Calle 80" },
+  { alias: "061", placa: "P318877", tipo: "Bomba", estado: "Activo", planta: "Chía" },
   { alias: "077", placa: "P305512", tipo: "", estado: "Sin asignar", planta: "" },
   { alias: "082", placa: "C150220", tipo: "", estado: "Sin asignar", planta: "" },
 ];
@@ -500,9 +500,9 @@ document.querySelectorAll("#plantModal [data-veh-combo], #plantEditModal [data-v
 
 // Vehículo: la ciudad logística se deriva de la planta
 const PLANT_CITY = {
-  "513 - Puente Aranda": "Bogotá / Sabana",
-  "503 - Calle 80": "Bogotá / Sabana",
-  "522 - Chía": "Bogotá / Sabana",
+  "Puente Aranda": "Bogotá / Sabana",
+  "Calle 80": "Bogotá / Sabana",
+  "Chía": "Bogotá / Sabana",
 };
 document.querySelectorAll("#vehiculoEditModal").forEach((dlg) => {
   const plantSelect = dlg.querySelector("[data-veh-planta]");
